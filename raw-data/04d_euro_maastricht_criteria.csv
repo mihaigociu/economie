@@ -1,0 +1,5 @@
+criterion,Romania_value,limit,pass
+Inflation (≤ ~3.3%),,3.3,False
+LT Interest Rate (≤ ~4.8%),,4.8,False
+Budget Deficit (≤ 3% GDP),,3.0,False
+Public Debt (≤ 60% GDP),,60.0,False
