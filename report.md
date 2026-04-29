@@ -19,7 +19,7 @@ Romania is not a failing economy. It is a rapidly growing one with a structural 
 
 Romania has been one of the EU's fastest-growing economies since accession in 2007. Real GDP growth averaged above 4% per year from 2000 to 2019, with a peak of **8.2% in 2017** — driven partly by consumption-fuelled fiscal stimulus. Post-COVID recovery was strong at 5.6% in 2021, but the economy has since decelerated sharply: **2.3% in 2023 and just 0.9% in 2024**, the weakest reading since the pandemic year.
 
-*→ Chart: `01a_gdp_growth.png`*
+![01a_gdp_growth.png](charts/01a_gdp_growth.png)
 
 The deceleration reflects simultaneous headwinds: fiscal consolidation pressure, elevated inflation eroding real incomes, a cooling European demand environment, and the structural limits of a labour-scarce economy.
 
@@ -35,7 +35,7 @@ The convergence chart is Romania's most compelling headline number. GDP per capi
 
 Poland and Romania started at similar absolute levels in 2000, but Poland's convergence has been both faster and more sustained. Romania surged in 2017–2019 on unsustainable fiscal stimulus, stagnated in 2020–2022, and has only modestly resumed convergence. The gap to Poland — a country with similar history and EU entry timing — has proved stubbornly persistent.
 
-*→ Chart: `01b_gdp_convergence.png`*
+![01b_gdp_convergence.png](charts/01b_gdp_convergence.png)
 
 ### 1.3 Economic Structure
 
@@ -47,7 +47,7 @@ Romania's sectoral composition has evolved steadily from an agriculture-heavy po
 
 The large agricultural share reflects both Romania's natural endowment (it ranks among the EU's top agricultural producers) and the persistence of low-productivity subsistence farming. The industrial base, anchored by automotive (Dacia/Renault), chemicals, and an expanding IT sector, is the primary export engine.
 
-*→ Chart: `01c_gdp_sectors.png`*
+![01c_gdp_sectors.png](charts/01c_gdp_sectors.png)
 
 ---
 
@@ -72,7 +72,7 @@ Poland's 2024 deficit is elevated by extraordinary defence spending (approaching
 
 Romania has been under the EU's Excessive Deficit Procedure (EDP) since 2020. The consolidation path agreed with the European Commission has been repeatedly revised because Romania has repeatedly missed it.
 
-*→ Chart: `02a_deficit.png`*
+![02a_deficit.png](charts/02a_deficit.png)
 
 ### 2.2 The Revenue Problem
 
@@ -84,7 +84,7 @@ The causes are well-documented:
 - **Structural under-investment in ANAF** (tax authority): digital infrastructure, audit capacity, and enforcement systematically underfunded
 - **Multiple exemptions**: the agricultural sector, for example, is largely outside the formal tax base
 
-*→ Chart: `02c_tax_revenue.png`*
+![02c_tax_revenue.png](charts/02c_tax_revenue.png)
 
 ### 2.3 The Spending Rigidity
 
@@ -96,13 +96,13 @@ On the expenditure side, the problem is structural inflexibility. Two items domi
 
 The result is a government that spends around **41–42% of GDP** (broadly European-normal) but collects only **29% of GDP** in revenues — a structural gap of over 12 percentage points that no short-term measure can bridge.
 
-*→ Chart: `02d_rev_vs_exp.png`*
+![02d_rev_vs_exp.png](charts/02d_rev_vs_exp.png)
 
 ### 2.4 Public Debt
 
 Public debt stood at **54.8% of GDP in 2024**, up from 35% pre-COVID — a 20 percentage point deterioration in five years. It remains below the Maastricht 60% ceiling, but the trajectory is steep, and current deficit levels imply further rapid accumulation. Romania's borrowing costs have risen in response: long-term government bond yields have been among the highest in the EU for a non-programme country, reflecting market concern about fiscal sustainability.
 
-*→ Chart: `02b_debt.png`*
+![02b_debt.png](charts/02b_debt.png)
 
 ---
 
@@ -112,11 +112,11 @@ Public debt stood at **54.8% of GDP in 2024**, up from 35% pre-COVID — a 20 pe
 
 Romania's employment rate of **63.8%** (ages 15–64, 2024) is the lowest among its peer group. Czechia reaches 75.4%, Hungary 75.1%, Poland 72.5%. The gap — roughly 10 percentage points — represents hundreds of thousands of Romanians outside the formal labour market, many engaged in subsistence agriculture or the informal economy, many more who have emigrated.
 
-*→ Chart: `03a_employment_rate.png`*
+![03a_employment_rate.png](charts/03a_employment_rate.png)
 
 Unemployment at **5.4% in 2024** is not alarming in isolation. But low unemployment alongside low employment signals not a tight labour market but a shrunken workforce — people have left the labour force entirely, either through emigration or discouragement.
 
-*→ Chart: `03b_unemployment.png`*
+![03b_unemployment.png](charts/03b_unemployment.png)
 
 ### 3.2 Youth Unemployment
 
@@ -132,7 +132,7 @@ Romania's youth unemployment rate (**23.9%** for ages 15–24 in 2024) is the mo
 
 At nearly 24%, Romania's youth unemployment is more than double the Czech rate. This is not primarily a cyclical problem — it persists in boom years as well as slowdowns. It reflects a skills mismatch, an education system misaligned with labour market needs, and the emigration of the most mobile young Romanians before they even enter the domestic labour market.
 
-*→ Chart: `03c_youth_unemp.png`*
+![03c_youth_unemp.png](charts/03c_youth_unemp.png)
 
 ### 3.3 Wages and Labour Costs
 
@@ -140,7 +140,7 @@ The Labour Cost Index (2020=100) tells a striking story. Romania's index reached
 
 Romanian wages have risen sharply in EUR terms over the past decade, narrowing the cost advantage that attracted FDI. This compression is not inherently bad — it reflects genuine productivity gains and living standard improvements — but it requires matching improvements in productivity and skills to avoid competitiveness erosion.
 
-*→ Chart: `03d_wages.png`*
+![03d_wages.png](charts/03d_wages.png)
 
 ### 3.4 Population Collapse
 
@@ -148,15 +148,17 @@ Romania's demographic trajectory is among the most severe in Europe. The populat
 
 The driver is dual: very low birth rates (total fertility rate around 1.6) and massive emigration following EU accession. The 2007 accession opened free movement to Spain, Italy, Germany, and the UK. In the years that followed, Romania lost an estimated 3–4 million working-age citizens to Western Europe — the largest sustained emigration in post-war European history outside of conflict zones.
 
-*→ Charts: `03e_population.png`, `03e2_romania_population.png`*
+![03e_population.png](charts/03e_population.png)
+
+![03e2_romania_population.png](charts/03e2_romania_population.png)
 
 Remittances — money sent home by the diaspora — have stabilised around **2.5–3.1% of GDP** annually, representing a significant transfer that supports domestic consumption and reduces measured poverty. But remittances mask the deeper cost: the human capital that left does not return, and the care economy (child-rearing, elder care) has been severely disrupted by the departures.
 
-*→ Chart: `03f_remittances.png`*
+![03f_remittances.png](charts/03f_remittances.png)
 
 The age dependency ratio is rising — more elderly per working-age adult — and this pressure will intensify through the 2030s and 2040s as the large cohorts born before 1990 reach retirement age against a dramatically smaller working-age population.
 
-*→ Chart: `03g_dependency_ratio.png`*
+![03g_dependency_ratio.png](charts/03g_dependency_ratio.png)
 
 ---
 
@@ -168,7 +170,7 @@ Romania's inflation history is a textbook arc of post-communist monetary stabili
 
 The 2021–2023 global inflation shock hit Romania harder and more persistently than most peers. HICP inflation peaked at **12.0% in 2022**, fell to 9.7% in 2023, and reached 5.8% in 2024 — still well above the Euro Area average by that point. Critically, 2025 data shows **6.8%** — inflation is re-accelerating as fiscal stimulus flows back into the economy.
 
-*→ Chart: `04a_inflation.png`*
+![04a_inflation.png](charts/04a_inflation.png)
 
 ### 4.2 BNR Response
 
@@ -176,13 +178,13 @@ The National Bank of Romania (BNR) began tightening in late 2021, raising its po
 
 A structural feature of Romanian inflation is its wage-push component: public sector wage increases and minimum wage hikes (which have been aggressive in recent years) feed through rapidly into services inflation.
 
-*→ Chart: `04b_policy_rate.png`*
+![04b_policy_rate.png](charts/04b_policy_rate.png)
 
 ### 4.3 RON/EUR: The Managed Float
 
 The RON/EUR exchange rate has depreciated slowly but relentlessly — from 3.34 in 2007 at EU accession to **4.975 in 2024**. The BNR manages a tight corridor: day-to-day volatility is very low, but the trend depreciation persists. This gentle depreciation partially offsets wage increases in EUR terms, maintaining some export competitiveness, but it also raises the cost of EUR-denominated public debt and undermines confidence in long-term savings.
 
-*→ Chart: `04c_ron_eur.png`*
+![04c_ron_eur.png](charts/04c_ron_eur.png)
 
 ### 4.4 Euro Adoption: The Perpetually Deferred Target
 
@@ -197,7 +199,7 @@ Romania has nominally committed to euro adoption since accession but has never c
 
 Three of four criteria are breached, and the deficit criterion is breached by a factor of 2.6. There is no credible near-term path to euro adoption. The political incentive to adopt has also weakened — the RON gives Romania a depreciation valve that euro membership would permanently close.
 
-*→ Chart: `04d_euro_criteria.png`*
+![04d_euro_criteria.png](charts/04d_euro_criteria.png)
 
 ---
 
@@ -217,7 +219,7 @@ Romania's current account deficit reached **−8.2% of GDP in 2024**, making it 
 
 Poland and Czechia have largely corrected their post-COVID external imbalances. Romania has not. A current account deficit of this size, sustained over multiple years, represents an ongoing dependence on external financing — primarily EU transfers and FDI — to balance the external accounts. The risk is not immediate default, but rising external vulnerability.
 
-*→ Chart: `05a_current_account.png`*
+![05a_current_account.png](charts/05a_current_account.png)
 
 ### 5.2 Trade Balance
 
@@ -225,13 +227,15 @@ Romania runs a persistent trade deficit in goods, driven by the import intensity
 
 The export profile is led by automotive (Dacia/Renault, Ford Otosan), machinery and equipment, and an increasingly significant IT services sector. Agricultural exports are large in volume but relatively low in value-added.
 
-*→ Charts: `05b_trade_balance.png`, `05d_ro_trade_openness.png`*
+![05b_trade_balance.png](charts/05b_trade_balance.png)
+
+![05d_ro_trade_openness.png](charts/05d_ro_trade_openness.png)
 
 ### 5.3 Foreign Direct Investment
 
 FDI inflows have been volatile and are trending down: **1.9% of GDP in 2024**, compared to Poland's 2.2% and Czechia's 3.8%. The decline reflects several factors: wage convergence eroding the low-cost manufacturing advantage, infrastructure deficits that raise logistics costs, and growing political uncertainty. Romania attracted significant automotive and manufacturing FDI in the 2000s–2010s, but greenfield investment in the latest technology sectors (semiconductors, advanced manufacturing) has disproportionately gone to Poland and Czechia.
 
-*→ Chart: `05c_fdi.png`*
+![05c_fdi.png](charts/05c_fdi.png)
 
 ### 5.4 EU Funds: The Absorption Problem
 
@@ -254,7 +258,7 @@ The 25-percentage-point gap between Romania and Estonia represents billions of e
 
 This matters enormously for the growth outlook. Romania has one of the highest GDP-per-infrastructure-euro potential returns in the EU — it has the most to gain from cohesion investment. Its consistent failure to absorb these funds is a self-inflicted constraint on potential growth.
 
-*→ Chart: `05e_eu_funds.png`*
+![05e_eu_funds.png](charts/05e_eu_funds.png)
 
 ---
 
@@ -266,7 +270,7 @@ Romanian industrial production has broadly tracked EU trends, with periods of si
 
 The automotive cluster is the most significant. Dacia (owned by Renault-Nissan) produces over 300,000 vehicles annually from its Mioveni plant and is Romania's single largest exporter. Ford Otosan's Craiova plant adds further capacity. The transition to electric vehicles poses both an opportunity (Romania produces cells and components through partnerships) and a risk (the ICE drivetrain expertise embedded in the supply chain faces obsolescence).
 
-*→ Chart: `06a_industrial_production.png`*
+![06a_industrial_production.png](charts/06a_industrial_production.png)
 
 ### 6.2 IT Sector: The Bright Spot
 
@@ -274,7 +278,7 @@ Romania has developed one of the region's strongest IT and software development 
 
 High-technology exports as a share of manufactured exports have risen but remain below Czech and Polish levels, reflecting that Romania's IT strength is primarily in services (exported as services, not goods) rather than high-tech manufacturing.
 
-*→ Chart: `06b_hightech_exports.png`*
+![06b_hightech_exports.png](charts/06b_hightech_exports.png)
 
 ### 6.3 Energy
 
@@ -282,7 +286,7 @@ Romania's electricity generation mix is notably diversified by regional standard
 
 The energy transition agenda is complex. Romania has committed to closing its coal plants (Oltenia), but the replacement capacity (additional nuclear units, offshore Black Sea wind) requires capital investment that depends on the same constrained fiscal environment.
 
-*→ Chart: `06d_electricity_mix.png`*
+![06d_electricity_mix.png](charts/06d_electricity_mix.png)
 
 ### 6.4 Agriculture: Potential Squandered
 
@@ -290,7 +294,7 @@ Romania has the EU's second-largest arable land area (after France) yet remains 
 
 The agricultural sector's large workforce (roughly 20% of employment against a 4% GDP share) is a proxy for disguised unemployment and structural poverty in rural areas.
 
-*→ Chart: `06e_cereal_yield.png`*
+![06e_cereal_yield.png](charts/06e_cereal_yield.png)
 
 ---
 
@@ -317,19 +321,21 @@ Nord-Est — home to Iași, the second-largest city — sits at **28% of the EU 
 
 The ratio between Romania's richest and poorest regions is approximately **5.8:1**. For comparison, the equivalent ratio in Poland is around 3.5:1, in France 2.5:1.
 
-*→ Charts: `07a_nuts2_gdp.png`, `07c_nuts2_comparison.png`*
+![07a_nuts2_gdp.png](charts/07a_nuts2_gdp.png)
+
+![07c_nuts2_comparison.png](charts/07c_nuts2_comparison.png)
 
 ### 7.2 Divergence, Not Convergence
 
 The internal regional story is not one of convergence — Bucharest has been pulling away from the rest for two decades. The capital captures the lion's share of FDI, EU-funded infrastructure investment, skilled labour (both domestic and return migrants), and government employment. Every major multinational entering Romania heads to Bucharest. Every talented graduate from Nord-Est or Oltenia faces a stark choice: Bucharest or abroad.
 
-*→ Chart: `07b_bucharest_divergence.png`*
+![07b_bucharest_divergence.png](charts/07b_bucharest_divergence.png)
 
 ### 7.3 Population Haemorrhage Outside the Capital
 
 Regional population change between 2007 and 2022 tells the story bluntly: every region except Bucharest-Ilfov (which gained roughly 80,000 people) lost population. Sud-Muntenia lost an estimated 200,000; Nord-Est 180,000. Rural depopulation in Moldavia (Nord-Est), Oltenia, and Dobrogea is severe enough to threaten the viability of basic services — schools, hospitals, local government — in hundreds of communes.
 
-*→ Chart: `07d_regional_population.png`*
+![07d_regional_population.png](charts/07d_regional_population.png)
 
 ---
 
@@ -341,7 +347,7 @@ Romania's at-risk-of-poverty or social exclusion rate (AROPE) stood at **27.9% o
 
 The EU27 average is 21%. Czechia achieves 11.3% — Romania's rate is more than double.
 
-*→ Chart: `08a_poverty.png`*
+![08a_poverty.png](charts/08a_poverty.png)
 
 ### 8.2 Inequality
 
@@ -349,7 +355,7 @@ The Gini coefficient — zero being perfect equality, 100 being maximum inequali
 
 Romania's Gini of 28.0 now sits closer to the EU average of 29.4 than at any point in recent history — one of the few genuinely positive recent developments.
 
-*→ Chart: `08b_gini.png`*
+![08b_gini.png](charts/08b_gini.png)
 
 ### 8.3 Education: A Crisis in Progress
 
@@ -364,7 +370,7 @@ Early school leaving — the share of 18–24 year olds who have not completed u
 
 Each percentage point represents thousands of young Romanians permanently locked out of formal employment prospects. The rising trend, against a falling EU average, suggests that the structural drivers — rural poverty, school infrastructure deficits, economic necessity to work rather than study — are intensifying, not abating.
 
-*→ Chart: `08c_early_school_leaving.png`*
+![08c_early_school_leaving.png](charts/08c_early_school_leaving.png)
 
 ### 8.4 Healthcare: Europe's Most Underfunded System
 
@@ -378,7 +384,11 @@ The consequences are visible in outcomes:
 
 The healthcare system suffers from chronic underfunding, severe staff shortages caused by emigration of doctors and nurses (an estimated 14,000 Romanian doctors work abroad), crumbling infrastructure particularly outside major cities, and endemic informal payments that effectively constitute a regressive private tax on the sick.
 
-*→ Charts: `08d_health_expenditure.png`, `08e_life_expectancy.png`, `08f_infant_mortality.png`*
+![08d_health_expenditure.png](charts/08d_health_expenditure.png)
+
+![08e_life_expectancy.png](charts/08e_life_expectancy.png)
+
+![08f_infant_mortality.png](charts/08f_infant_mortality.png)
 
 ---
 
