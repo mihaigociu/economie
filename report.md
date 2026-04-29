@@ -274,6 +274,8 @@ The automotive cluster is the most significant. Dacia (owned by Renault-Nissan) 
 
 ![06a_industrial_production.png](charts/06a_industrial_production.png)
 
+*Note: the chart shows an index (2015 = 100), not absolute levels — every country starts at the same point regardless of the actual size or sophistication of its industrial base. Romania and Czechia appearing close on this chart means their growth rates since 2015 are similar, not that their industries are comparable. In absolute terms, Czechia's industrial sector is considerably more advanced: higher value-added per worker, a deeper automotive supply chain built over three decades, and significantly higher-tech exports. Moreover, since 2018 Romania's index has flatlined at around 102–107 while Czechia's has continued climbing to 114, so Romania is losing ground even on the growth measure.*
+
 ### 6.2 IT Sector: The Bright Spot
 
 Romania has developed one of the region's strongest IT and software development industries. The sector employs over 150,000 people, contributes an estimated 6–7% of GDP, and has attracted significant outsourcing investment from Western multinationals. Bucharest, Cluj-Napoca, Iași, and Timișoara host dense clusters of software companies and R&D centres.
