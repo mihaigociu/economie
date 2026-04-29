@@ -235,6 +235,8 @@ The export profile is led by automotive (Dacia/Renault, Ford Otosan), machinery 
 
 FDI inflows have been volatile and are trending down: **1.9% of GDP in 2024**, compared to Poland's 2.2% and Czechia's 3.8%. The decline reflects several factors: wage convergence eroding the low-cost manufacturing advantage, infrastructure deficits that raise logistics costs, and growing political uncertainty. Romania attracted significant automotive and manufacturing FDI in the 2000s–2010s, but greenfield investment in the latest technology sectors (semiconductors, advanced manufacturing) has disproportionately gone to Poland and Czechia.
 
+*Note: Hungary's FDI figures in the chart are not comparable to the other countries. Hungary is a well-documented conduit for "phantom FDI" — multinational companies routing holding structures and Special Purpose Vehicles through Hungary for tax purposes. These financial flows are counted as FDI inflows and outflows even though no real productive investment occurs, producing the extreme swings visible in the data (e.g., +106% of GDP in 2020, −40% in 2018). The IMF and Eurostat have flagged this as a persistent statistical distortion in Hungary's balance of payments.*
+
 ![05c_fdi.png](charts/05c_fdi.png)
 
 ### 5.4 EU Funds: The Absorption Problem
