@@ -53,7 +53,7 @@ The large agricultural share reflects both Romania's natural endowment (it ranks
 
 ## 2. Public Finances: The Central Crisis
 
-If there is a single defining economic problem in Romania today, it is fiscal. The general government deficit has been consistently among the EU's largest, and the 2024 figure of **−9.3% of GDP** — equal to the COVID-year 2020 figure — places Romania in a category of its own among non-wartime peacetime economies.
+If there is a single defining economic problem in Romania today, it is fiscal. The general government deficit has been consistently among the EU's largest, and the 2024 figure of **−9.3% of GDP** — equal to the COVID-year 2020 figure — places Romania in a category of its own for a non-crisis year.
 
 ### 2.1 The Deficit Trajectory
 
