@@ -94,7 +94,7 @@ The trajectory is now sustainable on conservative assumptions, and Greece regain
 
 ### 3.1 The employment collapse and partial recovery
 
-The Greek labour market suffered the deepest collapse in the modern OECD. Unemployment rose from 7.8% (2008) to **27.8%** (2013); by 2024 — the latest full annual reading — it had fallen to 10.1%, with monthly data through 2025 trending below 9%.
+The Greek labour market suffered the deepest collapse in the modern OECD. Unemployment rose from 7.8% (2008) to **27.8%** (2013); by 2024 it had fallen to 10.1%.
 
 ![03b_unemployment.png](charts/03b_unemployment.png)
 
