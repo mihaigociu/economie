@@ -1,12 +1,13 @@
 # Economie
 
-Data-driven economic analyses using public sources (Eurostat, World Bank).
+Data-driven economic analyses using public sources (Eurostat, World Bank, ECB, European Commission).
 
 ## Structure
 
 | Folder | Description |
 |--------|-------------|
 | [`romania/`](romania/) | Romanian economy: trajectory, structural challenges, and current state |
+| [`greece/`](greece/) | Greek economy: debt crisis, adjustment programmes, and the slow reconstruction |
 
 ## Romania
 
@@ -17,12 +18,27 @@ A full analysis of the Romanian economy from 2000 to 2024, covering GDP converge
 - **[Raw data](romania/raw-data/)** — underlying CSVs from Eurostat and World Bank
 - **Scripts** — `01_gdp_overview.py` through `08_social.py`
 
-### Running the scripts
+## Greece
+
+A full analysis of the Greek economy from 2000 to 2025, covering the debt crisis (2010–2018 adjustment programmes), banking near-collapse, internal devaluation, tourism and shipping dominance, regional divergence, and the post-RRF recovery.
+
+- **[Report](greece/report.md)** — narrative analysis
+- **[Plan](greece/plan.md)** — research plan
+- **[Charts](greece/charts/)** — 49 charts generated from live data
+- **[Raw data](greece/raw-data/)** — 50 underlying CSVs from Eurostat, World Bank and ECB SDW
+- **Scripts** — `01_gdp_overview.py` through `09_social.py`
+
+## Running the scripts
+
+A single shared virtual environment lives at the repo root (`.venv/`) and is used by both projects.
 
 ```bash
-cd romania
 python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-python 01_gdp_overview.py
-# ... repeat for 02 through 08
+pip install -r romania/requirements.txt
+# regenerate Romanian charts
+cd romania && python 01_gdp_overview.py   # ... through 08_social.py
+# regenerate Greek charts
+cd ../greece && python 01_gdp_overview.py # ... through 09_social.py
 ```
+
+Each script fetches fresh data from the upstream APIs, writes a CSV to `raw-data/`, and saves PNG charts to `charts/`.
