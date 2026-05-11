@@ -50,7 +50,7 @@ The shape of the economy shifted with the crisis. Industry's share is essentiall
 
 ### 2.1 The deficit
 
-The 2009 budget deficit was 15.1% of GDP — and the in-year revisions that produced that number triggered the loss of market access. Six years and three programmes later, Greece ran a primary surplus of 4.1% of GDP in 2016. By 2024 the headline balance was around −1% with a primary surplus near 4%. Few advanced economies have ever sustained primary surpluses this large for this long.
+The 2009 budget deficit was 15.1% of GDP — and the in-year revisions that produced that number triggered the loss of market access. Six years and three programmes later, Greece ran a primary surplus of 4.1% of GDP in 2016. By 2024 the headline balance was a surplus of 1.3% of GDP with a primary surplus of 4.8%. Few advanced economies have ever sustained primary surpluses this large for this long.
 
 ![02a_deficit.png](charts/02a_deficit.png)
 
@@ -74,13 +74,17 @@ The composition chart below splits the total debt by instrument. **Bonds** are t
 
 ![02d_debt_composition.png](charts/02d_debt_composition.png)
 
-This is why the headline debt/GDP ratio overstates the actual burden. Italy sits at ~135% but mostly in market bonds it must keep refinancing; rate moves bite quickly. Greece is at ~153% but mostly in long-dated official loans at fixed concessional rates — so its effective annual interest bill is below 2% of GDP, lower than Italy's. Markets recognised this in 2023, when Greece regained investment-grade ratings.
+This is why the headline debt/GDP ratio overstates the actual burden. Italy sits at ~135% but mostly in market bonds it must keep refinancing; rate moves bite quickly. Greece is at ~153% but mostly in long-dated official loans at fixed concessional rates — so the effective interest rate on the debt stock averages around 2%. Markets recognised this in 2023, when Greece regained investment-grade ratings.
 
 ### 2.3 The primary-balance achievement
 
-Debt/GDP has fallen by roughly 50 percentage points since 2020. Most of that came from nominal GDP growth (the denominator) and inflation; primary surpluses contributed but were not dominant. The political economy of austerity produced both the worst macroeconomic outcomes in the EU and the strongest fiscal discipline.
+First, the terminology. The **headline balance** is total government revenue minus total government spending — *including* interest payments on existing debt. It is the figure the EU's 3%-of-GDP deficit ceiling refers to. The **primary balance** strips out the interest line and measures only revenue minus *non-interest* spending. So `primary balance = headline balance + interest paid`.
+
+The distinction matters because interest payments are largely fixed by past borrowing — they are not what this year's tax-and-spend decisions can move. The primary balance is. A country can run a primary surplus and still post a headline deficit if the interest bill swallows the surplus. Greece's 2024 numbers go the other way: a primary surplus of **+4.8% of GDP**, interest payments of **3.5%**, leaving a headline surplus of **+1.3%** — a remarkable position for a country whose 2009 headline deficit was 15.1%.
 
 ![02c_primary_balance.png](charts/02c_primary_balance.png)
+
+Debt-to-GDP has fallen by roughly 50 percentage points since 2020. The mechanics: when nominal GDP grows faster than the effective interest rate on debt — what economists shorthand as "r minus g" working in your favour — the ratio falls automatically, even before counting any primary surplus on top. Greece has both working: long-dated official loans at fixed rates averaging around 2%, and nominal GDP growth of 5–8% in recent years from real growth plus inflation. The primary surpluses contributed too but were not the dominant driver. The political economy of austerity produced both the worst macroeconomic outcomes in the EU and the strongest fiscal discipline.
 
 The trajectory is now sustainable on conservative assumptions, and Greece regained investment-grade ratings in 2023 — restoring market access after a fourteen-year exile.
 
