@@ -40,7 +40,7 @@ The PPS-adjusted level of per-capita GDP captures the deeper story. Greece reach
 
 ### 1.3 Sectoral composition
 
-The shape of the economy shifted with the crisis. Industry's share is essentially flat at 14–15% of value added. Services dominate at roughly 80% of GVA. The trade-transport-tourism aggregate held its share around 25% — meaning it shrank in absolute terms only as much as the rest of the economy and grew faster on the way out. Construction collapsed, as the dedicated charts in §7 show.
+The shape of the economy shifted with the crisis. Industry's share is essentially flat at 14–15% of value added. Services dominate at roughly 80% of GVA. The trade-transport-tourism aggregate held its share around 25% — meaning it shrank in absolute terms only as much as the rest of the economy and grew faster on the way out. Construction collapsed, as the dedicated charts in [§7.2](#72-construction-a-90-collapse) show.
 
 ![01c_gdp_sectors.png](charts/01c_gdp_sectors.png)
 
