@@ -8,7 +8,7 @@
 
 Between 2008 and 2016 Greece lost a quarter of its GDP, a third of its bank deposits, half its property values, and roughly 700,000 working-age residents. The non-performing loan ratio peaked near 50% — a figure normally associated with post-war financial systems. Sovereign yields touched 36% in early 2012. By every standard macroeconomic measure, Greece experienced the worst peacetime depression of any developed economy since the 1930s.
 
-A decade later the headline numbers have stabilised. Real GDP regained its 2010 level only in 2024 — sixteen years to recover. Public debt has fallen from 207% of GDP (2020) to roughly 153%. NPLs are below 5%. Unemployment has dropped from 28% to under 9%. Bond yields trade inside Italy's. The current account has stayed in deficit but is funded by record tourism receipts (€20bn) and a structural shipping surplus (€21bn) that together cover most of a chronic goods deficit.
+A decade later the headline numbers have stabilised. Real GDP in 2024 is still 16% below its 2007 peak and 7% below its 2010 level — the recovery is real but partial. Public debt has fallen from 207% of GDP (2020) to roughly 153%. NPLs are below 5%. Unemployment has dropped from 28% to about 10%. Bond yields trade inside Italy's. The current account has stayed in deficit but is funded by record tourism receipts (€20bn) and a structural shipping surplus (€21bn) that together cover most of a chronic goods deficit.
 
 But the recovery is incomplete and uneven. Per-capita GDP in PPS remains around 70% of the EU average — the same level as 2003, before the boom. Attica, the dominant economic region, fell from 127% of the EU average in 2006 to 86% in 2020 and has only partly recovered. Eleven of thirteen NUTS2 regions lost population over 2007–2024; West Macedonia lost 14%. Tertiary attainment among 25–34-year-olds, which had been climbing for two decades, ticked downward after 2022 — consistent with the persistent brain drain that net migration data confirm.
 
@@ -24,7 +24,7 @@ Real GDP grew at 4% per year in the half-decade before 2008, fuelled by cheap eu
 
 ![01a_gdp_growth.png](charts/01a_gdp_growth.png)
 
-Recovery began tentatively in 2014, was interrupted by the 2015 capital controls episode, then resumed at modest rates of 1–2% until COVID. The post-pandemic rebound was the strongest stretch of growth Greece had seen since the early 2000s: 8.7% in 2021, 5.6% in 2022. Even so, real GDP only regained its 2010 level in 2024. On a 24-year horizon, Greek output is roughly where it was in 2005.
+Recovery began tentatively in 2014, was interrupted by the 2015 capital controls episode, then resumed at modest rates of 1–2% until COVID. The post-pandemic rebound was the strongest stretch of growth Greece had seen since the early 2000s: 8.7% in 2021, 5.6% in 2022. Even so, real GDP in 2024 is still 7% below its 2010 level and 16% below the 2007 peak. On a 24-year horizon, Greek output is roughly where it was in 2003.
 
 ![01e_real_gdp_index.png](charts/01e_real_gdp_index.png)
 
@@ -94,15 +94,15 @@ The trajectory is now sustainable on conservative assumptions, and Greece regain
 
 ### 3.1 The employment collapse and partial recovery
 
-The Greek labour market suffered the deepest collapse in the modern OECD. Unemployment rose from 7.8% (2008) to **27.8%** (2013); by 2025 it had fallen below 9%.
+The Greek labour market suffered the deepest collapse in the modern OECD. Unemployment rose from 7.8% (2008) to **27.8%** (2013); by 2024 — the latest full annual reading — it had fallen to 10.1%, with monthly data through 2025 trending below 9%.
 
 ![03b_unemployment.png](charts/03b_unemployment.png)
 
-Youth (15–24) unemployment peaked at **59.4%** in 2013 — at one point, three out of five young job-seekers were unemployed. The 2025 figure of about 20% is still high but normalised.
+Youth (15–24) unemployment peaked at **59.4%** in 2013 — at one point, three out of five young job-seekers were unemployed. The 2024 figure of 22.5% is still high but normalised.
 
 ![03c_youth_unemp.png](charts/03c_youth_unemp.png)
 
-The employment rate (15–64) recovered to 65%, near the pre-crisis peak.
+The employment rate (15–64) recovered to 63.3% by 2024 — well above the 2013 trough of 48.5%, but on the Eurostat data this is the highest reading on record for Greece.
 
 ![03a_employment_rate.png](charts/03a_employment_rate.png)
 
@@ -146,7 +146,7 @@ Greece experienced **four consecutive years of HICP deflation (2013–2016)** �
 
 ### 4.2 Sovereign yields
 
-The 10-year Greek government bond yield rose from below 5% in early 2010 to **22.5%** monthly average in early 2012, with intraday peaks above 36%. Successive bailouts, the PSI, and ECB liquidity progressively normalised the yield curve. By 2025 the 10-year yield trades around 3.2% — inside Italy's.
+The 10-year Greek government bond yield rose from below 5% in early 2010 to **22.5%** monthly average in early 2012, with intraday peaks above 36%. Successive bailouts, the PSI, and ECB liquidity progressively normalised the yield curve. By 2024 the 10-year annual average was 3.35%, below Italy's 3.71% — Greek paper now trades inside Italian.
 
 ![04d_sovereign_yields.png](charts/04d_sovereign_yields.png)
 
@@ -160,7 +160,7 @@ The CPI-deflated real effective exchange rate appreciated by roughly 15% over 20
 
 ![04b_reer.png](charts/04b_reer.png)
 
-Nominal unit labour costs tell the same story even more cleanly. Greek NULC in 2025 sits at roughly the 2009 level while the euro-area aggregate is up 32%.
+Nominal unit labour costs tell the same story even more cleanly. Greek NULC in 2024 sits at 110 on the 2015=100 index — roughly the 2009 level (107) — while the euro-area aggregate has risen from 96 to 126 over the same period, a 32% increase.
 
 ![04c_ulc.png](charts/04c_ulc.png)
 
