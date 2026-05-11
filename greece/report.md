@@ -66,11 +66,15 @@ The revenue and expenditure trajectory together show the squeeze: revenue rose w
 
 Public debt rose from 103% of GDP (2007) to a peak of 207% in 2020. The 2012 Private Sector Involvement (PSI) — the largest sovereign restructuring in history — wiped roughly €100bn off the debt stock and dramatically shifted its composition.
 
+In plain terms: pre-2012 Greece borrowed mainly by selling **bonds** — tradable IOUs held by banks, pension funds and hedge funds. The PSI was a forced swap. Bondholders gave up €100 of old bonds for new bonds worth €46.50 in face value, with lower coupons and longer maturities — a "haircut" of about 53.5% in nominal terms, closer to 75% in present-value terms once the worse interest rates and longer wait are taken into account. It applied only to *private* creditors (hence the name); official loans from EU governments and the IMF were untouched.
+
 ![02b_debt.png](charts/02b_debt.png)
 
-Pre-PSI, market-held bonds were the largest creditor class. Post-PSI, official loans (EFSF, ESM, bilateral, IMF) became dominant and remain so today. By 2024 about 70% of Greek debt is owed to official lenders at concessional rates with maturities stretching to the 2070s. The headline debt/GDP ratio overstates the burden: the effective interest cost is below 2%.
+The composition chart below splits the total debt by instrument. **Bonds** are tradable IOUs whose price moves with market sentiment, refinanced every few years at whatever rate investors demand. **Loans** are direct, non-tradable contracts with a specific lender on fixed terms — no rollover risk, no mark-to-market. Pre-PSI, market-held bonds were the largest creditor class. The bailout packages (EFSF, ESM, bilateral euro-area partners, IMF) replaced most of those bonds with loans on extraordinarily soft terms. By 2024 about 70% of Greek debt is owed to official lenders at concessional rates with maturities stretching to the 2070s.
 
 ![02d_debt_composition.png](charts/02d_debt_composition.png)
+
+This is why the headline debt/GDP ratio overstates the actual burden. Italy sits at ~135% but mostly in market bonds it must keep refinancing; rate moves bite quickly. Greece is at ~153% but mostly in long-dated official loans at fixed concessional rates — so its effective annual interest bill is below 2% of GDP, lower than Italy's. Markets recognised this in 2023, when Greece regained investment-grade ratings.
 
 ### 2.3 The primary-balance achievement
 
