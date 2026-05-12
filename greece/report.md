@@ -140,6 +140,8 @@ The total fertility rate sits at 1.3 — well below the EU average and far below
 
 ### 4.1 Deflation, then disinflation
 
+First, a note on the measure. The **Harmonised Index of Consumer Prices (HICP)** is the EU's standardised CPI: the same idea as a regular consumer-price index, but built under a common methodology across all member states so numbers are directly comparable. HICP excludes owner-occupied housing costs, weights consumption more broadly (including tourist spending on the territory), and is what the ECB targets — its 2% euro-area inflation goal is defined on HICP. The gap to a national CPI is typically under half a percentage point per year, so the broad inflation story is the same either way.
+
 Greece experienced **four consecutive years of HICP deflation (2013–2016)** — a textbook symptom of a fixed-exchange-rate adjustment with no monetary offset. CPI fell cumulatively by about 2.5%. By contrast, the 2022 energy shock pushed headline inflation to 9.6% — closer to the euro-area average than the gap that opened during the crisis.
 
 ![04a_inflation.png](charts/04a_inflation.png)
