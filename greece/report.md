@@ -172,7 +172,7 @@ Nominal unit labour costs tell the same story even more cleanly. Greek NULC in 2
 
 ### 5.1 The NPL crisis
 
-The Greek banking system experienced one of the largest non-performing loan accumulations in modern banking history. The NPL ratio rose from under 5% (2008) to **45.6%** (2017) — a level normally seen only in post-war or post-currency-collapse economies. Resolution came through securitisation under the Hercules state-guarantee scheme: NPL ratios fell to 4.6% by 2024.
+The Greek banking system experienced one of the largest non-performing loan accumulations in modern banking history. The NPL ratio rose from under 3% (2008) to **46.0%** (2017) — a level normally seen only in post-war or post-currency-collapse economies. Resolution came through securitisation under the Hercules state-guarantee scheme: NPL ratios fell to 6.0% by 2023 (the latest year with data in this World Bank series; supervisory data published by the Bank of Greece show further declines into 2025).
 
 ![05a_npl_ratio.png](charts/05a_npl_ratio.png)
 

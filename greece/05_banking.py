@@ -52,6 +52,8 @@ def plot_peer_lines(ax, df, highlight="GR"):
             lw = 2.5 if iso == highlight else 1.4
             ax.plot(df.index, df[iso], label=PEER_LABELS[iso],
                     color=COLORS[iso], linewidth=lw, marker="o", markersize=3)
+    ax.xaxis.set_major_locator(mticker.MultipleLocator(2))
+    ax.xaxis.set_major_formatter(mticker.FormatStrFormatter("%d"))
 
 # ---------------------------------------------------------------------------
 # 1. NPL ratio — the defining banking metric
