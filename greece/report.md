@@ -178,7 +178,7 @@ The Greek banking system experienced one of the largest non-performing loan accu
 
 ### 5.2 The deposit flight
 
-Private-sector deposits at Greek MFIs peaked at €238bn in late 2009. By early 2015, on the eve of the third bailout and the imposition of capital controls, they had fallen to €120bn — a loss of roughly half. Capital controls (June 2015–September 2019) stemmed the bleed and gradually deposits rebuilt. By 2024 they stood at roughly €180bn, still well below the peak in nominal terms.
+Private-sector deposits at Greek MFIs peaked at €244bn in December 2009. By July 2015, on the eve of the third bailout and the imposition of capital controls, they had fallen to €126bn — a loss of roughly half. Capital controls (June 2015–September 2019) stemmed the bleed and gradually deposits rebuilt. By end-2024 they stood at €219bn, about 10% below the nominal peak.
 
 ![05b_bank_deposits.png](charts/05b_bank_deposits.png)
 
