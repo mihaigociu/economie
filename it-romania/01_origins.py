@@ -137,13 +137,31 @@ try:
 
     # Drop EU27 from the country-level chart — it dwarfs CEE peers
     country_peers = [g for g in PEERS if g != "EU27_2020"]
+    # Romania's 2013-2014 ED5-8 totals contain only ED6 (bachelor's); ED7
+    # (master's) was reported as zero — a Eurostat coverage gap, not an
+    # actual absence of master's graduates. Drop those two RO points so the
+    # chart does not visually imply a 4x supply jump in 2015.
+    grads_plot = grads.copy()
+    if "RO" in grads_plot.columns:
+        for yr in (2013, 2014):
+            if yr in grads_plot.index:
+                grads_plot.loc[yr, "RO"] = float("nan")
+
     fig, ax = plt.subplots(figsize=(12, 5))
     for geo in country_peers:
-        if geo not in grads.columns:
+        if geo not in grads_plot.columns:
             continue
         lw = 2.5 if geo == "RO" else 1.4
-        ax.plot(grads.index, grads[geo], label=PEER_LABELS[geo],
+        ax.plot(grads_plot.index, grads_plot[geo], label=PEER_LABELS[geo],
                 color=COLORS[geo], linewidth=lw, marker="o", markersize=3)
+    ax.annotate(
+        "RO 2013-2014 omitted: Eurostat ED5-8 total for those\n"
+        "years contains only bachelor-level (ED6) graduates;\n"
+        "master-level (ED7) reported as zero — coverage gap.",
+        xy=(0.02, 0.97), xycoords="axes fraction",
+        fontsize=8, color="#555", va="top",
+        bbox=dict(boxstyle="round,pad=0.3", facecolor="white",
+                  edgecolor="#bbb", linewidth=0.6))
     ax.set_title("Tertiary Graduates in ICT (ISCED-F 06, all levels) — CEE peers",
                  fontsize=13, fontweight="bold")
     ax.set_xlabel("Year"); ax.set_ylabel("Number of graduates per year")

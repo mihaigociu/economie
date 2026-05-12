@@ -25,11 +25,13 @@ Romania did not become a software exporter by accident. It inherited three thing
 
 The 1990s were the discovery phase: Softwin, Siveco and TotalSoft built early domestic firms; foreign clients arrived for low-wage arbitrage paired with strong language skills (English, French, German). The decisive policy choice came in 2001 — Romania granted a **0% income-tax rate** to employees working on qualifying software products. That single regulation, defended across governments of every political colour for two decades, made Romanian software unusually competitive on a take-home-pay basis for both employers and engineers.
 
-Eurostat tertiary-graduate series confirms the supply side. Romania's ICT graduate output grew sharply from EU accession in 2007:
+Eurostat tertiary-graduate series confirms the supply side. Romania's ICT graduate output rose from roughly 7,100 per year in 2015 to over **9,000 per year by 2024** — Poland is the only CEE country producing more, and Romania consistently produces more ICT graduates than Czechia, Hungary and Bulgaria combined:
 
 ![01b_ict_graduates.png](charts/01b_ict_graduates.png)
 
-ICT as a share of all tertiary graduates rose from roughly 4% in the late 2000s to around 8% by the early 2020s — high by EU standards and the second-highest growth trajectory in the CEE peer group.
+(Eurostat data note: Romania's 2013 and 2014 totals are omitted because the ED5-8 aggregate for those two years contains only bachelor-level graduates — master-level data was reported as zero, a coverage gap rather than an actual absence. The series becomes reliable from 2015 onwards, which is why the share chart below also starts in 2015.)
+
+ICT as a share of all tertiary graduates rose from roughly 4% in 2015 to around 8% by the early 2020s — high by EU standards and the second-highest growth trajectory in the CEE peer group.
 
 ![01d_ict_share_of_grads.png](charts/01d_ict_share_of_grads.png)
 
