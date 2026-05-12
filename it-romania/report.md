@@ -31,7 +31,7 @@ Eurostat tertiary-graduate series confirms the supply side. Romania's ICT gradua
 
 (Eurostat data note: Romania's 2013 and 2014 totals are omitted because the ED5-8 aggregate for those two years contains only bachelor-level graduates — master-level data was reported as zero, a coverage gap rather than an actual absence. The series becomes reliable from 2015 onwards, which is why the share chart below also starts in 2015.)
 
-ICT as a share of all tertiary graduates rose from roughly 4% in 2015 to around 8% by the early 2020s — high by EU standards and the second-highest growth trajectory in the CEE peer group.
+ICT as a share of all tertiary graduates rose from roughly 5% in 2015 to over **7% by 2024** — Romania is the **highest** in the CEE peer group on this measure, well above the EU27 average of 4.7%. Hungary rises sharply to converge with Romania post-2020. (The visible HU 2020 dip is real Eurostat data: Hungary's total-tertiary-graduate count nearly tripled that single year — likely a pandemic-era backlog clearance combined with educational-system disruption — depressing the share denominator for one year only.)
 
 ![01d_ict_share_of_grads.png](charts/01d_ict_share_of_grads.png)
 

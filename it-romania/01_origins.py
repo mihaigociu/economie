@@ -137,10 +137,9 @@ try:
 
     # Drop EU27 from the country-level chart — it dwarfs CEE peers
     country_peers = [g for g in PEERS if g != "EU27_2020"]
-    # Romania's 2013-2014 ED5-8 totals contain only ED6 (bachelor's); ED7
-    # (master's) was reported as zero — a Eurostat coverage gap, not an
-    # actual absence of master's graduates. Drop those two RO points so the
-    # chart does not visually imply a 4x supply jump in 2015.
+    # RO 2013-2014: ED5-8 contains only ED6 (bachelor); ED7 reported as 0,
+    # a Eurostat coverage gap — drop those two points so the chart does not
+    # imply a 4x supply jump in 2015. Raw values remain in the CSV.
     grads_plot = grads.copy()
     if "RO" in grads_plot.columns:
         for yr in (2013, 2014):
@@ -241,10 +240,11 @@ try:
         share.index.name = "year"
         save_csv(share, "01d_ict_share_of_grads_pct")
 
-        # Drop years where RO is implausibly low (<2%) — likely a Eurostat
-        # series break before the F06 classification was applied consistently.
-        # Romania's pre-2015 F06 numbers are an order of magnitude smaller than
-        # the engineering F07 numbers, suggesting reporting drift.
+        # Pre-2015 is dropped because of the RO ED7 coverage gap propagating
+        # into the share denominator. HU 2020 is kept: total-graduate count
+        # nearly tripled that year (likely pandemic-era backlog clearance
+        # in the Hungarian university system), F06 also spiked ~80%; the
+        # resulting share dip is what Eurostat publishes.
         share_plot = share[share.index >= 2015]
 
         fig, ax = plt.subplots(figsize=(12, 5))
