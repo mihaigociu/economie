@@ -51,9 +51,11 @@ By 2010 the share of ICT in Romanian GDP had crossed 2% and was rising; by 2024 
 
 ![02b_ict_gva_share.png](charts/02b_ict_gva_share.png)
 
-The sector pulled employment along with it. National-accounts data show that ICT employees in Romania went from negligible numbers in the late 1990s to roughly **220 thousand** by 2024 — and unlike employment in most other CEE economies, the trajectory has never reversed.
+The sector pulled employment along with it. National-accounts data for the narrow IT core (NACE J62-J63: computer programming and information services) show Romanian employment rising from roughly 23 thousand in 1995 to a peak of **122 thousand in 2022**, before falling to **106 thousand in 2023** — the first material reversal in the series. The broader Information & Communication sector (NACE J, which adds telecom, publishing and audiovisual) reached **209 thousand in 2024** and **207 thousand in 2025** on the same Eurostat source.
 
 ![02c_ict_employment_romania.png](charts/02c_ict_employment_romania.png)
+
+The 2022→2023 contraction in J62-J63 employment coincides precisely with the November 2022 cap on the IT income-tax exemption (Section 4.4) and with the cooling in the NACE J job-vacancy rate documented in Section 8.2 — three independent indicators pointing at the same inflection. Whether this is a one-cycle correction or the start of a structural plateau is the central uncertainty in the outlook.
 
 Indexed to 2000 = 100, Romanian ICT employment outpaced every CEE peer:
 
