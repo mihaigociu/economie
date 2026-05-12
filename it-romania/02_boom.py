@@ -175,15 +175,27 @@ print("  saved 02d_employment_index_growth.png")
 
 
 # ---------------------------------------------------------------------------
-# 5. Productivity — GVA per worker, EUR thousand (current prices)
+# 5. Productivity — real GVA per worker, EUR thousand (chain-linked 2015 prices)
 # ---------------------------------------------------------------------------
-print("Computing GVA per worker...")
-common_yrs = sorted(set(gva.index) & set(emp.index))
-# gva is in MEUR, emp is in thousand persons -> raw quotient is thousand EUR / person
-prod = gva.loc[common_yrs] / emp.loc[common_yrs]
+# Use REAL GVA (CLV15_MEUR) so the cross-country comparison and the time
+# series are not distorted by Romania's recent inflation surge and the
+# nominal wage-cost jump triggered by the November 2022 IT tax-exemption
+# cap (which inflated nominal GVA without representing real productivity).
+print("Fetching real ICT GVA (chain-linked 2015 prices) for productivity...")
+df_real = fetch_eurostat("nama_10_a64", {
+    "nace_r2": "J62_J63",
+    "na_item": "B1G",
+    "unit":    "CLV15_MEUR",   # chain-linked volumes, 2015 reference
+    "geo":     PEERS + ["EU27_2020"],
+})
+gva_real = to_year_indexed(df_real).dropna(how="all")
+save_csv(gva_real, "02e_ict_gva_real_clv15_meur")
+
+common_yrs = sorted(set(gva_real.index) & set(emp.index))
+prod = gva_real.loc[common_yrs] / emp.loc[common_yrs]
 prod = prod.dropna(how="all")
 prod.index.name = "year"
-save_csv(prod, "02e_ict_productivity_keur_per_worker")
+save_csv(prod, "02e_ict_productivity_real_keur_per_worker")
 
 prod_plot = prod[prod.index >= 2000]
 fig, ax = plt.subplots(figsize=(13, 5))
@@ -193,11 +205,18 @@ for geo in PEERS + ["EU27_2020"]:
     lw = 2.5 if geo == "RO" else 1.4
     ax.plot(prod_plot.index, prod_plot[geo], label=PEER_LABELS[geo],
             color=COLORS[geo], linewidth=lw, marker="o", markersize=3)
-ax.set_title("ICT Services — Gross Value Added per Worker (current prices)",
+ax.set_title("ICT Services — Real Gross Value Added per Worker (chain-linked, 2015 prices)",
              fontsize=13, fontweight="bold")
-ax.set_xlabel("Year"); ax.set_ylabel("Thousand EUR per worker")
+ax.set_xlabel("Year"); ax.set_ylabel("Thousand EUR per worker (constant 2015 prices)")
 ax.legend(ncol=3, fontsize=9); ax.grid(axis="y", alpha=0.3)
 ax.xaxis.set_major_locator(mticker.MultipleLocator(2))
+ax.annotate(
+    "EU27 line ends at 2014: Eurostat does not publish an EU27-aggregate\n"
+    "GVA series for J62-J63 after that year (only the broader NACE J).",
+    xy=(0.02, 0.97), xycoords="axes fraction",
+    fontsize=8, color="#555", va="top",
+    bbox=dict(boxstyle="round,pad=0.3", facecolor="white",
+              edgecolor="#bbb", linewidth=0.6))
 plt.tight_layout()
 plt.savefig(f"{OUTPUT}/02e_ict_productivity.png", dpi=150); plt.close()
 print("  saved 02e_ict_productivity.png")

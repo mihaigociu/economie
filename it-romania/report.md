@@ -61,9 +61,11 @@ Indexed to 2000 = 100, Romanian ICT employment outpaced every CEE peer:
 
 ![02d_employment_index_growth.png](charts/02d_employment_index_growth.png)
 
-Productivity — value added per worker — rose alongside, but with characteristic Romanian noise (small numerators in some early years, methodology breaks between SBS regimes in 2020/21):
+Productivity — real (chain-linked, 2015 prices) value added per worker — rose alongside, from roughly €25K per worker in 2000 to **€80K by 2019** and **€114K in 2023**. Romania crossed above the EU27 average around 2013 and has stayed there since. Two visible discontinuities along the way: the 2009 dip reflects the financial-crisis GVA contraction; the 2014→2015 dip is a national-accounts employment revision (RO J62-J63 employment jumped from 51K to 76K while GVA stayed roughly flat, mechanically depressing the ratio for one year). The sharp 2022→2023 jump (from 96 to 114 thousand) is genuine in nominal terms but partly mechanical: employment fell from 122K to 106K in that year (Section 2 above) and real GVA stayed roughly flat, so the ratio rose even though output per remaining worker did not improve commensurately.
 
 ![02e_ict_productivity.png](charts/02e_ict_productivity.png)
+
+The real-terms gap to CEE peers (RO €114K vs Czechia €62K vs Poland €41K in 2023, constant 2015 prices) is genuine, not an inflation artifact — it reflects the export-oriented composition of Romanian IT, higher concentration of multinational captive R&D centres, and a smaller share of low-end body-shop work. (Chart note: the EU27 line stops at 2014 because Eurostat does not publish an EU27 aggregate for J62-J63 GVA after that year — only the broader NACE J aggregate.)
 
 The deeper structural pattern visible here is *export-led services growth* in a country that otherwise spent the 2000s and 2010s running large current-account deficits. IT was, and remains, one of very few Romanian sectors converging upward to Western European productivity levels rather than diverging downward.
 
