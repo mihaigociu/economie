@@ -97,7 +97,7 @@ Romania runs a **structural surplus** of €6–7 billion per year on IT service
 
 ![03c_it_services_trade_balance.png](charts/03c_it_services_trade_balance.png)
 
-IT services have grown from about 18% of total Romanian services exports in 2013 to over 30% in 2025, a level only Ireland and a handful of small EU economies surpass:
+IT services have grown from about **14% of total Romanian services exports in 2013 to roughly 26% in 2025** — a doubling of the IT share over twelve years, and the highest share among the CEE peer group:
 
 ![03d_it_share_services_exports.png](charts/03d_it_share_services_exports.png)
 
