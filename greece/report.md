@@ -152,7 +152,7 @@ The 10-year Greek government bond yield rose from below 5% in early 2010 to **22
 
 ![04d_sovereign_yields.png](charts/04d_sovereign_yields.png)
 
-The Greek–Bund spread reached 21 percentage points at the peak of the crisis. The convergence trade that vanished in 2010 has substantially reconstituted itself.
+To isolate the *Greek-specific* risk premium, analysts look at the **spread** to Germany. A **Bund** is a German federal government bond (from "Bundesanleihe"); because Germany is treated by markets as the most creditworthy sovereign in the euro area, its 10-year yield is the regional benchmark "safe" rate. The Greek–Bund spread is simply the difference between the two 10-year yields, expressed in percentage points. It strips out the common eurozone factor — ECB policy, global rates, region-wide risk appetite — and shows only how much extra investors demand to hold Greek debt instead of German. Pre-2008 the spread was negligible (markets treated Greek debt as effectively German); at the 2012 peak it reached **21 percentage points**; by 2024 it had collapsed back to around 1 pp. The convergence trade that vanished in 2010 has substantially reconstituted itself.
 
 ![04e_spread.png](charts/04e_spread.png)
 
