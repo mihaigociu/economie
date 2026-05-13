@@ -1,0 +1,18 @@
+# source: United Nations — World Population Prospects 2024 (medium variant)
+# url: https://population.un.org/wpp/
+# url: https://population.un.org/wpp/Download/Standard/MostUsed/
+# retrieved: 2026-05-13
+# notes: Working-age population (15-64 years), millions. Five-year snapshots through 2050 (UN medium-variant projection from 2025).
+# notes: China's working-age population peaked around 2015 and has been declining since. UN medium variant projects a further ~200M decline by 2050.
+year,china,india,united_states,european_union
+1990,762,529,164,239
+2000,888,648,193,251
+2010,996,795,209,261
+2015,1018,855,212,259
+2020,1006,910,213,250
+2025,975,961,217,242
+2030,941,1005,221,232
+2035,900,1037,226,222
+2040,852,1059,231,212
+2045,802,1072,235,204
+2050,750,1080,239,197

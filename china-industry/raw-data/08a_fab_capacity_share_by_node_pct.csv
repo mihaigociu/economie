@@ -1,0 +1,10 @@
+# source: TrendForce 2024 fab-capacity commentary; SEMI World Fab Forecast 2024 (publicly cited figures)
+# url: https://www.trendforce.com/news/  (TrendForce free news + analyses)
+# url: https://www.semi.org/en/products-services/market-data/world-fab-forecast  (SEMI World Fab Forecast — paywalled report; headline figures in press)
+# retrieved: 2026-05-13
+# notes: % of global wafer-fab capacity by economy of fab location, by node segment, 2024.
+# notes: Advanced = leading-edge (<=7nm). Mature = 28nm and older (analog, power management, automotive, IoT).
+# notes: Rows sum to ~100%; small differences (0-1pp) reflect rounding across sources.
+node_segment,Taiwan (TSMC),South Korea,United States,Japan,China (mainland),Europe + Other
+Advanced (<=7nm),91.5,7,1,0,0.5,0
+Mature (28nm+),30,17,7,10,32,4

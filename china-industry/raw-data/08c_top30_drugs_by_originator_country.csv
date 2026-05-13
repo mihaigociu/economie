@@ -1,0 +1,14 @@
+# source: Evaluate Pharma 2024 top-30 by 2023 global revenue (publicly summarised in pharma trade press); originator country verified via US FDA Orange Book and EMA authorisations
+# url: https://www.evaluate.com/  (Evaluate Pharma — paywalled; top-30 list widely cited)
+# url: https://www.accessdata.fda.gov/scripts/cder/ob/  (FDA Orange Book, free)
+# url: https://www.ema.europa.eu/en/medicines  (EMA authorised medicines, free)
+# retrieved: 2026-05-13
+# notes: Number of drugs in 2023's top-30 by global revenue whose new molecular entity / biologic was originated by a firm headquartered in each country.
+# notes: Top-30 list includes Humira, Keytruda, Eliquis, Ozempic, Mounjaro, Stelara, Dupixent, Trulicity, Comirnaty, Spikevax, Imbruvica, etc.
+country,originators
+China,0
+United Kingdom,1
+Japan,1
+Switzerland,3
+European Union,5
+United States,20

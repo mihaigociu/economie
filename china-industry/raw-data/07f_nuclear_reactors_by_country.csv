@@ -1,0 +1,16 @@
+# source: IAEA — PRIS (Power Reactor Information System), end-2024 snapshot
+# url: https://pris.iaea.org/pris/  (free interactive database)
+# url: https://pris.iaea.org/PRIS/WorldStatistics/UnderConstructionReactorsByCountry.aspx
+# retrieved: 2026-05-13
+# notes: Operable and under-construction reactor counts by country. Total = operating + under_construction (derived).
+country,operating,under_construction
+United Kingdom,9,2
+Ukraine,15,2
+Canada,19,0
+South Korea,26,3
+India,23,7
+Japan,33,2
+Russia,36,4
+France,56,1
+China,55,26
+United States,94,1

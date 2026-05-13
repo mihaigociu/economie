@@ -1,0 +1,14 @@
+# source: Synopsys 10-K and Cadence 10-K (revenue + commentary on competitive position); Siemens AG annual report (Digital Industries segment); industry trade press (ESD Alliance / SEMI) 2024 commentary
+# url: https://investor.synopsys.com/financial-information/sec-filings  (Synopsys 10-K)
+# url: https://www.cadence.com/en_US/home/company/investor-relations.html  (Cadence 10-K)
+# url: https://www.semi.org/en/products-services/market-data  (SEMI / ESD Alliance commentary)
+# retrieved: 2026-05-13
+# notes: % of global EDA software market by vendor revenue, 2024.
+# notes: Top 3 (Synopsys + Cadence + Siemens EDA) hold ~73% of global EDA. Empyrean is the largest indigenous Chinese EDA vendor.
+vendor,country,share
+Synopsys,United States,32
+Cadence,United States,28
+Siemens EDA,European Union,13
+Ansys,United States,11
+Empyrean,China,3
+Others,Mixed,13

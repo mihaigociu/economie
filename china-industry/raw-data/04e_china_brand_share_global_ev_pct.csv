@@ -1,0 +1,15 @@
+# source: IEA Global EV Outlook 2024 + 2025; JATO Dynamics public commentary; Counterpoint Research global EV market quarterly summaries
+# url: https://www.iea.org/reports/global-ev-outlook-2024
+# url: https://www.iea.org/reports/global-ev-outlook-2025
+# url: https://www.jato.com/  (JATO Dynamics — public press releases)
+# retrieved: 2026-05-13
+# notes: Brand-of-origin view — a BYD sold in Brazil counts as Chinese-brand. Tesla Shanghai-made exports count as US-brand.
+# notes: 2020 dip reflects temporary cut in Chinese NEV subsidies that year.
+year,china_brand_pct
+2018,50
+2019,47
+2020,38
+2021,50
+2022,57
+2023,60
+2024,64

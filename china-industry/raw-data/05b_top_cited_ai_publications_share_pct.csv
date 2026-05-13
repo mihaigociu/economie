@@ -1,0 +1,16 @@
+# source: NSF — Science & Engineering Indicators 2024; CSET / Georgetown country AI capability tracker; cross-checked against Stanford AI Index 2024 publication-quality tables
+# url: https://ncses.nsf.gov/pubs/nsb20241  (NSF S&E Indicators 2024)
+# url: https://cset.georgetown.edu/publication/country-views-on-ai-capability-tracker/
+# url: https://aiindex.stanford.edu/report/
+# retrieved: 2026-05-13
+# notes: % share of top-1% most-cited AI publications by country/region of authorship.
+# notes: Citation-based rankings partly reflect self-citation patterns; the directional crossover (China overtaking US ~2019) is robust across methods.
+year,China,United States,European Union,United Kingdom,Other
+2010,18,32,19,7,24
+2012,20,30,18,7,25
+2014,22,28,18,7,25
+2016,25,27,17,7,24
+2018,27,26,16,6,25
+2020,28,24,15,6,27
+2022,30,23,14,6,27
+2023,31,23,14,6,26

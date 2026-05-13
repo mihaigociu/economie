@@ -1,0 +1,16 @@
+# source: IEA — Global Critical Minerals Outlook 2024 (chapter on battery supply chains)
+# url: https://www.iea.org/reports/global-critical-minerals-outlook-2024
+# retrieved: 2026-05-13
+# notes: China's share of global processing / production at each battery-supply-chain stage, ca. 2023.
+# notes: Cathode/anode active materials, separators, electrolytes, plus refined critical minerals (Li, Co, Ni, Mn, graphite).
+stage,china_share
+Nickel (battery-grade refined),35
+Lithium (refined),70
+Cobalt (refined),75
+Separators,80
+Cathode Active Material,85
+Electrolytes,85
+Natural Graphite (refining),90
+Anode Active Material,95
+Synthetic Graphite,95
+Manganese (battery-grade),95

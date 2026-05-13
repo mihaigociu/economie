@@ -1,0 +1,12 @@
+# source: Ember — Global Electricity Review (China data)
+# url: https://ember-energy.org/countries-and-regions/china/
+# retrieved: 2026-05-13
+# notes: China's electricity generation mix by source, % of total. Coal declining as share, but coal generation still grows in absolute TWh (renewables fill marginal demand).
+year,Coal,Hydro,Wind,Solar,Nuclear,Gas,Bio / other
+2010,78,17,1,0,2,1,1
+2012,76,17,2,0,2,2,1
+2015,73,19,3,1,3,2,2
+2018,67,17,5,3,4,3,2
+2020,63,17,6,3,5,3,3
+2022,61,15,8,5,5,3,3
+2024,58,13,9,9,5,3,3

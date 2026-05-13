@@ -1,0 +1,12 @@
+# source: Pratt & Whitney / US Air Force / Russian Aerospace Forces / AVIC public statements and trade-press coverage
+# url: https://www.pw.utc.com/products-and-services/products/military-engines/F119/  (Pratt & Whitney F119)
+# url: https://www.pw.utc.com/products-and-services/products/military-engines/F135-Engine/  (Pratt & Whitney F135)
+# url: https://thediplomat.com/2023/07/chinese-j-20-fighter-finally-gets-its-purpose-built-engine/  (WS-15 IOC reporting)
+# retrieved: 2026-05-13
+# notes: Year of Initial Operational Capability (IOC) for an indigenous high-thrust 5th-gen fighter engine.
+# notes: WS-15 reached IOC in 2023 — 18 years after the US F-119 (the engine for the F-22) entered service in 2005.
+engine,country,ioc_year
+F-119 (F-22),United States,2005
+F-135 (F-35),United States,2015
+AL-41F1 (Su-57),Russia,2020
+WS-15 (J-20),China,2023

@@ -1,0 +1,16 @@
+# source: US Congressional Research Service (CRS) reports on IRA and CHIPS Act; European Commission communications on Net-Zero Industry Act and Critical Raw Materials Act; Treasury / CBO scoring updates
+# url: https://crsreports.congress.gov/product/pdf/R/R47346  (CRS IRA overview)
+# url: https://crsreports.congress.gov/product/pdf/R/R47558  (CRS CHIPS+Science Act overview)
+# url: https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal/green-deal-industrial-plan/net-zero-industry-act_en
+# url: https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal/green-deal-industrial-plan/critical-raw-materials-act_en
+# retrieved: 2026-05-13
+# notes: Headline announced funding amounts, USD billion. IRA tax-credit value depends on uptake; CBO 2023 revised IRA energy/EV provisions to ~$663B over 10y.
+# notes: EU Net-Zero Industry Act is a regulatory framework, but linked to IPCEI / Innovation Fund + Sovereignty Fund proposals totalling ~$170B. EU CRMA does not bring new money but channels existing funds.
+# notes: This is announced / authorised amounts, not actual disbursements.
+policy,year,country_region,headline_usd_bn,focus
+CHIPS Act,2022,United States,52,Semiconductor manufacturing + R&D
+IRA (clean energy + EV),2022,United States,369,"Clean-energy and EV tax credits (initial scoring; CBO 2023 revised ~$663B)"
+IRA (CBO revised),2023,United States,663,CBO scoring revision (energy + EV tax-credit costs)
+Net-Zero Industry Act,2023,European Union,170,"Strategic net-zero tech (solar, wind, batteries, hydrogen, CCS)"
+Critical Raw Materials Act,2023,European Union,30,"Critical-mineral processing + recycling (channels existing EU funds)"
+EU Chips Act,2023,European Union,46,Semiconductor manufacturing + design + R&D in EU

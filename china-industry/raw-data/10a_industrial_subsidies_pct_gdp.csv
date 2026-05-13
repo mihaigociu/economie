@@ -1,0 +1,14 @@
+# source: OECD Trade Policy Paper No. 270 (DiPippo et al., 2022) "Red Ink: Estimating Chinese Industrial Policy Spending"; CSIS-related analyses; IMF working papers
+# url: https://www.oecd.org/trade/topics/trade-related-industrial-policies/
+# url: https://www.csis.org/analysis/red-ink-estimating-chinese-industrial-policy-spending-comparative-perspective  (CSIS / DiPippo Red Ink)
+# retrieved: 2026-05-13
+# notes: Estimated annual industrial-policy spending (direct subsidies + below-market credit + tax expenditures + land-use preferences), % of GDP, 2019.
+# notes: Headline figure from Red Ink: China industrial-policy spending ~1.7% of GDP in 2019, roughly 2x of comparators by GDP share and ~3-5x in absolute terms.
+country,share_pct_gdp
+China,1.73
+South Korea,0.67
+United States,0.39
+Germany,0.41
+France,0.55
+Japan,0.50
+Brazil,0.32

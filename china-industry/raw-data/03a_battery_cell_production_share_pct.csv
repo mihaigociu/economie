@@ -1,0 +1,11 @@
+# source: IEA — Global EV Outlook 2024 (chapter "Outlook for batteries"); IEA Global EV Outlook 2025 commentary
+# url: https://www.iea.org/reports/global-ev-outlook-2024
+# url: https://www.iea.org/reports/global-ev-outlook-2025
+# url: https://www.sneresearch.com/en/insight/release_view/210 (SNE Research annual roundup; headline figures cited in trade press)
+# retrieved: 2026-05-13
+# notes: Snapshots rounded to nearest %. Exact values vary by 1-2 pp between capacity vs cell-shipments methodologies.
+# notes: Directional story (China 25% in 2015 -> ~75-80% by 2024) is robust across IEA, SNE, BNEF sources.
+year,China,Korea,Japan,United States,Europe,Other
+2015,25,30,35,6,1,3
+2020,70,12,10,6,3,2
+2024,77,6,4,6,5,2

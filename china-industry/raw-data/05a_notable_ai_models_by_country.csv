@@ -1,0 +1,13 @@
+# source: Stanford HAI — AI Index Report 2024 and 2025; underlying data from Epoch AI notable-models database
+# url: https://aiindex.stanford.edu/report/  (Stanford HAI AI Index landing)
+# url: https://epoch.ai/data/notable-ai-models  (Epoch AI notable-models database)
+# retrieved: 2026-05-13
+# notes: "Notable" = models meeting Epoch AI's compute/impact thresholds. Counts approximate headline tables in the Stanford AI Index.
+year,United States,China,United Kingdom,European Union,Other
+2018,14,5,3,2,1
+2019,18,6,4,3,1
+2020,22,8,4,2,2
+2021,28,11,5,3,2
+2022,34,18,6,4,3
+2023,51,21,8,7,4
+2024,40,26,8,10,6

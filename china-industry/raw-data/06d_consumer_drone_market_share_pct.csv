@@ -1,0 +1,12 @@
+# source: DJI public disclosures; Drone Industry Insights public market reports; FAA drone-registry trade press summaries
+# url: https://droneii.com/  (Drone Industry Insights — public market commentary)
+# url: https://www.faa.gov/uas  (FAA drone registry)
+# retrieved: 2026-05-13
+# notes: % of global consumer / prosumer drone market by units. DJI ~72%, Chinese makers combined ~80%.
+# notes: US Blue UAS list restricts federal procurement but does not affect consumer/commercial markets.
+maker,global_share,country
+DJI (China),72,China
+Autel (China),8,China
+Parrot (France),4,European Union
+Skydio (United States),3,United States
+Other,13,Mixed

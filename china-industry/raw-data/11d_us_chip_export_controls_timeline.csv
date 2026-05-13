@@ -1,0 +1,12 @@
+# source: US Bureau of Industry and Security (BIS) Entity List and Federal Register notices; CSIS analyses of the export-control cycle
+# url: https://www.bis.doc.gov/  (US BIS)
+# url: https://www.federalregister.gov/agencies/industry-and-security-bureau  (Federal Register BIS notices)
+# url: https://www.csis.org/analysis/choking-china-acsem-ic-semiconductor-supply-chain  (CSIS chip-controls analyses)
+# retrieved: 2026-05-13
+# notes: Major US semiconductor / AI compute export controls targeting China, 2018-2024. Scope has expanded substantially each cycle.
+year,month,event,scope_summary
+2019,5,Huawei + 70 affiliates added to Entity List,"Cuts Huawei off from US-origin chips, software and design tools"
+2020,9,SMIC added to Entity List restrictions,"Restricts SMIC access to advanced US-origin manufacturing equipment"
+2022,10,"October 2022 export controls — advanced compute + EDA + fab equipment",Limits export to China of advanced AI chips (A100/H100 class) plus the equipment needed to make them
+2023,10,"October 2023 update — H800/A800 also restricted",Closes loopholes; adds presumptive denial for ~30 named Chinese AI labs
+2024,12,"December 2024 update — adds HBM, 24 toolmakers, 140 Chinese chip firms","Tightens HBM (high-bandwidth memory) and chipmaking equipment; broadens Foreign Direct Product Rule"

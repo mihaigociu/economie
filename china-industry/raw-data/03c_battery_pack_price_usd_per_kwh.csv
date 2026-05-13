@@ -1,0 +1,23 @@
+# source: BloombergNEF — annual Lithium-Ion Battery Price Survey (Dec press release each year)
+# url: https://about.bnef.com/insights/clean-energy/lithium-ion-battery-pack-prices-see-largest-drop-since-2017-falling-to-115-per-kilowatt-hour/ (2024 release with 2024 figure)
+# url: https://about.bnef.com/blog/lithium-ion-battery-pack-prices-rise-for-first-time-to-an-average-of-151-kwh/ (2022 release)
+# url: https://about.bnef.com/blog/battery-pack-prices-cited-below-100-kwh-for-the-first-time-in-2020-while-market-average-sits-at-137-kwh/ (2020 release)
+# retrieved: 2026-05-13
+# notes: Volume-weighted average pack price, nominal USD per kWh.
+# notes: Annual headline figures back to 2010 are quoted across BNEF's yearly press releases; full underlying survey is paywalled.
+year,usd_per_kwh
+2010,1355
+2011,924
+2012,726
+2013,668
+2014,592
+2015,384
+2016,295
+2017,221
+2018,181
+2019,156
+2020,137
+2021,141
+2022,161
+2023,139
+2024,115

@@ -1,0 +1,12 @@
+# source: Tesla Inc. 10-K annual reports (SEC); BYD Co. annual reports and monthly sales releases (SEHK)
+# url: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=10-K  (Tesla 10-K filings)
+# url: https://www.bydglobal.com/en/InvestorRelations/  (BYD investor relations)
+# retrieved: 2026-05-13
+# notes: tesla_bev and byd_bev are battery-electric only. byd_phev is plug-in hybrid only. byd_total_nev = byd_bev + byd_phev (derived).
+year,tesla_bev,byd_bev,byd_phev
+2019,0.37,0.13,0.10
+2020,0.50,0.13,0.06
+2021,0.94,0.32,0.27
+2022,1.31,0.91,0.95
+2023,1.81,1.57,1.44
+2024,1.79,1.76,2.49

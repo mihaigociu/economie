@@ -1,0 +1,16 @@
+# source: LMArena / Chatbot Arena public leaderboard (Q1 2025 snapshot, open-weight category)
+# url: https://lmarena.ai/leaderboard
+# retrieved: 2026-05-13
+# notes: Arena score from pairwise human preference votes on LMArena. Higher = better. Rankings shift weekly; this is a representative Q1 2025 frame, not a forecast.
+# notes: Closed-frontier rankings (OpenAI GPT-4o/o1, Anthropic Claude, Google Gemini) remain dominated by US labs and are NOT included here — this is open-weight only.
+model,lab,country,arena_score
+Phi-3.5,Microsoft,United States,1209
+Gemma 2 27B,Google,United States,1218
+Qwen2.5-32B,Alibaba,China,1241
+Mistral Large 2,Mistral,European Union,1251
+Llama 3.3 70B,Meta,United States,1252
+GLM-4-Plus,Zhipu AI,China,1255
+Qwen2.5-72B,Alibaba,China,1257
+Llama 3.1 405B,Meta,United States,1267
+DeepSeek-V3,DeepSeek,China,1318
+DeepSeek-R1,DeepSeek,China,1351

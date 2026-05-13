@@ -1,0 +1,17 @@
+# source: Chinese MOFCOM and Ministry of Commerce export-control announcements; Reuters and FT coverage of each event; WTO DS431 case file (2014 rare-earth ruling)
+# url: https://english.mofcom.gov.cn/  (MOFCOM English news releases)
+# url: https://www.wto.org/english/tratop_e/dispu_e/cases_e/ds431_e.htm  (WTO China-Rare Earths case)
+# url: https://www.reuters.com/world/china/china-imposes-export-controls-graphite-citing-national-security-2023-10-20/
+# url: https://www.reuters.com/world/china/china-imposes-export-controls-some-rare-earth-processing-technologies-2024-12-21/
+# retrieved: 2026-05-13
+# notes: Major Chinese export-control or restriction events affecting critical minerals / materials, 2010-2024.
+# notes: 2010 Senkaku episode was an informal embargo on rare earths to Japan; the WTO 2014 ruling found later (2012-2014) formal quotas to be WTO-non-compliant.
+year,month,event,materials,note
+2010,9,2010 Senkaku rare-earth embargo (informal),Rare earths,Informal halt to RE shipments to Japan during Senkaku/Diaoyu islands incident
+2012,3,Formal RE export quotas (later WTO-ruled non-compliant),Rare earths,Quota system formalised; challenged at WTO by US/EU/Japan
+2014,3,WTO DS431 ruling against China,Rare earths,WTO found export quotas WTO-non-compliant; China removed in 2015
+2023,7,Gallium and germanium export licensing,"Gallium, Germanium",Export licences required; affects semiconductor supply chains
+2023,10,Graphite export licensing,Graphite,Export licences required for natural and synthetic graphite (battery anode material)
+2023,12,Rare-earth refining tech export ban,Rare-earth processing tech,Export of rare-earth separation/refining technology banned
+2024,8,Antimony export controls,Antimony,Export licences for antimony (defense / semiconductor applications)
+2024,12,Rare-earth and graphite tech controls (expanded),"Rare earths, Graphite",Expanded controls on processing technology and equipment

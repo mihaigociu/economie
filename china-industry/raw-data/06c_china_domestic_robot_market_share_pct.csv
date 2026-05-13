@@ -1,0 +1,13 @@
+# source: Chinese MIIT industrial-robot annual summaries; IFR China-market reports (publicly summarised in trade press)
+# url: https://www.miit.gov.cn/  (MIIT annual industrial-robot statistics)
+# url: https://ifr.org/ifr-press-releases/news/top-5-robot-trends-2024  (IFR commentary on Chinese-brand domestic share)
+# retrieved: 2026-05-13
+# notes: Chinese-brand vs foreign-brand share of industrial-robot installations within China.
+# notes: Big Four foreign makers = FANUC, Yaskawa, ABB, KUKA. Chinese challengers = Estun, Inovance, Siasun, EFORT, Han's Robot.
+year,chinese_brand,foreign_brand
+2015,30,70
+2017,33,67
+2019,37,63
+2021,40,60
+2023,47,53
+2024,50,50

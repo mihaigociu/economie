@@ -1,0 +1,21 @@
+# source: public product announcements, press releases and company websites for each named model (late 2024 / early 2025)
+# url: https://www.unitree.com/g1  (Unitree G1)
+# url: https://www.unitree.com/h1  (Unitree H1)
+# url: https://www.tesla.com/we-robot  (Tesla Optimus target)
+# url: https://www.figure.ai/  (Figure 02)
+# url: https://apptronik.com/apollo  (Apptronik Apollo)
+# url: https://agilityrobotics.com/  (Agility Digit)
+# url: https://www.agibot.com/  (AGIBOT A2)
+# url: https://www.fftai.com/  (Fourier GR-2)
+# retrieved: 2026-05-13
+# notes: "Commercial" = publicly-listed retail or stated commercial-pilot price. "False" means R&D / pilot, not at retail.
+# notes: price_usd_k_low and price_usd_k_high in thousands USD per unit. Where they are equal, vendor has stated a single point price.
+model,maker,country,price_usd_k_low,price_usd_k_high,commercial
+Unitree G1,Unitree (China),China,16,16,True
+Unitree H1,Unitree (China),China,90,90,True
+Tesla Optimus (target),Tesla (United States),United States,20,30,False
+Figure 02,Figure (United States),United States,100,200,False
+Apptronik Apollo,Apptronik (United States),United States,50,150,True
+Agility Digit,Agility (United States),United States,85,110,True
+AGIBOT A2,AGIBOT (China),China,35,60,True
+Fourier GR-2,Fourier (China),China,35,50,True

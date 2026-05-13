@@ -1,0 +1,17 @@
+# source: Synergy Research Group — Cloud Infrastructure Services market tracker (Q4 2024 quarterly snapshot)
+# url: https://www.srgresearch.com/articles/q4-2024-cloud-spending  (Synergy quarterly press release)
+# url: https://www.canalys.com/  (cross-check with Canalys cloud market)
+# retrieved: 2026-05-13
+# notes: % of global cloud-infrastructure-services market (IaaS + PaaS + hosted private cloud), Q4 2024.
+# notes: AWS + Azure + GCP = 63% globally. Chinese cloud vendors (Alibaba + Tencent + Huawei) = ~8% globally; dominant inside China but marginal outside.
+vendor,country,share
+AWS,United States,30
+Microsoft Azure,United States,21
+Google Cloud,United States,12
+Alibaba Cloud,China,4
+Oracle,United States,3
+IBM,United States,3
+Salesforce,United States,3
+Tencent Cloud,China,2
+Huawei Cloud,China,2
+Others,Mixed,20

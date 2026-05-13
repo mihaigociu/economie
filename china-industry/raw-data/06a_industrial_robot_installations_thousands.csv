@@ -1,0 +1,19 @@
+# source: IFR (International Federation of Robotics) — World Robotics 2024 report (headline annual figures publicly summarised in IFR press releases)
+# url: https://ifr.org/ifr-press-releases/news/world-robotics-2024-report  (IFR press release with global+regional headline figures)
+# url: https://ifr.org/ifr-press-releases/news/asia-still-dominates-the-global-robotics-installation
+# retrieved: 2026-05-13
+# notes: New industrial-robot installations per year, thousands of units. Full IFR World Robotics report is paywalled; headline country totals are in IFR press releases each September.
+# notes: Global column is derived (sum of regions); China_share_pct = China / Global * 100.
+year,China,Japan,Korea,United States,Germany,Rest of World
+2012,23,28,19,22,18,30
+2013,37,26,22,24,18,29
+2014,57,29,25,26,20,30
+2015,69,35,38,27,20,35
+2016,87,38,41,31,21,43
+2017,138,46,40,33,22,56
+2018,154,55,38,40,26,70
+2019,140,50,28,33,20,62
+2020,168,39,30,30,22,60
+2021,268,47,31,35,24,75
+2022,290,50,32,39,25,78
+2023,276,46,31,44,26,86

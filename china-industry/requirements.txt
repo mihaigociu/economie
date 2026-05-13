@@ -1,0 +1,7 @@
+pandas
+matplotlib
+seaborn
+wbgapi
+eurostat
+requests
+openpyxl

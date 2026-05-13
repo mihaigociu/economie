@@ -1,0 +1,11 @@
+# source: SASAC and MIIT public announcements; Caixin and Reuters reporting on Big Fund tranches; financial-press coverage of National Integrated Circuit Industry Investment Fund
+# url: https://www.reuters.com/technology/china-launches-third-big-fund-with-475-bln-boost-its-chips-2024-05-27/
+# url: https://www.miit.gov.cn/
+# url: https://www.caixinglobal.com/
+# retrieved: 2026-05-13
+# notes: National Integrated Circuit Industry Investment Fund ("Big Fund") tranches, USD billion at announcement.
+# notes: Phase 1 launched 2014; Phase 2 launched 2019; Phase 3 launched May 2024. Plus subsequent provincial / local funds; the table only lists central-government Big Fund tranches.
+phase,year,announced_usd_bn,note
+Big Fund I,2014,22,"Initial fund — capital injection into national chip producers (SMIC, YMTC, Hua Hong, etc.)"
+Big Fund II,2019,30,"Second-tranche fund; broader coverage including equipment + materials"
+Big Fund III,2024,48,"Largest tranche; explicit focus on equipment and EDA after 2022 export controls"

@@ -1,0 +1,15 @@
+# source: USGS Mineral Commodity Summaries 2024 (rare-earth element mine production); IEA Global Critical Minerals Outlook 2024 (refining shares)
+# url: https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-rare-earths.pdf
+# url: https://www.iea.org/reports/global-critical-minerals-outlook-2024
+# retrieved: 2026-05-13
+# notes: Share of global rare-earth output by country, 2023 figures, %. Mining vs refining/separation are two distinct stages.
+# notes: USGS reports China at ~68% of mine production, ~92% of refining capacity. Mining diversifying (US Mountain Pass, Australia Lynas).
+country,mining,refining
+China,68,90
+United States,12,1
+Australia,5,0
+Myanmar,11,0
+Vietnam,1,3
+Estonia,0,2
+Malaysia,1,3
+Other,2,1

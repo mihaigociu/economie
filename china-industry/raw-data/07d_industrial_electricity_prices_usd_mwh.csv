@@ -1,0 +1,15 @@
+# source: OECD / IEA — Energy Prices and Taxes Quarterly statistics (2024 release, 2023 reference year)
+# url: https://www.iea.org/data-and-statistics/data-product/energy-prices
+# url: https://www.oecd.org/en/topics/energy-statistics.html
+# retrieved: 2026-05-13
+# notes: Industrial-sector electricity prices, USD per MWh, 2023 reference year. Where 2023 data unavailable, latest IEA quarterly figure used.
+# notes: China figure is national average for large industrial consumers (CEC reports cited in IEA data).
+country,usd_per_mwh
+United States,70
+China,80
+Korea,100
+France,110
+Japan,145
+Italy,175
+United Kingdom,195
+Germany,220

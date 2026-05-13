@@ -1,0 +1,14 @@
+# source: CPCA (China Passenger Car Association); ACEA (European Automobile Manufacturers Association); IEA Global EV Outlook 2025; EV-Volumes / EV Adoption (US); JADA (Japan Automobile Dealers Association)
+# url: http://www.cpcaauto.com/  (CPCA monthly retail data, China)
+# url: https://www.acea.auto/pc-registrations/  (ACEA passenger-car registrations, Europe)
+# url: https://www.iea.org/reports/global-ev-outlook-2025
+# retrieved: 2026-05-13
+# notes: NEV (BEV + PHEV) share of new passenger-car sales, %.
+year,China,Europe,United States,Japan
+2018,4.5,2.0,2.0,1.0
+2019,4.9,3.0,2.0,1.0
+2020,5.4,11.0,2.0,0.7
+2021,13.4,18.0,4.5,1.0
+2022,25.6,21.6,7.0,3.0
+2023,31.6,21.6,9.5,3.5
+2024,47.6,24.0,10.0,3.5

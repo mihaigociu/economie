@@ -1,0 +1,14 @@
+# source: CAAM — China Association of Automobile Manufacturers (monthly export statistics + annual roundups)
+# url: http://www.caam.org.cn/english
+# url: https://www.reuters.com/business/autos-transportation/china-passes-japan-worlds-top-auto-exporter-2023-2024-01-11/  (Reuters reporting 2023 milestone)
+# retrieved: 2026-05-13
+# notes: Total vehicle exports in millions; nev_share_pct is NEV (BEV+PHEV) share of those exports.
+# notes: nev_mn and ice_mn are derived columns (total * share / 100).
+year,total_mn,nev_share_pct
+2018,1.04,15
+2019,1.02,25
+2020,0.99,22
+2021,2.01,31
+2022,3.11,22
+2023,4.91,25
+2024,5.86,21

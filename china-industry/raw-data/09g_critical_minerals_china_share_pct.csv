@@ -1,0 +1,18 @@
+# source: IEA Global Critical Minerals Outlook 2024 (refining / processing shares for the major critical minerals)
+# url: https://www.iea.org/reports/global-critical-minerals-outlook-2024
+# retrieved: 2026-05-13
+# notes: China's share of global refining / processing capacity for each critical mineral, 2023 figures, %.
+# notes: Sorted ascending; nickel is the diversified outlier (most refining in Indonesia + Russia + Japan).
+mineral,china_share
+Nickel (refined),20
+Lithium (refined),70
+Cobalt (refined),75
+Rare earths (refined),90
+Graphite (natural + synthetic),90
+Manganese (battery-grade),95
+Bismuth,80
+Antimony,60
+Gallium,98
+Germanium,68
+Tungsten,84
+Magnesium,87

@@ -1,0 +1,17 @@
+# source: China General Administration of Customs (GAC) monthly trade data; IMF Direction of Trade Statistics; World Bank
+# url: http://english.customs.gov.cn/  (China Customs)
+# url: https://data.imf.org/dot  (IMF Direction of Trade Statistics)
+# retrieved: 2026-05-13
+# notes: China merchandise trade surplus (goods exports - goods imports), USD billion, annual.
+# notes: Counter-view evidence — despite tariffs, decoupling rhetoric, and domestic-demand weakness, China's goods trade surplus has hit successive records in 2022-2024.
+year,trade_surplus_usd_bn
+2000,24
+2005,102
+2010,183
+2015,594
+2018,381
+2020,524
+2021,676
+2022,838
+2023,824
+2024,992

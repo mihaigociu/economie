@@ -1,0 +1,19 @@
+# source: BIS — Credit to the non-financial sector (free database, table F1.1)
+# url: https://www.bis.org/statistics/totcredit.htm
+# url: https://stats.bis.org/statx/srs/table/f1.1?c=CN
+# retrieved: 2026-05-13
+# notes: Credit to the non-financial sector (all instruments), % of GDP. BIS data ends ~mid-2024; latest values are quarterly.
+# notes: China_total = government + non-financial corporations + households. The financing engine behind industrial-policy directives is the state-bank lending channel.
+# notes: Comparator series shown for context — the US figure is also high but is driven primarily by household + government, not corporate.
+year,china_total,china_corporate,united_states,euro_area
+2000,116,103,180,167
+2005,135,109,179,164
+2008,140,96,200,180
+2010,178,118,196,183
+2012,200,128,201,191
+2014,222,140,202,194
+2016,249,152,203,194
+2018,253,150,205,192
+2020,294,160,229,219
+2022,295,160,219,205
+2024,310,165,225,210

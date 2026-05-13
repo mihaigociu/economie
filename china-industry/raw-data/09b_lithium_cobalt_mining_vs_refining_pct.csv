@@ -1,0 +1,26 @@
+# source: USGS Mineral Commodity Summaries 2024 (mine production); IEA Global Critical Minerals Outlook 2024 (refining shares)
+# url: https://pubs.usgs.gov/periodicals/mcs2024/
+# url: https://www.iea.org/reports/global-critical-minerals-outlook-2024
+# retrieved: 2026-05-13
+# notes: % of global supply at each stage of the lithium and cobalt value chains, 2023.
+# notes: Mining is geographically diversified (Australia for Li, DRC for Co); refining is concentrated in China.
+mineral,stage,country,share
+Lithium,Mining,Australia,52
+Lithium,Mining,Chile,24
+Lithium,Mining,China,18
+Lithium,Mining,Argentina,6
+Lithium,Mining,Other,0
+Lithium,Refining,China,70
+Lithium,Refining,Chile,12
+Lithium,Refining,Argentina,5
+Lithium,Refining,Other,13
+Cobalt,Mining,DR Congo,74
+Cobalt,Mining,Indonesia,7
+Cobalt,Mining,Russia,4
+Cobalt,Mining,Australia,3
+Cobalt,Mining,Other,12
+Cobalt,Refining,China,75
+Cobalt,Refining,Finland,5
+Cobalt,Refining,Japan,4
+Cobalt,Refining,Canada,3
+Cobalt,Refining,Other,13

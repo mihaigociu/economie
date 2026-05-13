@@ -1,0 +1,18 @@
+# source: SNE Research — Global EV Battery Market 2024 (January 2025 release); figures cited in trade press
+# url: https://www.sneresearch.com/en/insight/release_view/238
+# url: https://www.reuters.com/business/autos-transportation/chinas-catl-byd-extend-dominance-global-ev-battery-market-2025-02-06/ (Reuters summary)
+# retrieved: 2026-05-13
+# notes: Share is % of global EV battery installations measured in kWh during calendar 2024.
+# notes: SNE Research full report is paywalled; headline percentages re-published in trade press are used.
+maker,country,share
+CATL,China,37.9
+BYD,China,17.2
+LG Energy Solution,Korea,11.7
+SK On,Korea,4.6
+CALB,China,4.1
+Panasonic,Japan,4.0
+Samsung SDI,Korea,4.0
+EVE Energy,China,2.3
+Gotion,China,2.2
+Sunwoda,China,1.7
+Others,Mixed,10.3

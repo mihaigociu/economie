@@ -1,0 +1,15 @@
+# source: IFR World Robotics 2024 — robot-density tables (publicly summarised in IFR press releases)
+# url: https://ifr.org/ifr-press-releases/news/global-robot-density-in-factories-doubled-in-seven-years  (IFR robot density press release)
+# retrieved: 2026-05-13
+# notes: Industrial robots per 10,000 manufacturing workers. Change column = density_2023 - density_2018 (derived).
+country,density_2018,density_2023
+South Korea,774,1012
+Singapore,831,770
+China,140,470
+Germany,338,429
+Japan,327,419
+United States,217,295
+Italy,200,219
+Sweden,247,343
+France,154,198
+Netherlands,175,209

@@ -1,0 +1,11 @@
+# source: European Commission — Strategic Dependencies and Capacities (SWD(2021) 352, May 2021); US FDA — Drug Manufacturing and Facility Inspection lists; OECD pharmaceutical trade data
+# url: https://commission.europa.eu/system/files/2021-05/swd-strategic-dependencies-capacities_en.pdf
+# url: https://www.fda.gov/drugs/development-approval-process-drugs/api-facility-information
+# retrieved: 2026-05-13
+# notes: Share of active pharmaceutical ingredient (API) supply for the US and EU originating from each region, ca. 2023.
+# notes: For finished generic dose forms, India is the largest source; but India itself imports a large share of intermediate APIs from China (the "double dependency" issue).
+# notes: Numbers are illustrative; exact API-by-API figures vary widely. The Strategic Dependencies report identifies pharmaceuticals as one of the EU's top strategic dependencies.
+market,china,india,europe,united_states,other
+US generic APIs,28,33,12,15,12
+EU generic APIs,40,30,15,8,7
+EU essential APIs,29,11,32,17,11

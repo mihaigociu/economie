@@ -1,0 +1,13 @@
+# source: World Bank Open Data (SP.DYN.TFRT.IN); UN World Population Prospects 2024
+# url: https://data.worldbank.org/indicator/SP.DYN.TFRT.IN?locations=CN
+# url: https://population.un.org/wpp/
+# retrieved: 2026-05-13
+# notes: Total fertility rate (births per woman). Replacement rate is approximately 2.1.
+# notes: China's TFR collapsed from 2.5 (1990) to ~1.0 (2023) — well below comparators and replacement.
+year,china,united_states,japan,south_korea,india
+1990,2.5,2.1,1.5,1.6,4.0
+2000,1.6,2.1,1.4,1.5,3.4
+2010,1.7,1.9,1.4,1.2,2.7
+2015,1.7,1.8,1.5,1.2,2.4
+2020,1.3,1.6,1.3,0.84,2.1
+2023,1.0,1.6,1.2,0.72,2.0

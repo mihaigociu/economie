@@ -1,0 +1,16 @@
+# source: IEA — Global EV Outlook 2024 and 2025 (regional EV sales tables)
+# url: https://www.iea.org/reports/global-ev-outlook-2024
+# url: https://www.iea.org/reports/global-ev-outlook-2025
+# retrieved: 2026-05-13
+# notes: BEV + PHEV sales, millions of vehicles. Global column is derived (sum of regions).
+year,China,Europe,United States,Rest of World
+2015,0.21,0.20,0.12,0.02
+2016,0.34,0.22,0.16,0.06
+2017,0.58,0.31,0.20,0.11
+2018,1.10,0.40,0.36,0.14
+2019,1.18,0.56,0.33,0.13
+2020,1.34,1.40,0.32,0.04
+2021,3.50,2.30,0.65,0.15
+2022,6.10,2.65,1.00,0.45
+2023,8.40,3.20,1.40,0.80
+2024,11.00,3.20,1.55,1.35

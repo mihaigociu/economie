@@ -1,0 +1,11 @@
+# source: IEA — Special Report on Solar PV Global Supply Chains (2022); updated with IEA Renewables 2024
+# url: https://www.iea.org/reports/solar-pv-global-supply-chains
+# url: https://www.iea.org/reports/renewables-2024
+# retrieved: 2026-05-13
+# notes: China's share of global solar PV manufacturing at each stage of the value chain, 2023 figures, %.
+# notes: Polysilicon -> wafer -> cell -> module. China share rose from ~60% (modules) in 2010 to >80% at every stage by 2023.
+stage,china_share,rest_of_world
+Polysilicon,88,12
+Wafer,97,3
+Cell,85,15
+Module,80,20

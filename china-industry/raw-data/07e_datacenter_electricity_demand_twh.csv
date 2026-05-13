@@ -1,0 +1,13 @@
+# source: IEA — Electricity 2024; IEA — Energy and AI 2025
+# url: https://www.iea.org/reports/electricity-2024
+# url: https://www.iea.org/reports/energy-and-ai
+# retrieved: 2026-05-13
+# notes: Global data-centre electricity demand by region, TWh per year. 2020-2024 are estimates of actuals; 2026-2030 are IEA scenario projections (mid-case).
+# notes: Global column derived (sum of regions).
+year,United States,China,EU27,Rest of World
+2020,100,80,65,50
+2022,140,120,80,60
+2024,175,150,90,70
+2026,260,240,115,85
+2028,330,320,130,100
+2030,400,400,150,120

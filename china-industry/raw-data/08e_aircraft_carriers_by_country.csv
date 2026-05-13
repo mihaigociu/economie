@@ -1,0 +1,17 @@
+# source: IISS Military Balance 2024 (paywalled report; figures cited in trade press); US Office of Naval Intelligence public testimony to Congress; CSIS open analyses
+# url: https://www.iiss.org/publications/the-military-balance/the-military-balance-2024  (IISS Military Balance — paywalled)
+# url: https://www.csis.org/programs/china-power-project  (CSIS China Power Project, free)
+# url: https://news.usni.org/  (USNI News covers ONI testimony)
+# retrieved: 2026-05-13
+# notes: Aircraft carriers commissioned and operational as of end-2024. Nuclear vs conventional propulsion.
+# notes: India/Japan/Italy/Korea entries here treat helicopter / STOVL flat-tops as carriers per IISS convention.
+# notes: Total column is derived (nuclear + conventional).
+country,nuclear,conventional
+France,1,0
+Russia,0,1
+Italy,0,2
+United Kingdom,0,2
+India,0,2
+Japan,0,2
+China,0,3
+United States,11,0

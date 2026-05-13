@@ -1,0 +1,16 @@
+# source: Ember — Global Electricity Review (annual, free); cross-checked with IEA Electricity Report
+# url: https://ember-energy.org/data/electricity-data-explorer/  (Ember Electricity Data Explorer, free CSV download)
+# url: https://www.iea.org/reports/electricity-2024
+# retrieved: 2026-05-13
+# notes: Total electricity generation per country, TWh per year, all sources (thermal+hydro+nuclear+renewables).
+year,China,United States,EU27,India,Japan
+1990,621,3038,2380,290,858
+1995,1007,3361,2470,395,994
+2000,1356,3802,2700,555,1083
+2005,2500,4055,2940,720,1149
+2010,4210,4125,2970,1010,1115
+2015,5810,4078,2810,1340,998
+2020,7780,4007,2620,1580,974
+2022,8850,4243,2660,1820,978
+2023,9466,4178,2580,1900,961
+2024,10250,4310,2650,2000,970

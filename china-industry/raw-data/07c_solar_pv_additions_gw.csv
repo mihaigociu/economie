@@ -1,0 +1,15 @@
+# source: IRENA — Renewable Capacity Statistics; cross-checked with IEA Renewables 2024
+# url: https://www.irena.org/Publications/2024/Mar/Renewable-capacity-statistics-2024  (IRENA renewable capacity)
+# url: https://www.iea.org/reports/renewables-2024
+# retrieved: 2026-05-13
+# notes: Annual solar PV capacity additions per country, GW per year. Global and China_share_pct columns derived.
+year,China,United States,EU27,India,Rest of World
+2015,15,7,8,2,17
+2017,53,11,7,10,24
+2018,44,11,8,8,23
+2019,30,13,14,9,32
+2020,48,19,20,5,35
+2021,55,24,26,13,55
+2022,87,18,41,12,71
+2023,217,32,56,13,138
+2024,278,33,65,30,150

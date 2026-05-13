@@ -1,0 +1,14 @@
+# source: derived from World Bank investment + GDP data (gross capital formation as % of GDP, divided by real GDP growth rate); IMF Article IV China consultations
+# url: https://data.worldbank.org/indicator/NE.GDI.TOTL.ZS  (gross capital formation, % of GDP)
+# url: https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG  (real GDP growth)
+# url: https://www.imf.org/en/Publications/CR/Issues/2024/08/02/Peoples-Republic-of-China-2024-Article-IV  (IMF China Article IV 2024)
+# retrieved: 2026-05-13
+# notes: ICOR (Incremental Capital-Output Ratio) = gross capital formation (% of GDP) / real GDP growth rate.
+# notes: Higher ICOR means more investment is needed per unit of growth — a classic diminishing-returns indicator. China's ICOR has roughly doubled from ~4 (early 2000s) to ~8 (2020s).
+# notes: 5-year averages to smooth cyclical noise.
+period,china_icor,china_investment_pct_gdp,china_gdp_growth_pct
+2001-2005,3.6,40.6,11.3
+2006-2010,3.8,43.4,11.5
+2011-2015,5.1,46.4,9.2
+2016-2020,6.7,42.3,6.3
+2021-2024,8.0,42.8,5.3

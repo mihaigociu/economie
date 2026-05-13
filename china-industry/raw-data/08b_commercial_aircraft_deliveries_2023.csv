@@ -1,0 +1,17 @@
+# source: Airbus, Boeing, COMAC, Embraer, Bombardier, ATR — full-year 2023 delivery reports (publicly released by each company)
+# url: https://www.airbus.com/en/newsroom/press-releases/2024-01-airbus-2023-commercial-aircraft-orders-and-deliveries
+# url: https://boeing.mediaroom.com/2024-01-09-Boeing-Reports-2023-Deliveries
+# url: http://english.comac.cc/news/  (COMAC press releases)
+# url: https://www.embraer.com/global/en/news  (Embraer press releases)
+# retrieved: 2026-05-13
+# notes: 2023 commercial-aircraft deliveries by manufacturer (units).
+# notes: COMAC C919 entered commercial service in May 2023; 7 deliveries to China Eastern Airlines that calendar year.
+# notes: COMAC C919 uses CFM LEAP engines (GE/Safran), Western avionics, ~60% Western content by value. Indigenous CJ-1000A engine still in testing.
+manufacturer,country,deliveries_2023
+COMAC C919,China,7
+ATR,France/Italy,36
+COMAC ARJ21,China,50
+Bombardier (business),Canada,134
+Embraer (commercial),Brazil,181
+Boeing,United States,528
+Airbus,European Union,735

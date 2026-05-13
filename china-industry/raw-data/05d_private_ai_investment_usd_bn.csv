@@ -1,0 +1,16 @@
+# source: Stanford HAI — AI Index Report 2024 and 2025 (private-investment tables)
+# url: https://aiindex.stanford.edu/report/
+# retrieved: 2026-05-13
+# notes: Annual private AI investment by country, USD billion. Stanford AI Index aggregates Pitchbook + Capital IQ figures.
+# notes: US 2024 (~$109B) was roughly 9x China (~$12B). Closed-frontier model development still concentrates in well-capitalised US labs.
+year,United States,China,United Kingdom,Other
+2015,8,5,1.5,2
+2016,11,7,2.5,3
+2017,17,10,4.0,5
+2018,25,15,5.0,8
+2019,30,5,4.0,7
+2020,42,7,5.0,8
+2021,71,17,7.0,16
+2022,47,13,5.0,11
+2023,72,8,4.0,9
+2024,109,12,5.0,11
