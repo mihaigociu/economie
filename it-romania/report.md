@@ -9,7 +9,7 @@
 
 In 1995 Romania's computer-programming and information-services industry — NACE J62-J63, the activities that today everyone calls "IT" — produced about **€170 million of value added**, less than a single mid-sized European factory. Thirty years later it produced **€17.8 billion** (2024), a more-than-hundred-fold expansion, equal to **5.6% of Romanian GDP** and bigger than agriculture, construction, or hospitality. IT services exports reached **€11.5 billion in 2025** with a **€7.1 billion surplus** — the country's largest tradable-services category, comfortably ahead of transport and second only to the goods complex around automotive.
 
-The sector grew under a specific policy regime (income-tax exemption for IT employees, 2001–2023) and on top of a specific inheritance (Cold-War-era technical universities and a robust mathematics tradition). It paid wages on a different scale from the rest of the labour market — **3.6× the national average** in 2023 — and built four genuine technology hubs in a country that otherwise saw rural decline. It is one of the few visible counter-examples to Romania's broader story of fiscal strain and demographic loss.
+The sector grew under a specific policy regime (income-tax exemption for IT employees, 2001–2023) and on top of a specific inheritance (Cold-War-era technical universities and a robust mathematics tradition). It paid wages on a different scale from the rest of the labour market — **3.6× the national average** in 2023 — and built four genuine technology hubs in a country otherwise marked by demographic and regional decline. It is one of the few visible counter-examples to Romania's broader story of fiscal strain and demographic loss.
 
 But Romania remains, paradoxically, a digitally **lagging** economy. The very country that exports €11 billion in IT services has the EU's **lowest basic-digital-skills rate**, **lowest e-government use**, and is near the bottom on enterprise cloud adoption. The sector grew despite — not because of — domestic digital demand. Its growth engine was exports.
 
@@ -141,7 +141,7 @@ The gap was closed historically by experienced engineers returning from Western 
 
 ## 5. The Hubs — How IT Reshaped Four Cities
 
-The national aggregates mask the single most visible spillover of the sector: the transformation of four cities into genuine technology hubs in a country otherwise marked by rural decline and regional divergence.
+The national aggregates mask the single most visible spillover of the sector: the transformation of four cities into genuine technology hubs in a country otherwise marked by demographic and regional decline.
 
 ### 5.1 Geographic concentration
 
