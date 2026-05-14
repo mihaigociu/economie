@@ -127,11 +127,18 @@ The legacy explanation — the Cold-War-era technical universities did not disco
 
 ### 4.3 Supply and demand
 
-Romanian university CS, automation, and electronics graduate output rose steadily from the late 2000s, but the pace of new ICT-specialist employment has consistently outrun it — which is part of why the wage premium opened up and stayed wide:
+Two different headcount figures appear in this report and it is worth distinguishing them before reading the chart below:
+
+- **ICT-sector employment** (NACE J62-J63, employees of dedicated software / IT-services firms — used in §2): **122,000** at the 2022 peak, 106,000 in 2023.
+- **ICT specialists in employment** (Eurostat `isoc_sks_itspt`, anyone working in an ICT job role regardless of which sector their employer is classified in — plotted in the chart below): **222,000 in 2024**, up from 140,000 in 2014.
+
+The ~100,000-person gap is real: it is ICT specialists employed *outside* dedicated software firms — embedded engineers at automotive plants and Bosch / Continental R&D centres, in-house IT at banks and telecom operators, software developers inside retail and energy companies. The §2 chart is sector-bounded; the §4 chart below is occupation-bounded. Both are correct; they measure different things.
+
+Taking the wider occupation measure, Romania's ICT-specialist workforce grew by roughly 80,000 over the past decade — about **8,000 net new specialist roles per year**. Annual graduate output runs around **9,000 per year**. That gross supply almost matches net demand on paper, but it leaves no margin for normal labour churn (retirement, career switching, emigration to Germany or the UK), nor for the gross hiring that always exceeds net growth in a fast-moving sector:
 
 ![04e_supply_demand_ro.png](charts/04e_supply_demand_ro.png)
 
-The gap was closed historically by experienced engineers returning from Western Europe (post-2007 boomerang migration), by lateral entry from adjacent technical fields, and by major foreign captive R&D centres importing some senior talent. None of these channels scales without limit, and Section 9 returns to whether the gap is now closing — for the wrong reasons.
+A structurally short labour market clears through wages, not through job postings — which is exactly what the wage-premium chart shows. The gap was historically closed by experienced engineers returning from Western Europe (post-2007 return migration), by lateral entry from adjacent engineering and applied-science fields, and by major foreign captive R&D centres importing some senior talent. None of these channels scales without limit, and §8.2 returns to whether the gap is now closing — for the wrong reasons.
 
 ---
 
