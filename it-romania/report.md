@@ -35,10 +35,6 @@ ICT as a share of all tertiary graduates rose from roughly 5% in 2015 to over **
 
 ![01d_ict_share_of_grads.png](charts/01d_ict_share_of_grads.png)
 
-Engineering disciplines as a whole (Eurostat ISCED-F 07, the broader category that includes electronics, automation and mechanical) tell the same story:
-
-![01c_engineering_graduates.png](charts/01c_engineering_graduates.png)
-
 ---
 
 ## 2. The Take-Off (2000–2015)
