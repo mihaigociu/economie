@@ -183,7 +183,7 @@ Local hub-level housing markets (INS Tempo regional data, out of scope for the c
 
 ### 5.5 What did *not* spill over
 
-Honest counter-evidence: the spillovers stop sharply at the hub-city boundary. Rural counties surrounding Cluj or Iași did not benefit comparably. Regional within-country inequality in Romania widened across the 2010s — a finding consistent with the parent `romania/07_regional.py` analysis. The IT sector is a powerful agglomeration force; it is not a national development policy.
+Honest counter-evidence: the spillovers stop sharply at the hub-city boundary. Rural counties surrounding Cluj or Iași did not benefit comparably. Regional within-country inequality in Romania widened across the 2010s — see the broader [Romania economy report, §7 Regional Disparities](../romania/report.md#7-regional-disparities-a-country-of-extremes) for the national picture. The IT sector is a powerful agglomeration force; it is not a national development policy.
 
 ---
 
