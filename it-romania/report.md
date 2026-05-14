@@ -190,7 +190,7 @@ Reading the sector laterally — composition, ownership, R&D intensity, patents 
 
 ### 6.1 R&D intensity
 
-Business R&D spending in Romanian J62 (computer programming) as a share of sector value added has stayed in the **0.5–1.5% range** for the past decade — well below CEE peers running 4–6%:
+Business R&D spending in Romanian J62 (computer programming) as a share of sector value added has stayed **below 1%** for the past decade — typically 0.4–0.9%, well below CEE peers running 3–7% (Poland 6.6%, Czechia 6.1%, Hungary 4.4%, Bulgaria 3.3% in 2023):
 
 ![06a_ro_business_rd.png](charts/06a_ro_business_rd.png)
 ![06b_ict_share_of_rd.png](charts/06b_ict_share_of_rd.png)
@@ -226,11 +226,11 @@ These specialisations were not the result of industrial policy. They emerged org
 
 ## 7. The Digital Paradox
 
-Romania exports €11 billion in IT services and has the worst digital adoption indicators in the EU. The contrast is so stark that it constitutes the single most interesting structural feature of the Romanian economy.
+Romania exported €11.5 billion in IT services in 2025 and has the worst digital adoption indicators in the EU. The contrast is so stark that it constitutes the single most interesting structural feature of the Romanian economy.
 
 ### 7.1 Connectivity — the one where Romania leads
 
-Romanian internet adoption has converged on EU norms. Among individuals aged 16-74, internet use in the last 3 months has risen from below 30% in 2007 to above 85% by 2024 — close to the EU27 average:
+Romanian internet adoption has converged on EU norms. Among individuals aged 16-74, internet use in the last 3 months has risen from 24% in 2007 to 93% in 2025 — within one point of the EU27 average (94%):
 
 ![07a_internet_use.png](charts/07a_internet_use.png)
 ![07b_household_internet.png](charts/07b_household_internet.png)
