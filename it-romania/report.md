@@ -129,16 +129,16 @@ The legacy explanation — the Cold-War-era technical universities did not disco
 
 Two different headcount figures appear in this report and it is worth distinguishing them before reading the chart below:
 
-- **ICT-sector employment** (NACE J62-J63, employees of dedicated software / IT-services firms — used in §2): **122,000** at the 2022 peak, 106,000 in 2023.
+- **ICT-sector employment** (NACE J62-J63, employees of dedicated software / IT-services firms — used in [§2](#2-the-takeoff-20002015)): **122,000** at the 2022 peak, 106,000 in 2023.
 - **ICT specialists in employment** (Eurostat `isoc_sks_itspt`, anyone working in an ICT job role regardless of which sector their employer is classified in — plotted in the chart below): **222,000 in 2024**, up from 140,000 in 2014.
 
-The ~100,000-person gap is real: it is ICT specialists employed *outside* dedicated software firms — embedded engineers at automotive plants and Bosch / Continental R&D centres, in-house IT at banks and telecom operators, software developers inside retail and energy companies. The §2 chart is sector-bounded; the §4 chart below is occupation-bounded. Both are correct; they measure different things.
+The ~100,000-person gap is real: it is ICT specialists employed *outside* dedicated software firms — embedded engineers at automotive plants and Bosch / Continental R&D centres, in-house IT at banks and telecom operators, software developers inside retail and energy companies. The [§2](#2-the-takeoff-20002015) chart is sector-bounded; the [§4](#4-the-generation-it-built) chart below is occupation-bounded. Both are correct; they measure different things.
 
 Taking the wider occupation measure, Romania's ICT-specialist workforce grew by roughly 80,000 over the past decade — about **8,000 net new specialist roles per year**. Annual graduate output runs around **9,000 per year**. That gross supply almost matches net demand on paper, but it leaves no margin for normal labour churn (retirement, career switching, emigration to Germany or the UK), nor for the gross hiring that always exceeds net growth in a fast-moving sector:
 
 ![04e_supply_demand_ro.png](charts/04e_supply_demand_ro.png)
 
-A structurally short labour market clears through wages, not through job postings — which is exactly what the wage-premium chart shows. The gap was historically closed by experienced engineers returning from Western Europe (post-2007 return migration), by lateral entry from adjacent engineering and applied-science fields, and by major foreign captive R&D centres importing some senior talent. None of these channels scales without limit, and §8.2 returns to whether the gap is now closing — for the wrong reasons.
+A structurally short labour market clears through wages, not through job postings — which is exactly what the wage-premium chart shows. The gap was historically closed by experienced engineers returning from Western Europe (post-2007 return migration), by lateral entry from adjacent engineering and applied-science fields, and by major foreign captive R&D centres importing some senior talent. None of these channels scales without limit, and [§8.2](#82-demand-is-already-cooling) returns to whether the gap is now closing — for the wrong reasons.
 
 ---
 
@@ -324,15 +324,15 @@ The pre-2024 chart values are real Eurostat data. The post-2024 lines are illust
 
 ## 9. Synthesis — Five Things That Made Romanian IT Work
 
-1. **An engineering inheritance**: large technical universities, mathematics-olympiad culture, residual hardware competence from Cold-War-era manufacturing. ([§1, charts 01b, 01c, 01d](charts/))
+1. **An engineering inheritance**: large technical universities, mathematics-olympiad culture, residual hardware competence from Cold-War-era manufacturing. ([§1](#1-origins--why-romania-of-all-places-19902000), charts 01b, 01c, 01d)
 
-2. **A specific, durable policy**: the 2001 income-tax exemption for IT employees, defended across two decades of government turnover. ([§1, §8.2](#))
+2. **A specific, durable policy**: the 2001 income-tax exemption for IT employees, defended across two decades of government turnover. ([§1](#1-origins--why-romania-of-all-places-19902000), [§8.2](#82-demand-is-already-cooling))
 
-3. **Export orientation from day one**: the domestic market did not demand software (§7). Foreign demand did. The sector has run a €6–7 billion structural services surplus for years. ([§3.2, charts 03b, 03c, 03d](charts/))
+3. **Export orientation from day one**: the domestic market did not demand software ([§7](#7-the-digital-paradox)). Foreign demand did. The sector has run a €6–7 billion structural services surplus for years. ([§3.2](#32-exports--the-engine), charts 03b, 03c, 03d)
 
-4. **A wage premium wide enough to bend Romanian demography**: 3.6× the national average in 2023, enough to make Bucharest the only Romanian region with absolute population growth and to keep Cluj and Iași declining at less than half the national rate. ([§4, §5, charts 04c, 05e](charts/))
+4. **A wage premium wide enough to bend Romanian demography**: 3.6× the national average in 2023, enough to make Bucharest the only Romanian region with absolute population growth and to keep Cluj and Iași declining at less than half the national rate. ([§4](#4-the-generation-it-built), [§5](#5-the-hubs--how-it-reshaped-four-cities), charts 04c, 05e)
 
-5. **Agglomeration in exactly four cities**: hub effects, not industrial policy, did the work. Cluj's 15× growth and Iași's 7× growth are among the fastest regional ICT trajectories in the EU. ([§5, charts 05c, 05d](charts/))
+5. **Agglomeration in exactly four cities**: hub effects, not industrial policy, did the work. Cluj's 15× growth and Iași's 7× growth are among the fastest regional ICT trajectories in the EU. ([§5](#5-the-hubs--how-it-reshaped-four-cities), charts 05c, 05d)
 
 ### What the sector contributed beyond GDP
 
@@ -340,9 +340,9 @@ Romania's IT industry is the country's most visible and broadly-shared example o
 
 ### What the next decade demands
 
-- **Upgrade the value chain.** The R&D intensity gap (§6.1) and the patent gap (§6.2) are the biggest structural shortfalls. Captive R&D centres and body-shop outsourcing built the sector. Owned IP must build the next phase.
-- **Close the domestic-demand gap.** §7 is a missed-opportunity chapter. Public-sector digitalisation, enterprise cloud adoption, and basic digital skills would together represent the largest untapped market Romanian IT firms have.
-- **Solve the talent-pipeline arithmetic.** A shrinking 20-29 cohort (§8.1) and a 5pp specialist-share gap to EU leaders (§8.4) cannot both be addressed by training alone. Return migration, immigration of engineers, and AI-assisted productivity all have to contribute.
+- **Upgrade the value chain.** The R&D intensity gap ([§6.1](#61-rd-intensity)) and the patent gap ([§6.2](#62-patents)) are the biggest structural shortfalls. Captive R&D centres and body-shop outsourcing built the sector. Owned IP must build the next phase.
+- **Close the domestic-demand gap.** [§7](#7-the-digital-paradox) is a missed-opportunity chapter. Public-sector digitalisation, enterprise cloud adoption, and basic digital skills would together represent the largest untapped market Romanian IT firms have.
+- **Solve the talent-pipeline arithmetic.** A shrinking 20-29 cohort ([§8.1](#81-the-demographic-constraint)) and a 5pp specialist-share gap to EU leaders ([§8.4](#84-room-to-grow-on-specialists)) cannot both be addressed by training alone. Return migration, immigration of engineers, and AI-assisted productivity all have to contribute.
 - **Plan for a sector without subsidy.** The tax exemption is gone. The wage premium is wider than the subsidy ever justified. The sector now has to compete on value, not on net-take-home arithmetic.
 
 The Romanian IT industry was built on a thirty-year combination of inheritance, policy, and demand it did not have to create. None of those three pillars is fully load-bearing going forward. Whether the sector navigates the transition is the most consequential economic question Romania faces this decade.
