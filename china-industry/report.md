@@ -368,13 +368,17 @@ leader/follower binary.
 
 ![Notable AI model releases by lab country, 2018–2024](charts/05a_notable_ai_models.png)
 
-On notable-model output the US is still ahead in absolute count, but
-China is closing fast. In 2018 the US released ~14 notable models per
-year; China released ~5. By 2024 the US is at ~40 (down from a 2023
-spike of 51) and China at ~26. The European Union has accelerated to
-~10. Note that "notable" is Epoch AI's compute/impact threshold; the
-top-end frontier — GPT-class and Claude-class closed models — is
-narrower and is still US-dominated.
+On notable-model output the US is still well ahead in absolute count,
+and the gap actually widened in 2024. In 2018 the US released ~14
+notable models per year; China released ~5. The 2024 Stanford AI Index
+(Epoch AI database, March 2025 snapshot) puts the US at 40 notable
+models, China at 15, France at 3, with single releases from Canada,
+Israel, Saudi Arabia and South Korea. All major regions released fewer
+notable models in 2024 than in 2023 — driven by larger training runs
+concentrating output in fewer, bigger releases. Note that "notable" is
+Epoch AI's compute/impact threshold; the top-end frontier — GPT-class
+and Claude-class closed models — is narrower still and remains
+US-dominated.
 
 ![Top-1% most-cited AI publications](charts/05b_top_cited_ai_publications.png)
 
@@ -383,23 +387,27 @@ of top-1% most-cited AI publications. Citation-based rankings reflect
 partly self-citation patterns; the directional crossover and ongoing
 trend are robust across the methods used by Stanford HAI, NSF, and CSET.
 
-![Generative-AI patent filings by country](charts/05c_gai_patent_filings.png)
+![Generative-AI patent families, cumulative 2014–2023, by inventor country](charts/05c_gai_patent_filings.png)
 
 The patent picture is the starkest of the three. Generative-AI patent
-filings — a sub-set of all AI patents that WIPO's 2024 Patent Landscape
-Report breaks out specifically — show China filing roughly 6x more
-GenAI applications than the US in 2023 (38,000 vs 6,300). Volume is not
+families — a sub-set of all AI patents that WIPO's 2024 Patent Landscape
+Report breaks out specifically — show China filing 38,210 cumulative
+families across 2014–2023, against 6,276 for the US. That's a ~6x lead
+across the decade, with China outpacing the rest of the world combined
+every year since 2017. By 2023 alone, global annual GenAI filings had
+risen above 14,000, of which ~70% originated in China. Volume is not
 quality, but the ramp is consistent with the production-oriented
 industrial-AI focus of Chinese firms.
 
 ![Private AI investment, USD billion](charts/05d_private_ai_investment.png)
 
 Private investment is where the honest counter-case lives. US private
-AI investment in 2024 was ~\$109 billion — roughly 9x China's ~\$12
-billion in the Stanford AI Index aggregation. Closed-frontier-model
-development (Anthropic, OpenAI, Google DeepMind, xAI) is concentrated
-in US-headquartered labs with capital, infrastructure, and chip access
-that Chinese firms cannot fully match under current export controls.
+AI investment in 2024 was \$109.1 billion — roughly 12x China's
+\$9.3 billion in the Stanford AI Index aggregation, and ~24x the UK's
+\$4.5 billion. Closed-frontier-model development (Anthropic, OpenAI,
+Google DeepMind, xAI) is concentrated in US-headquartered labs with
+capital, infrastructure, and chip access that Chinese firms cannot
+fully match under current export controls.
 
 ![Open-weight LLM leaderboard, Q1 2025](charts/05e_open_weight_leaderboard.png)
 
@@ -414,12 +422,12 @@ triggered a substantial market reassessment of the AI-compute cost
 curve. Closed-frontier rankings (GPT-4o, o1, Claude 3.5, Gemini 1.5)
 remain US-dominated and are not included on this chart.
 
-The composite AI picture, then, is asymmetric. China leads on volume of
-new models, citation share, GenAI patents and open-weight quality;
-the US leads on capital, closed-frontier models, and per-firm compute
-access. Both leaderboards are moving fast enough that any single-quarter
-snapshot will be obsolete within ~6 months; the trend, not the snapshot,
-is the read.
+The composite AI picture, then, is asymmetric. China leads on citation
+share, GenAI patents and open-weight model quality; the US leads on
+notable-model count, capital, closed-frontier models, and per-firm
+compute access. Both leaderboards are moving fast enough that any
+single-quarter snapshot will be obsolete within ~6 months; the trend,
+not the snapshot, is the read.
 
 ---
 

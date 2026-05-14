@@ -1,13 +1,15 @@
-# source: WIPO — Patent Landscape Report on Generative AI (2024); summarised in Stanford HAI AI Index 2024
+# source: WIPO — Patent Landscape Report on Generative AI (July 2024), Figure 17a
 # url: https://www.wipo.int/web/patent-landscape-reports/generative-artificial-intelligence
-# url: https://aiindex.stanford.edu/report/
+# url: https://www.wipo.int/web-publications/patent-landscape-report-generative-artificial-intelligence-genai/assets/62504/Generative%20AI%20-%20PLR%20EN_WEB2.pdf  (PDF, p.44)
 # retrieved: 2026-05-13
-# notes: Generative-AI-specific patent applications per year by applicant country. A sub-set of all AI patents.
-# notes: China filed roughly 6x more GenAI patents than the US in 2023. Volume != quality.
-year,China,United States,Korea,Japan,European Union
-2014,1200,800,200,150,100
-2016,2500,1200,300,300,220
-2018,4000,1800,600,400,350
-2020,9500,2400,1100,500,500
-2022,21000,3500,1400,600,800
-2023,38000,6300,1900,720,1200
+# notes: Cumulative GenAI-related patent families 2014–2023, by inventor location. Exact values from WIPO PDF Figure 17a.
+# notes: WIPO's annual chart (Figure 16, p.43) shows the global annual rate rising to ~14,000 in 2023, ~70% of which is China — i.e. roughly ~10,000 GenAI patent families filed by China in 2023 alone, vs. the 38,210 cumulative across 2014–2023.
+# notes: The CSV format was previously a (mislabelled) time series; restructured here to a single cumulative ranking to match the source unambiguously.
+country,patent_families_2014_2023
+China,38210
+United States,6276
+South Korea,4155
+Japan,3409
+India,1350
+United Kingdom,714
+Germany,708

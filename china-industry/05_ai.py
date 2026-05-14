@@ -68,8 +68,9 @@ for i, t in enumerate(totals):
     ax.text(i, t + 1.5, f"{t}", ha="center", va="bottom",
             fontsize=10, color="#222", fontweight="bold")
 ax.annotate(
-    "US leads in absolute count but China is closing — and the gap on the\n"
-    "highest-impact frontier models is wider than the headline counts suggest.\n\n"
+    "US still leads in absolute count (40 in 2024 vs China's 15 per the\n"
+    "AI Index 2025); all regions released fewer notable models in 2024 than\n"
+    "in 2023 as training runs consolidate into bigger, fewer releases.\n\n"
     "Source: Stanford HAI AI Index 2024+2025; data from Epoch AI.\n"
     "See raw-data/05a_*.csv for URLs.",
     xy=(0.02, 0.65), xycoords="axes fraction",
@@ -122,37 +123,40 @@ print("  saved 05b_top_cited_ai_publications.png")
 
 
 # ---------------------------------------------------------------------------
-# 5c. Generative-AI patent filings by country, 2014–2023
+# 5c. Generative-AI patent families, cumulative 2014–2023, by inventor country
 # ---------------------------------------------------------------------------
-print("Generative-AI patent filings by country...")
-gai_patents = load("05c_gai_patent_filings_by_country", index_col="year")
+print("Generative-AI patent families by country, cumulative 2014–2023...")
+gai_patents = load("05c_gai_patent_filings_by_country")
+gai_patents = gai_patents.sort_values("patent_families_2014_2023", ascending=True)
+
+country_colors = {
+    "China": COLOR_CN, "United States": COLOR_US,
+    "South Korea": COLOR_KR, "Japan": COLOR_JP,
+    "India": COLOR_OTHER, "United Kingdom": COLOR_UK,
+    "Germany": COLOR_EU,
+}
+colors = [country_colors.get(c, COLOR_OTHER) for c in gai_patents["country"]]
 
 fig, ax = plt.subplots(figsize=(13, 5.5))
-for col, color, lw in [("China", COLOR_CN, 2.8),
-                       ("United States", COLOR_US, 2.0),
-                       ("Korea", COLOR_KR, 1.5),
-                       ("Japan", COLOR_JP, 1.5),
-                       ("European Union", COLOR_EU, 1.5)]:
-    ax.plot(gai_patents.index, gai_patents[col], label=col, color=color,
-            linewidth=lw, marker="o", markersize=5)
-ax.fill_between(gai_patents.index, gai_patents["China"], alpha=0.08, color=COLOR_CN)
-ax.set_title("Generative-AI Patent Filings — by Applicant Country, 2014–2023",
+bars = ax.barh(gai_patents["country"], gai_patents["patent_families_2014_2023"],
+               color=colors)
+for bar, val in zip(bars, gai_patents["patent_families_2014_2023"]):
+    ax.text(val + 400, bar.get_y() + bar.get_height() / 2, f"{val:,}",
+            va="center", fontsize=10, fontweight="bold")
+ax.set_title("Generative-AI Patent Families — Cumulative 2014–2023, by Inventor Country",
              fontsize=13, fontweight="bold")
-ax.set_xlabel("Year"); ax.set_ylabel("Generative-AI patent applications per year")
-ax.legend(loc="upper left", fontsize=10, framealpha=0.95)
-ax.grid(axis="y", alpha=0.3)
-ax.set_ylim(0, 42000)
-ax.text(2023 + 0.1, 38000, "38,000", va="center", fontsize=10,
-        color=COLOR_CN, fontweight="bold")
-ax.text(2023 + 0.1, 6300, "6,300", va="center", fontsize=10,
-        color=COLOR_US, fontweight="bold")
+ax.set_xlabel("Patent families filed 2014–2023 (cumulative)")
+ax.set_xlim(0, 42000)
+ax.grid(axis="x", alpha=0.3)
 ax.annotate(
-    "China filed ~6x more generative-AI patents than the US in 2023.\n"
-    "Volume ≠ quality, but the ramp is striking and consistent with the\n"
-    "production-oriented industrial-AI focus of Chinese firms.\n\n"
-    "Source: WIPO Patent Landscape Report on Generative AI 2024.\n"
+    "China filed ~6x more generative-AI patent families than the US over\n"
+    "the decade 2014–2023. WIPO notes that since 2017 China has filed\n"
+    "more GenAI patent families each year than the rest of the world combined.\n"
+    "Volume ≠ quality, but the ramp is consistent with the production-oriented\n"
+    "industrial-AI focus of Chinese firms.\n\n"
+    "Source: WIPO Patent Landscape Report on Generative AI 2024, Figure 17a.\n"
     "See raw-data/05c_*.csv for URLs.",
-    xy=(0.02, 0.70), xycoords="axes fraction",
+    xy=(0.40, 0.40), xycoords="axes fraction",
     fontsize=9, color="#222", va="top", ha="left",
     bbox=dict(boxstyle="round,pad=0.4", facecolor="white",
               edgecolor="#888", linewidth=0.8))
@@ -183,7 +187,7 @@ for i, t in enumerate(totals):
             fontsize=10, color="#222", fontweight="bold")
 ax.annotate(
     "The honest counter-case: US private AI investment in 2024 (\\$109B)\n"
-    "was roughly 9x China's (\\$12B). Closed-frontier model development\n"
+    "was roughly 12x China's (\\$9.3B). Closed-frontier model development\n"
     "still concentrates in well-capitalised US labs.\n\n"
     "Source: Stanford HAI AI Index 2024+2025.\n"
     "See raw-data/05d_*.csv for URLs.",

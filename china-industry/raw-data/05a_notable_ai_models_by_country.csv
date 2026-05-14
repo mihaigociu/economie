@@ -1,8 +1,11 @@
-# source: Stanford HAI — AI Index Report 2024 and 2025; underlying data from Epoch AI notable-models database
+# source: Stanford HAI — AI Index Report 2025 (Ch.1 Figures 1.3.1/1.3.2); Epoch AI notable-models database
 # url: https://aiindex.stanford.edu/report/  (Stanford HAI AI Index landing)
-# url: https://epoch.ai/data/notable-ai-models  (Epoch AI notable-models database)
+# url: https://hai.stanford.edu/assets/files/hai_ai-index-report-2025_chapter1_final.pdf  (Ch.1, pp.23–26, snapshot March 17 2025)
+# url: https://epoch.ai/data/notable-ai-models  (Epoch AI notable-models database, live)
 # retrieved: 2026-05-13
-# notes: "Notable" = models meeting Epoch AI's compute/impact thresholds. Counts approximate headline tables in the Stanford AI Index.
+# notes: "Notable" = Epoch AI's compute/impact threshold. Multi-country models can be double-counted (model attributed to each affiliated country).
+# notes: 2024 row matches AI Index 2025 figures exactly: US 40, China 15, France 3, Canada/Israel/Saudi/Korea 1 each. "EU" column = France only in 2024. UK had 0 in 2024.
+# notes: 2018–2023 are approximations from earlier AI Index editions; Stanford notes historical counts shift between editions as the Epoch DB is curated.
 year,United States,China,United Kingdom,European Union,Other
 2018,14,5,3,2,1
 2019,18,6,4,3,1
@@ -10,4 +13,4 @@ year,United States,China,United Kingdom,European Union,Other
 2021,28,11,5,3,2
 2022,34,18,6,4,3
 2023,51,21,8,7,4
-2024,40,26,8,10,6
+2024,40,15,0,3,4
