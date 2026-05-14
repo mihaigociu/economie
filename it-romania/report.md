@@ -164,11 +164,11 @@ Indexed to 2008 = 100, NACE J compensation in each hub has multiplied many times
 
 ### 5.3 The demographic spillover
 
-The most important effect of the hubs is what they did to Romanian demography. Romania's population has fallen by more than 4 million since 1990 — except in the IT-hub counties, which **gained** population over the 2010s and early 2020s.
+The most important demographic effect of the hubs is to **damp depopulation, not reverse it**. Romania's population has fallen by more than 4 million since 1990 and is down roughly 5% since 2014 alone. Among the four IT-hub regions, only **Bucharest-Ilfov** grew in absolute terms (+1% from 2014 to 2025). **Cluj (Nord-Vest)** and **Iași (Nord-Est)** declined about 2% each — less than half the national rate, an outperformance attributable to in-migration drawn by IT jobs. **Timișoara (Vest)** is the apparent outlier with an 8% drop, but most of that decline is a one-time step-down in 2022 when Eurostat absorbed the 2021 census revision rather than a sustained exodus.
 
 ![05e_hubs_population.png](charts/05e_hubs_population.png)
 
-This is unique. There is no other Romanian sector that has reversed local depopulation. The hubs pulled in internal migrants from the rest of the country and increasingly attracted return migration from the Romanian diaspora.
+This pattern — three of four hubs outperforming the national trend, and Bucharest-Ilfov actively growing — is unique. No other Romanian sector has produced a comparable demographic counter-pull. The hubs draw internal migrants from the rest of the country, and increasingly return migration from the Romanian diaspora.
 
 ### 5.4 The housing market — the visible spillover
 
@@ -327,7 +327,7 @@ The pre-2024 chart values are real Eurostat data. The post-2024 lines are illust
 
 3. **Export orientation from day one**: the domestic market did not demand software (§7). Foreign demand did. The sector has run a €6–7 billion structural services surplus for years. ([§3.2, charts 03b, 03c, 03d](charts/))
 
-4. **A wage premium wide enough to bend Romanian demography**: 3.6× the national average in 2023, enough to make Cluj, Iași, Timișoara and Bucharest the only Romanian counties that *gained* population. ([§4, §5, charts 04c, 05e](charts/))
+4. **A wage premium wide enough to bend Romanian demography**: 3.6× the national average in 2023, enough to make Bucharest the only Romanian region with absolute population growth and to keep Cluj and Iași declining at less than half the national rate. ([§4, §5, charts 04c, 05e](charts/))
 
 5. **Agglomeration in exactly four cities**: hub effects, not industrial policy, did the work. Cluj's 15× growth and Iași's 7× growth are among the fastest regional ICT trajectories in the EU. ([§5, charts 05c, 05d](charts/))
 
