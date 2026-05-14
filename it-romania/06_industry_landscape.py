@@ -36,7 +36,23 @@ COLORS = {"RO": "#c0392b", "PL": "#2980b9", "CZ": "#27ae60",
 
 
 def save_csv(df, name):
-    df.to_csv(f"{RAW_DATA}/{name}.csv")
+    """Save df to raw-data/{name}.csv, preserving any '#'-prefixed source
+    header lines that were already at the top of the file."""
+    path = f"{RAW_DATA}/{name}.csv"
+    header_lines = []
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as fh:
+            for line in fh:
+                if line.startswith("#"):
+                    header_lines.append(line)
+                else:
+                    break
+    df.to_csv(path)
+    if header_lines:
+        with open(path, "r", encoding="utf-8") as fh:
+            body = fh.read()
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write("".join(header_lines) + body)
     print(f"  saved raw-data/{name}.csv")
 
 
