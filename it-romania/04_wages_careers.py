@@ -233,9 +233,12 @@ df_gr = fetch_eurostat("educ_uoe_grad02", {
 })
 grads = to_year_indexed(df_gr)["RO"].dropna() / 1000.0   # to thousands
 
-# Use 2014+ to avoid the pre-2015 series-break low values
-grads = grads[grads.index >= 2014]
-spec_ths = spec_ths[spec_ths.index >= 2014]
+# Start at 2015: RO ICT-grads 2013-2014 contain only bachelor-level (ED6);
+# master-level (ED7) is reported as zero, a Eurostat coverage gap. The
+# 5x jump between 2014 and 2015 is an artefact of that gap, not real
+# supply growth, so drop those points (same treatment as 01b chart).
+grads = grads[grads.index >= 2015]
+spec_ths = spec_ths[spec_ths.index >= 2015]
 
 fig, ax = plt.subplots(figsize=(13, 5))
 ax2 = ax.twinx()

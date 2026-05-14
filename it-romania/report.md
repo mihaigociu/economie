@@ -130,11 +130,11 @@ The legacy explanation — the Cold-War-era technical universities did not disco
 Two different headcount figures appear in this report and it is worth distinguishing them before reading the chart below:
 
 - **ICT-sector employment** (NACE J62-J63, employees of dedicated software / IT-services firms — used in [§2](#2-the-takeoff-20002015)): **122,000** at the 2022 peak, 106,000 in 2023.
-- **ICT specialists in employment** (Eurostat `isoc_sks_itspt`, anyone working in an ICT job role regardless of which sector their employer is classified in — plotted in the chart below): **222,000 in 2024**, up from 140,000 in 2014.
+- **ICT specialists in employment** (Eurostat `isoc_sks_itspt`, anyone working in an ICT job role regardless of which sector their employer is classified in — plotted in the chart below): **222,000 in 2024**, up from 161,000 in 2015.
 
 The ~100,000-person gap is real: it is ICT specialists employed *outside* dedicated software firms — embedded engineers at automotive plants and Bosch / Continental R&D centres, in-house IT at banks and telecom operators, software developers inside retail and energy companies. The [§2](#2-the-takeoff-20002015) chart is sector-bounded; the [§4](#4-the-generation-it-built) chart below is occupation-bounded. Both are correct; they measure different things.
 
-Taking the wider occupation measure, Romania's ICT-specialist workforce grew by roughly 80,000 over the past decade — about **8,000 net new specialist roles per year**. Annual graduate output runs around **9,000 per year**. That gross supply almost matches net demand on paper, but it leaves no margin for normal labour churn (retirement, career switching, emigration to Germany or the UK), nor for the gross hiring that always exceeds net growth in a fast-moving sector:
+Taking the wider occupation measure, Romania's ICT-specialist workforce grew by roughly 60,000 between 2015 and 2024 — about **6,000–7,000 net new specialist roles per year**. Annual graduate output runs around **9,000 per year**. The 2,000-grad nominal surplus vanishes once you account for the gross hiring a fast-moving sector requires — replacing retirements, career-switchers, and the persistent leakage of mid-career engineers to Germany and the UK:
 
 ![04e_supply_demand_ro.png](charts/04e_supply_demand_ro.png)
 
