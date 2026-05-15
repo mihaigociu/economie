@@ -263,9 +263,12 @@ strategic forecasting. Volume-weighted average pack prices fell from
 \$1,355/kWh in 2010 to \$115/kWh in 2024 — a 91% decline. The 2021–22
 spike was the lithium-carbonate price episode; the 2023–24 fall resumed
 the trend as Chinese LFP scale-up brought lithium prices back down and
-manufacturing costs continued to compress. \$100/kWh is the threshold at
-which EVs become unsubsidised price-competitive with ICE vehicles on
-total cost of ownership; 2024 broke it.
+manufacturing costs continued to compress. \$100/kWh is the threshold
+commonly cited as the point at which EVs become unsubsidised
+price-competitive with ICE vehicles on total cost of ownership; the
+2024 print (\$115) is the closest the volume-weighted global average
+has been, and BNEF's own forecast in the same release projects ~\$80/kWh
+by 2026 if current cost-curve dynamics hold.
 
 ![EV battery chemistry mix](charts/03d_battery_chemistry_share.png)
 
