@@ -71,6 +71,9 @@ ax.annotate(
     "US still leads in absolute count (40 in 2024 vs China's 15 per the\n"
     "AI Index 2025); all regions released fewer notable models in 2024 than\n"
     "in 2023 as training runs consolidate into bigger, fewer releases.\n\n"
+    "\"Notable AI models\" per Epoch AI's compute/impact threshold — broader\n"
+    "than LLMs. 2018 examples include BERT, GPT-1, BigGAN, AlphaZero; LLMs\n"
+    "as commonly understood emerge with GPT-3 (2020) and ChatGPT (late 2022).\n\n"
     "Source: Stanford HAI AI Index 2024+2025; data from Epoch AI.\n"
     "See raw-data/05a_*.csv for URLs.",
     xy=(0.02, 0.65), xycoords="axes fraction",

@@ -391,9 +391,14 @@ models, China at 15, France at 3, with single releases from Canada,
 Israel, Saudi Arabia and South Korea. All major regions released fewer
 notable models in 2024 than in 2023 — driven by larger training runs
 concentrating output in fewer, bigger releases. Note that "notable" is
-Epoch AI's compute/impact threshold; the top-end frontier — GPT-class
-and Claude-class closed models — is narrower still and remains
-US-dominated.
+Epoch AI's compute/impact threshold across all AI architectures — much
+broader than LLMs. The 2018–2020 portion of the series is dominated by
+non-LLM systems: BERT, GPT-1, BigGAN, AlphaZero (2018); GPT-2, AlphaStar,
+StyleGAN (2019); GPT-3, AlphaFold, DALL-E (2020). LLMs as commonly
+understood — chat-style instruction-tuned models — emerge with GPT-3 in
+mid-2020 and become the dominant subset only after ChatGPT (late 2022).
+The top-end frontier — GPT-class and Claude-class closed models — is
+narrower still and remains US-dominated.
 
 ![Top-1% most-cited AI publications](charts/05b_top_cited_ai_publications.png)
 
