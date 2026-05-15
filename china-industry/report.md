@@ -57,7 +57,7 @@ rising ICOR (more investment needed per unit of growth), and expanding US
 export controls that have closed the gap to advanced AI compute. None of
 these are minor. But the same demographic and debt arguments were made for
 Japan in 1990 and Germany in 2005; neither country stopped exporting
-frontier engineering products. China's goods trade surplus hit ~\$992
+frontier engineering products. China's goods trade surplus hit \$992
 billion in 2024 — a new all-time record — even with tariffs, decoupling
 rhetoric, and a weak domestic property sector. The export engine has not
 yet broken.
@@ -80,8 +80,8 @@ Three macro series describe the scale of what has happened since 1978.
 
 ![Real GDP, constant 2015 USD](charts/01a_real_gdp.png)
 
-Real GDP at constant 2015 prices captures the absolute scale: from ~\$370
-billion in 1978 to ~\$18.5 trillion in 2024, a 50-fold expansion. The US
+Real GDP at constant 2015 prices captures the absolute scale: from \$370
+billion in 1978 to \$18.5 trillion in 2024, a 50-fold expansion. The US
 expanded ~3-fold over the same period. In constant-USD terms China
 overtook Japan in 2005 (the commonly-cited "second-largest economy in
 2010" milestone is in *nominal* USD, where Japan's yen depreciation
@@ -134,8 +134,8 @@ fast. Trade is still climbing in absolute USD — see Chapter 12 on the
 
 ![FDI inflows, USD billion](charts/01f_fdi_inflows.png)
 
-Inward FDI tells the partner side of the story: from ~\$2 billion in 1985
-to ~\$334 billion in 2021, then a sharp drop in 2023–2024 as the
+Inward FDI tells the partner side of the story: from \$2 billion in 1985
+to \$334 billion in 2021, then a sharp drop in 2023–2024 as the
 combination of zero-COVID overhang, geopolitical risk, and the closure of
 the China stock-market bubble shifted Western capital toward India,
 Vietnam, and Mexico. China-bound FDI remains positive but the trend break
@@ -267,7 +267,7 @@ manufacturing costs continued to compress. \$100/kWh is the threshold
 commonly cited as the point at which EVs become unsubsidised
 price-competitive with ICE vehicles on total cost of ownership; the
 2024 print (\$115) is the closest the volume-weighted global average
-has been, and BNEF's own forecast in the same release projects ~\$80/kWh
+has been, and BNEF's own forecast in the same release projects \$80/kWh
 by 2026 if current cost-curve dynamics hold.
 
 ![EV battery chemistry mix](charts/03d_battery_chemistry_share.png)
@@ -353,8 +353,9 @@ and Tesla finished 2024 within ~30,000 units of each other (1.76M vs
 1.79M). On total NEV — BYD's full product line which includes PHEVs —
 BYD reached 4.25M units in 2024, more than 2x Tesla's BEV volume. The
 gap is widening in BYD's favour each quarter. BYD's product range
-runs from the ~\$10,000 Seagull to the Yangwang U9 (~\$200k); Tesla's
-mid-cycle Model 3/Y refresh has not changed the trajectory.
+runs from the roughly \$10,000 Seagull to the Yangwang U9 at around
+\$200k; Tesla's mid-cycle Model 3/Y refresh has not changed the
+trajectory.
 
 ![Chinese-brand share of global EV sales](charts/04e_china_brand_share.png)
 
@@ -555,8 +556,8 @@ country.
 ![Industrial electricity prices](charts/07d_industrial_electricity_prices.png)
 
 Industrial electricity prices are where the cost story lands. Chinese
-industrial users pay ~\$80/MWh; the US ~\$70/MWh; Korea ~\$100; France
-~\$110; Japan ~\$145; Italy ~\$175; the UK ~\$195; Germany ~\$220. For
+industrial users pay \$80/MWh; the US \$70/MWh; Korea \$100; France
+\$110; Japan \$145; Italy \$175; the UK \$195; Germany \$220. For
 energy-intensive industries — aluminium smelting, chemicals, refining,
 data-centre operation, AI-compute farms — a 2-3x cost differential
 compounds dramatically over a multi-decade asset life.
@@ -840,8 +841,8 @@ diffuse, and quiet influence.
 ![China's Big Fund — semiconductor investment tranches](charts/10d_big_fund.png)
 
 The Big Fund tranches are the most-discussed single industrial-policy
-vehicle. Phase I (2014): ~\$22B. Phase II (2019): ~\$30B. Phase III
-(May 2024): ~\$48B. Combined central authority over ten years: ~\$100B,
+vehicle. Phase I (2014): \$22B. Phase II (2019): \$30B. Phase III
+(May 2024): \$48B. Combined central authority over ten years: \$100B,
 plus provincial and local-government chip funds that bring the
 publicly-announced national total well above \$200B. Outcomes have
 been mixed: SMIC ramped 14nm and demonstrated 7nm-class fabrication;
@@ -853,10 +854,10 @@ arrests including the fund's chairman).
 ![Western industrial-policy response](charts/10e_western_policy_response.png)
 
 The Western convergence chart is the response-side of the same story.
-The IRA's headline clean-energy and EV authority is ~\$369B (CBO's 2023
-revision pushed this to ~\$663B over ten years); the CHIPS Act ~\$52B;
-the EU Net-Zero Industry Act ~\$170B in linked funding streams; the EU
-Chips Act ~\$46B; the EU Critical Raw Materials Act ~\$30B in channelled
+The IRA's headline clean-energy and EV authority is \$369B (CBO's 2023
+revision pushed this to \$663B over ten years); the CHIPS Act \$52B;
+the EU Net-Zero Industry Act \$170B in linked funding streams; the EU
+Chips Act \$46B; the EU Critical Raw Materials Act \$30B in channelled
 funds. The instruments are different — the US emphasis is demand-side
 tax credits; the EU emphasis is regulatory framework plus existing-fund
 channelling — but the strategic targeting (clean energy, semiconductors,
@@ -938,7 +939,7 @@ a longer indigenous-substitution path.
 
 The trade-surplus chart is the counter-view. Despite tariffs, despite
 decoupling rhetoric, despite weak domestic demand, China's goods trade
-surplus hit ~\$992 billion in 2024 — a fresh all-time record. The
+surplus hit \$992 billion in 2024 — a fresh all-time record. The
 export engine has not broken; the same demographic and capital-allocation
 arguments made for Japan in 1990 and Germany in 2005 did not stop
 either country from continuing to export frontier engineering products.
