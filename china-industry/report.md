@@ -81,13 +81,21 @@ Three macro series describe the scale of what has happened since 1978.
 ![Real GDP, constant 2015 USD](charts/01a_real_gdp.png)
 
 Real GDP at constant 2015 prices captures the absolute scale: from ~\$370
-billion in 1978 to ~\$19 trillion in 2024, a 51-fold expansion. The US
-expanded ~3-fold over the same period. China overtook Japan in 2010 and
-sits at roughly 80% of the US economy at market exchange rates (parity
-on PPP terms since 2014). The vertical-line markers identify the five
-policy phases this brief uses as scaffolding: Reform & Opening (1978),
-WTO accession (2001), the RMB-4-trillion stimulus (2008–09), Made in
-China 2025 (2015), and Dual Circulation (2020).
+billion in 1978 to ~\$18.5 trillion in 2024, a 50-fold expansion. The US
+expanded ~3-fold over the same period. In constant-USD terms China
+overtook Japan in 2005 (the commonly-cited "second-largest economy in
+2010" milestone is in *nominal* USD, where Japan's yen depreciation
+delayed the crossover); on this real-GDP series China sits at ~82% of
+the US economy in 2024, and has been larger than the US on PPP terms
+since ~2014. Japan in real terms has been essentially flat over the
+entire post-2000 period (4.0T → 4.6T, ~15% total growth in 24 years —
+the "lost decades" continuing); Korea grew solidly (~3.5% CAGR, 2.3x
+over 2000–2024) but on a scale dominated by China and the US looks
+visually compressed near the bottom of the chart. The vertical-line
+markers identify the five policy phases this brief uses as scaffolding:
+Reform & Opening (1978), WTO accession (2001), the RMB-4-trillion
+stimulus (2008–09), Made in China 2025 (2015), and Dual Circulation
+(2020).
 
 ![GDP per capita PPP — convergence](charts/01b_gdp_per_capita_ppp.png)
 
