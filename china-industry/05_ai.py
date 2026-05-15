@@ -63,21 +63,18 @@ ax.set_xlabel("Year"); ax.set_ylabel("Number of notable AI models released")
 ax.set_xticklabels(models.index, rotation=0)
 ax.legend(ncol=5, loc="upper left", fontsize=9, framealpha=0.95)
 ax.grid(axis="y", alpha=0.3)
+ax.set_ylim(0, 140)
 totals = models.sum(axis=1)
 for i, t in enumerate(totals):
     ax.text(i, t + 1.5, f"{t}", ha="center", va="bottom",
             fontsize=10, color="#222", fontweight="bold")
 ax.annotate(
-    "US still leads in absolute count (40 in 2024 vs China's 15 per the\n"
-    "AI Index 2025); all regions released fewer notable models in 2024 than\n"
-    "in 2023 as training runs consolidate into bigger, fewer releases.\n\n"
     "\"Notable AI models\" per Epoch AI's compute/impact threshold — broader\n"
-    "than LLMs. 2018 examples include BERT, GPT-1, BigGAN, AlphaZero; LLMs\n"
-    "as commonly understood emerge with GPT-3 (2020) and ChatGPT (late 2022).\n\n"
-    "Source: Stanford HAI AI Index 2024+2025; data from Epoch AI.\n"
-    "See raw-data/05a_*.csv for URLs.",
-    xy=(0.02, 0.65), xycoords="axes fraction",
-    fontsize=9, color="#222", va="top", ha="left",
+    "than LLMs. 2018 examples: BERT, GPT-1, BigGAN, AlphaZero. LLM era as\n"
+    "commonly understood emerges with GPT-3 (2020) / ChatGPT (late 2022).\n"
+    "Source: Stanford HAI AI Index 2024+2025; data from Epoch AI.",
+    xy=(0.99, 0.97), xycoords="axes fraction",
+    fontsize=9, color="#222", va="top", ha="right",
     bbox=dict(boxstyle="round,pad=0.4", facecolor="white",
               edgecolor="#888", linewidth=0.8))
 plt.tight_layout()
