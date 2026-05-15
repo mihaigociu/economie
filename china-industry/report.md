@@ -337,7 +337,10 @@ comparator.
 
 China became the world's largest auto exporter in 2023, overtaking Japan
 on units shipped. The 2024 total was 5.86 million vehicles, of which
-roughly 1.23 million were NEVs (BEV + PHEV). Top destinations in 2024
+roughly 1.28 million were NEVs (BEV + PHEV) — 22% by unit count, but
+about 40% by export *value* because NEVs ship at roughly 2x the per-unit
+FOB price of the ICE vehicles in the export mix (the higher figure is
+often what trade-press headlines quote). Top destinations in 2024
 included Russia, Mexico, Belgium, the UK, Saudi Arabia and Brazil. The
 EU's October 2024 countervailing duties on Chinese BEVs (17.4–35.3% on
 top of the existing 10% tariff) have been visible in the destination

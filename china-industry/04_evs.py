@@ -145,7 +145,8 @@ ax.legend(loc="upper left", fontsize=10, framealpha=0.95)
 ax.grid(axis="y", alpha=0.3)
 ax.annotate(
     "2023: China overtook Japan to become the world's largest auto exporter.\n"
-    "2024: 5.86 million vehicles exported, of which ~1.2 million NEVs.\n"
+    "2024: 5.86 million vehicles exported, of which ~1.28 million NEVs (22% by units).\n"
+    "By export *value* NEVs are ~40% (NEVs export at ~2x the per-unit FOB price).\n"
     "Top destinations 2024 (units): Russia, Mexico, Belgium, UK, Saudi Arabia.\n\n"
     "Source: CAAM (China Association of Automobile Manufacturers).\n"
     "See raw-data/04c_*.csv for URLs.",
