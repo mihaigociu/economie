@@ -10,6 +10,7 @@ Data-driven economic analyses using public sources (Eurostat, World Bank, ECB, E
 | [`greece/`](greece/) | Greek economy: debt crisis, adjustment programmes, and the slow reconstruction |
 | [`it-romania/`](it-romania/) | Romanian IT sector deep dive: origins, take-off, hubs, the digital paradox, and outlook |
 | [`china-industry/`](china-industry/) | China's industrial rise: from imitation at scale to selective frontier leadership |
+| [`bolojan/`](bolojan/) | The Bolojan government and the Romanian economy: data-driven assessment of its ~11 months in office (Jun 2025 – May 2026) |
 | [`SAFE/`](SAFE/) | EU Security Action for Europe defence-financing instrument: objective assessment of Romania's €16.68 bn participation |
 
 ## Romania
@@ -50,6 +51,16 @@ A deep dive testing whether China has moved beyond imitation-at-scale to selecti
 - **[Charts](china-industry/charts/)** — ~65 charts
 - **[Raw data](china-industry/raw-data/)** — ~50 underlying CSVs with `# source:` headers, plus [`SOURCES.md`](china-industry/raw-data/SOURCES.md) master index
 - **Scripts** — `00_fetch_world_bank.py` (refreshes WB-sourced CSVs); `01_macro_overview.py` through `11_headwinds.py`
+
+## The Bolojan Government
+
+A strictly descriptive assessment of the **Bolojan government** in office from 23 June 2025 until its removal by a 281-to-4 no-confidence vote on 5 May 2026 — just under eleven months. Covers the inherited fiscal position (the 9.3 %-of-GDP 2024 deficit, EDP, PNRR milestones), the two emergency-ordinance fiscal packages (*Pachetul 1*: VAT 19 → 21 %, reduced VAT unified at 11 %, bank turnover tax doubled to 4 %, excises +10 %, public-sector wage/pension freeze; *Pachetul 2*: 20 % civil-service headcount cut, hazard-pay reductions, special-pension reform, energy levies), and the outcomes in deficit, debt, inflation, real wages, GDP, FX, and equity markets.
+
+- **[Report](bolojan/REPORT.md)** — narrative analysis with the data
+- **[Plan](bolojan/PLAN.md)** — research plan
+- **[Charts](bolojan/charts/)** — 8 charts (deficit, debt, real wages, CPI, EUR/RON, GDP, peer-deficit comparison, BET index)
+- **[Macro snapshot](bolojan/data/macro_snapshot.md)** and **[measures timeline](bolojan/data/measures_timeline.md)**
+- **Script** — `bolojan/scripts/make_charts.py` (regenerates the eight PNGs)
 
 ## EU SAFE program and Romania
 
