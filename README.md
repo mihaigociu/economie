@@ -10,6 +10,7 @@ Data-driven economic analyses using public sources (Eurostat, World Bank, ECB, E
 | [`greece/`](greece/) | Greek economy: debt crisis, adjustment programmes, and the slow reconstruction |
 | [`it-romania/`](it-romania/) | Romanian IT sector deep dive: origins, take-off, hubs, the digital paradox, and outlook |
 | [`china-industry/`](china-industry/) | China's industrial rise: from imitation at scale to selective frontier leadership |
+| [`SAFE/`](SAFE/) | EU Security Action for Europe defence-financing instrument: objective assessment of Romania's €16.68 bn participation |
 
 ## Romania
 
@@ -49,6 +50,16 @@ A deep dive testing whether China has moved beyond imitation-at-scale to selecti
 - **[Charts](china-industry/charts/)** — ~65 charts
 - **[Raw data](china-industry/raw-data/)** — ~50 underlying CSVs with `# source:` headers, plus [`SOURCES.md`](china-industry/raw-data/SOURCES.md) master index
 - **Scripts** — `00_fetch_world_bank.py` (refreshes WB-sourced CSVs); `01_macro_overview.py` through `11_headwinds.py`
+
+## EU SAFE program and Romania
+
+An objective assessment of the EU's €150 bn Security Action for Europe (SAFE) defence-financing instrument, with emphasis on costs and benefits for Romania. Builds a ledger of all 21 Romanian SAFE-funded programmes, tests five pre-committed hypotheses on German-prime concentration, transparency, and the Hanwha (Korean) exclusion on the Lynx KF41 IFV award, and weighs the €5–8 bn present-value financing subsidy against the governance opacity (~65 % of value awarded under negotiated procedure without prior publication, the OUG 62/2025 → Law 4/2026 → OUG 21/2026 → OUG 38/2026 legal stack contested at the Constitutional Court). Conducted 2026-05-22, 8 days before the 30 May contracting deadline.
+
+- **[Synthesis](SAFE/synthesis.md)** — Romania-centric cost-benefit, three separate verdicts on the three conflated controversies
+- **[Hypothesis scorecard](SAFE/hypothesis_scorecard.md)** — H1–H5 against pre-committed falsification thresholds
+- **[Contracts ledger](SAFE/contracts_ledger.csv)** — all 21 Romanian SAFE programmes with prime, value, procedure type, source
+- **Thread briefs** — [foundation + ledger](SAFE/01_foundation_and_ledger.md), [IFV/Skynex](SAFE/02_ifv_skynex_briefs.md), [political/transparency](SAFE/03_political_transparency_briefs.md), [German auto-pivot](SAFE/04_german_pivot.md), [macro/fiscal](SAFE/05_macro_fiscal.md)
+- **[Research plan](SAFE/research_plan.md)** — with pre-committed hypotheses
 
 ## Running the scripts
 
