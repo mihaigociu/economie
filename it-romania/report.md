@@ -43,7 +43,7 @@ If the 1990s were the discovery phase, the 2000s were the boom. Romanian ICT (J6
 
 ![02a_ict_gva_romania.png](charts/02a_ict_gva_romania.png)
 
-By 2010 the share of ICT in Romanian GDP had crossed 2% and was rising; by 2024 it reached **5.6%**, materially higher than Poland (3.3%), Czechia (4.6%) or Hungary (3.4%):
+By 2010 the share of ICT in Romanian GDP had crossed 2% and was rising; by 2024 it reached **5.6%**, materially higher than Poland (3.4%), Czechia (4.4%) or Hungary (3.4%):
 
 ![02b_ict_gva_share.png](charts/02b_ict_gva_share.png)
 
