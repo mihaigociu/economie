@@ -1,9 +1,13 @@
+# source: Eurostat nama_10r_2gdp — GDP per inhabitant in PPS, % of EU27_2020 average (PPS_HAB_EU27_2020), 2024
+# url: https://ec.europa.eu/eurostat/databrowser/view/nama_10r_2gdp/default/table
+# retrieved: 2026-10-13
+# note: national value for 2024: 77
 region,gdp_per_capita_pps_pct_eu27
-Nord-Est,28
-Sud-Est,37
-Sud-Muntenia,38
-Sud-Vest Oltenia,34
-Vest,67
-Nord-Vest,52
-Centru,57
-Bucuresti-Ilfov,162
+Nord-Vest,71.0
+Centru,71.0
+Nord-Est,48.0
+Sud-Est,59.0
+Sud-Muntenia,55.0
+Bucuresti-Ilfov,188.0
+Sud-Vest Oltenia,60.0
+Vest,78.0

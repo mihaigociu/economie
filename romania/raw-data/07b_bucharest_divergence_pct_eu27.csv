@@ -1,16 +1,32 @@
-year,Bucuresti_Ilfov,Romania_national_avg,Romania_excl_Bucharest
-2000,75,27,24
-2003,88,33,28
-2005,100,36,32
-2007,128,46,40
-2008,145,48,42
-2009,118,41,36
-2010,125,42,37
-2012,130,43,38
-2014,135,46,40
-2016,145,49,43
-2018,155,58,50
-2019,158,61,52
-2020,148,57,49
-2021,158,63,54
-2022,162,65,52
+# source: Derived from Eurostat nama_10r_2gdp (GDP, MIO_PPS_EU27_2020) and nama_10r_3popgdp (average population, THS); GDP per inhabitant in PPS as % of EU27
+# url: https://ec.europa.eu/eurostat/databrowser/view/nama_10r_2gdp/default/table
+# retrieved: 2026-10-13
+# note: Romania_excl_Bucharest_derived = (GDP RO - GDP RO32) / (pop RO - pop RO32), relative to EU27 — derived, not published by Eurostat
+# note: where nama_10r_3popgdp lacks RO32 population (2002-2011) the mean of 1-Jan populations from demo_r_d2jan is used (flag column)
+# note: check: derived RO32/RO values are within 0.50 pts of Eurostat's published rounded index
+year,Bucuresti_Ilfov,Romania_national_avg,Romania_excl_Bucharest_derived,RO32_population_estimated
+2000,58.0,26.4,22.8,False
+2001,57.4,27.7,24.3,False
+2002,61.6,29.5,25.9,True
+2003,63.5,30.4,26.7,True
+2004,72.0,34.6,30.3,True
+2005,82.2,35.6,30.2,True
+2006,88.3,39.4,33.7,True
+2007,98.4,43.8,37.3,True
+2008,122.7,51.3,42.5,True
+2009,115.6,51.9,43.9,True
+2010,118.1,52.4,44.1,True
+2011,126.6,54.2,44.9,True
+2012,131.6,56.3,46.6,False
+2013,126.9,54.1,44.7,False
+2014,126.2,55.1,45.8,False
+2015,133.3,55.9,45.8,False
+2016,136.1,58.3,48.0,False
+2017,144.5,62.4,51.5,False
+2018,147.0,65.0,54.0,False
+2019,157.9,68.5,56.3,False
+2020,164.4,71.5,58.7,False
+2021,168.3,71.9,58.7,False
+2022,174.5,71.7,57.7,False
+2023,180.8,74.8,60.3,False
+2024,187.7,77.0,61.8,False

@@ -1,0 +1,16 @@
+# source: European Commission Cohesion Open Data — EU payments as % of planned EU amount: 2014-2020 ESIF excl. REACT-EU (dataset gayr-92qh, end-2023 and latest year); 2021-2027 (ue97-5sq6, latest)
+# url: https://cohesiondata.ec.europa.eu/
+# retrieved: 2026-10-13
+# note: 2014-2020 'latest' is effectively the closure position (programmes closed 2024-2026)
+# note: latest values as published on the platform on 2026-10-13
+country,p2014_2020_end2023,p2014_2020_latest,p2021_2027_latest
+Bulgaria,82.9,98.3,24.7
+Czechia,97.8,99.4,37.3
+Estonia,97.2,98.9,57.2
+Croatia,86.6,98.5,28.1
+Hungary,97.7,98.9,21.0
+Lithuania,94.9,98.8,41.0
+Latvia,91.4,98.8,36.6
+Poland,96.2,99.3,30.3
+Romania,89.7,97.9,36.3
+Slovakia,87.2,99.2,35.4

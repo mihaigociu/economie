@@ -1,5 +1,11 @@
-criterion,Romania_value,limit,pass
-Inflation (≤ ~3.3%),,3.3,False
-LT Interest Rate (≤ ~4.8%),,4.8,False
-Budget Deficit (≤ 3% GDP),,3.0,False
-Public Debt (≤ 60% GDP),,60.0,False
+# source: Romania vs Maastricht convergence criteria — Eurostat data on Convergence Report 2026 periods
+# url: https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr260624~ec1dcac037.en.html
+# retrieved: 2026-10-13
+# note: reference values (inflation 2.7%, long-term rate 5.1%) from the ECB/EC Convergence Report 2026
+# note: Romania values computed from Eurostat prc_hicp_minr (RCH_MV12MAVR), irt_lt_mcby_m, gov_10dd_edpt1
+# note: for context: latest HICP 12-month average = 8.6% (2026-08); latest 12-month avg long-term rate = 6.42% (to 2026-09)
+criterion,period,Romania_value,limit,pass
+"Inflation (HICP, 12-month average)",12 months to 2026-05,8.4,2.7,False
+"Long-term interest rate (10y, 12-month average)",2025-06 to 2026-05,6.73,5.1,False
+Budget deficit (% GDP),2025,7.9,3.0,False
+Public debt (% GDP),2025,59.3,60.0,True

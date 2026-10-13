@@ -1,0 +1,10 @@
+# source: Derived from Eurostat nama_10r_2gdp (PPS_HAB_EU27_2020): ratio of highest to lowest NUTS2 GDP per inhabitant in PPS, by country
+# url: https://ec.europa.eu/eurostat/databrowser/view/nama_10r_2gdp/default/table
+# retrieved: 2026-10-13
+country,year,richest,richest_value,poorest,poorest_value,ratio,n_regions
+RO,2024,RO32,188.0,RO21,48.0,3.92,8
+PL,2024,PL91,157.0,PL81,55.0,2.85,17
+HU,2024,HU11,168.0,HU31,47.0,3.57,8
+BG,2024,BG41,107.0,BG31,42.0,2.55,6
+CZ,2024,CZ01,192.0,CZ04,61.0,3.15,8
+SK,2024,SK01,153.0,SK04,54.0,2.83,4

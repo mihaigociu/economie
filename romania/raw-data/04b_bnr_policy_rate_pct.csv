@@ -1,10 +1,12 @@
+# source: BIS central bank policy rates (WS_CBPOL), Romania — end-December value of the monthly series
+# url: https://stats.bis.org/api/v1/data/WS_CBPOL/M.RO/all?format=csv
+# retrieved: 2026-10-13
+# note: latest monthly observation: 2026-09 = 6.50%
+# note: BIS series starts 2003-01; earlier hand-typed values (2000-2002) were dropped as unverifiable
 year,policy_rate_pct
-2000,35.0
-2001,35.0
-2002,25.0
 2003,21.25
 2004,17.0
-2005,8.5
+2005,7.5
 2006,8.75
 2007,7.5
 2008,10.25
@@ -24,3 +26,4 @@ year,policy_rate_pct
 2022,6.75
 2023,7.0
 2024,6.5
+2025,6.5

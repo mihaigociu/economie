@@ -1,9 +1,14 @@
-region,population_change_thousands
-Nord-Est,-180
-Sud-Est,-120
-Sud-Muntenia,-200
-Sud-Vest Oltenia,-160
-Vest,-60
-Nord-Vest,-130
-Centru,-100
-Bucuresti-Ilfov,80
+# source: Eurostat demo_r_d2jan — population on 1 January by NUTS2 region; change 1 Jan 2012 to 1 Jan 2025
+# url: https://ec.europa.eu/eurostat/databrowser/view/demo_r_d2jan/default/table
+# retrieved: 2026-10-13
+# note: 2012 is the first estimate anchored on the 2011 census; from 2022 estimates are anchored on the 2021 census (break in series in 2022). Pre-2012 regional estimates are not census-consistent and are not used.
+region,population_change_thousands,change_pct,pop_1jan_2012,pop_1jan_2025
+Romania (total),-1052.8,-5.2,20095996.0,19043151.0
+Nord-Vest,-54.9,-2.1,2598877.0,2544010.0
+Centru,-69.0,-2.9,2360578.0,2291551.0
+Nord-Est,-76.0,-2.3,3294204.0,3218218.0
+Sud-Est,-207.8,-8.2,2538949.0,2331165.0
+Sud-Muntenia,-303.1,-9.7,3128799.0,2825694.0
+Bucuresti-Ilfov,34.3,1.5,2279145.0,2313455.0
+Sud-Vest Oltenia,-219.3,-10.6,2067357.0,1848028.0
+Vest,-157.1,-8.6,1828087.0,1671030.0

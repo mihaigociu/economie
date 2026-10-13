@@ -1,11 +1,20 @@
+# source: Eurostat nama_10r_2gdp — GDP per inhabitant in PPS, % of EU27_2020 average, selected NUTS2 regions, 2024
+# url: https://ec.europa.eu/eurostat/databrowser/view/nama_10r_2gdp/default/table
+# retrieved: 2026-10-13
 region,gdp_per_capita_pps_pct_eu27
-Nord-Est (RO),28
-Sud-Vest Oltenia (RO),34
-Severozapaden (BG),30
-Yuzhen Tsentralen (BG),33
-Észak-Magyarország (HU),44
-Lubelskie (PL),55
-Podkarpackie (PL),52
-Bucuresti-Ilfov (RO),162
-Mazowieckie (PL),172
-Praha (CZ),211
+Nord-Est (RO),48.0
+Sud-Muntenia (RO),55.0
+Bucuresti-Ilfov (RO),188.0
+Severozapaden (BG),42.0
+Yuzhen tsentralen (BG),43.0
+"Yugozapaden, incl. Sofia (BG)",107.0
+Észak-Magyarország (HU),47.0
+Budapest (HU),168.0
+Lubelskie (PL),55.0
+Podkarpackie (PL),57.0
+Warszawski stołeczny (PL),157.0
+Praha (CZ),192.0
+Bratislavský kraj (SK),153.0
+Berlin (DE),127.0
+Wien (AT),137.0
+Stockholm (SE),153.0
