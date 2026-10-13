@@ -2,6 +2,9 @@
 
 Data-driven economic analyses using public sources (Eurostat, World Bank, ECB, European Commission, IEA, IMF, BIS, USGS, WIPO, IAEA).
 
+**Read the reports online: <https://mihaigociu.github.io/economie/>** (built from this repo with MkDocs — `python -m mkdocs serve` to preview locally; config in `mkdocs.yml`, site pages in `site-src/`).
+
+
 ## Structure
 
 | Folder | Description |

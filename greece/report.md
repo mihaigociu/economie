@@ -1,8 +1,8 @@
 # Greece: Crisis, Adjustment, and the Slow Reconstruction
 
-*October 2026 edition — data updated to 2025 (retrieved 13 October 2026). First published May 2026.*
-
 ### A Data-Driven Analysis, 2000–2025
+
+*October 2026 edition — data updated to 2025 (retrieved 13 October 2026). First published May 2026.*
 
 > **What changed in the October 2026 edition**
 >

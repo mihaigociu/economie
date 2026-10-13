@@ -62,6 +62,12 @@ The repo is already public, so `SAFE/`, `bolojan/` and `curs/` are already reada
 
 ## Phase 2 — Build the site
 
+**Status (2026-10-13): built and committed locally; not yet published.**
+- The site is built from `mkdocs.yml` and `site-src/`, which symlinks the four report folders.
+- `hooks/reports.py` adapts the reports at build time: links to raw data point to GitHub, the "What changed" quote becomes a note box, charts lazy-load, and each report ends with a link to its data and code.
+- `mkdocs build --strict` passes. Previews checked at desktop and mobile widths.
+- To publish: in the repo settings, set Pages → Source to **GitHub Actions**, then push `main`. `.github/workflows/pages.yml` builds and deploys the site on every push.
+
 ### Layout
 ```
 mkdocs.yml                 # at repo root
