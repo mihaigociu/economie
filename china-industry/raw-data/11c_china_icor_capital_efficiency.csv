@@ -1,14 +1,17 @@
 # source: derived from World Bank investment + GDP data (gross capital formation as % of GDP, divided by real GDP growth rate); IMF Article IV China consultations
 # url: https://data.worldbank.org/indicator/NE.GDI.TOTL.ZS  (gross capital formation, % of GDP)
 # url: https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG  (real GDP growth)
+# url: https://api.worldbank.org/v2/country/CHN/indicator/NE.GDI.TOTL.ZS?format=json&date=2001:2025  (WDI, last updated 2026-10-08)
+# url: https://api.worldbank.org/v2/country/CHN/indicator/NY.GDP.MKTP.KD.ZG?format=json&date=2001:2025
 # url: https://www.imf.org/en/Publications/CR/Issues/2024/08/02/Peoples-Republic-of-China-2024-Article-IV  (IMF China Article IV 2024)
-# retrieved: 2026-05-13
-# notes: ICOR (Incremental Capital-Output Ratio) = gross capital formation (% of GDP) / real GDP growth rate.
-# notes: Higher ICOR means more investment is needed per unit of growth — a classic diminishing-returns indicator. China's ICOR has roughly doubled from ~4 (early 2000s) to ~8 (2020s).
-# notes: 5-year averages to smooth cyclical noise.
+# retrieved: 2026-10-13
+# notes: ICOR (Incremental Capital-Output Ratio) = period-average gross capital formation (% of GDP) / period-average real GDP growth rate.
+# notes: REVISION 2026-10-13: all rows recomputed directly from current World Bank WDI. The previous values (ICOR 3.6/3.8/5.1/6.7/8.0; investment 40.6/43.4/46.4/42.3/42.8; growth 11.3/11.5/9.2/6.3/5.3) could not be reproduced from the cited source (e.g. WDI real growth averages 9.9% in 2001-05, not 11.3%). Old->new ICOR: 3.6->3.9, 3.8->3.8, 5.1->5.7, 6.7->7.4, 8.0->7.5.
+# notes: The qualitative picture is unchanged: ICOR roughly doubled from ~3.8-3.9 (2000s) to ~7.4-7.5 (2016-2024).
+# notes: Period kept at 2021-2024 (4 years) because WDI does not yet publish China's 2025 gross capital formation share (2025 real growth = 4.96%).
 period,china_icor,china_investment_pct_gdp,china_gdp_growth_pct
-2001-2005,3.6,40.6,11.3
-2006-2010,3.8,43.4,11.5
-2011-2015,5.1,46.4,9.2
-2016-2020,6.7,42.3,6.3
-2021-2024,8.0,42.8,5.3
+2001-2005,3.9,38.6,9.9
+2006-2010,3.8,42.6,11.3
+2011-2015,5.7,45.2,7.9
+2016-2020,7.4,42.6,5.8
+2021-2024,7.5,41.7,5.5

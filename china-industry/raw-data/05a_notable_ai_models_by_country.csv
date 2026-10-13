@@ -1,16 +1,21 @@
-# source: Stanford HAI — AI Index Report 2025 (Ch.1 Figures 1.3.1/1.3.2); Epoch AI notable-models database
-# url: https://aiindex.stanford.edu/report/  (Stanford HAI AI Index landing)
-# url: https://hai.stanford.edu/assets/files/hai_ai-index-report-2025_chapter1_final.pdf  (Ch.1, pp.23–26, snapshot March 17 2025)
+# source: Stanford HAI — AI Index Report 2026 (Ch.1 §1.1, Figures 1.1.1/1.1.2; data from Epoch AI); earlier AI Index editions for UK/EU/Other 2018–2024
+# url: https://hai.stanford.edu/ai-index/2026-ai-index-report  (AI Index 2026 landing)
+# url: https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf  (AI Index 2026 full PDF, pp.16–17)
+# url: https://drive.google.com/drive/folders/1zJTOg0iR0j5SijCwFutwWvDt143lW277  (AI Index 2026 public chart data; Ch.1 Data/fig_1.1.1.csv and fig_1.1.2.csv)
+# url: https://hai.stanford.edu/assets/files/hai_ai-index-report-2025_chapter1_final.pdf  (AI Index 2025 Ch.1, previous basis)
 # url: https://epoch.ai/data/notable-ai-models  (Epoch AI notable-models database, live)
-# retrieved: 2026-05-13
-# notes: "Notable" = Epoch AI's compute/impact threshold. Multi-country models can be double-counted (model attributed to each affiliated country).
-# notes: 2024 row matches AI Index 2025 figures exactly: US 40, China 15, France 3, Canada/Israel/Saudi/Korea 1 each. "EU" column = France only in 2024. UK had 0 in 2024.
-# notes: 2018–2023 are approximations from earlier AI Index editions; Stanford notes historical counts shift between editions as the Epoch DB is curated.
+# retrieved: 2026-10-13
+# notes: "Notable" = Epoch AI's manual curation (state of the art, historical significance, high citations). Multi-country models can be double-counted (model attributed to each affiliated country).
+# notes: REVISION 2026-10-13 — United States and China columns for 2018–2025 replaced with the AI Index 2026 public data file fig_1.1.2.csv (one consistent Epoch snapshot). Epoch keeps adding historical models, so counts were revised up sharply: e.g. US 2018 14->31, 2023 51->87, 2024 40->57; China 2018 5->1, 2023 21->21, 2024 15->29. Old->new US: 2018 14->31, 2019 18->59, 2020 22->41, 2021 28->61, 2022 34->76, 2023 51->87, 2024 40->57. Old->new China: 2018 5->1, 2019 6->6, 2020 8->8, 2021 11->16, 2022 18->12, 2023 21->21, 2024 15->29.
+# notes: 2025 row from fig_1.1.1.csv: US 50, China 30, South Korea 5, UK 1, France 1, Canada 1, Hong Kong 1 -> EU = France 1; Other = Korea 5 + Canada 1 + Hong Kong 1 = 7 (Hong Kong kept separate from China as in the AI Index).
+# notes: CONFLICT / FLAG: the AI Index 2026 PDF text and Figure 1.1.1 report 2025 as US 59, China 35, South Korea 8 (Epoch snapshot of 22 Apr 2026) and state releases "declined year over year across all major geographic areas", whereas the public data CSVs give US 50 / China 30 / Korea 5. The CSV time series is used here for internal consistency; if the report text quotes 59 vs 35, say so and note the chart uses the data-file snapshot.
+# notes: UK, EU and Other columns for 2018–2024 are UNCHANGED from earlier AI Index editions (the 2026 data file only gives an aggregate "Europe" series: 2018 4, 2019 13, 2020 7, 2021 13, 2022 7, 2023 16, 2024 6, 2025 2), so these columns are on an older basis.
 year,United States,China,United Kingdom,European Union,Other
-2018,14,5,3,2,1
-2019,18,6,4,3,1
-2020,22,8,4,2,2
-2021,28,11,5,3,2
-2022,34,18,6,4,3
-2023,51,21,8,7,4
-2024,40,15,0,3,4
+2018,31,1,3,2,1
+2019,59,6,4,3,1
+2020,41,8,4,2,2
+2021,61,16,5,3,2
+2022,76,12,6,4,3
+2023,87,21,8,7,4
+2024,57,29,0,3,4
+2025,50,30,1,1,7

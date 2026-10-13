@@ -1,16 +1,22 @@
-# source: Ember — Global Electricity Review (annual, free); cross-checked with IEA Electricity Report
+# source: Ember — Global Electricity Review 2026 / Ember Yearly Electricity Data (full release, free CSV); cross-checked with IEA Electricity 2026
 # url: https://ember-energy.org/data/electricity-data-explorer/  (Ember Electricity Data Explorer, free CSV download)
-# url: https://www.iea.org/reports/electricity-2024
-# retrieved: 2026-05-13
+# url: https://storage.googleapis.com/emb-prod-bkt-publicdata/public-downloads/yearly_full_release_long_format.csv  (bulk file used for 2000-2025; variable 'Total Generation', TWh)
+# url: https://ember-energy.org/latest-insights/global-electricity-review-2026/
+# url: https://www.iea.org/reports/electricity-2026
+# retrieved: 2026-10-13
 # notes: Total electricity generation per country, TWh per year, all sources (thermal+hydro+nuclear+renewables).
+# notes: 2026-10-13 update: added 2025 row and REVISED 2000-2024 to Ember's current release so the series is internally consistent (previous values were mixed-source; e.g. 2024 China 10250->10087, US 4310->4391, EU27 2650->2773, India 2000->2037, Japan 970->1016).
+# notes: 1990 and 1995 rows are NOT in the Ember bulk file (it starts in 2000) and are retained unchanged from the 2026-05-13 compilation; treat as lower-confidence / possibly different basis.
+# notes: EU27 = Ember 'EU' aggregate. US = Ember 'United States of America'.
 year,China,United States,EU27,India,Japan
 1990,621,3038,2380,290,858
 1995,1007,3361,2470,395,994
-2000,1356,3802,2700,555,1083
-2005,2500,4055,2940,720,1149
-2010,4210,4125,2970,1010,1115
-2015,5810,4078,2810,1340,998
-2020,7780,4007,2620,1580,974
-2022,8850,4243,2660,1820,978
-2023,9466,4178,2580,1900,961
-2024,10250,4310,2650,2000,970
+2000,1356,3802,2622,571,1100
+2005,2500,4035,2884,705,1153
+2010,4207,4114,2946,936,1156
+2015,5815,4084,2870,1311,1030
+2020,7779,4043,2753,1563,1011
+2022,8849,4287,2777,1805,1041
+2023,9456,4254,2710,1918,1007
+2024,10087,4391,2773,2037,1016
+2025,10578,4520,2792,2082,1030

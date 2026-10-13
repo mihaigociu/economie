@@ -1,8 +1,11 @@
-# source: SNE Research — annual EV-battery market roundups (publicly summarised in trade press each January)
+# source: SNE Research — annual EV-battery market roundups (publicly summarised in trade press each January/February)
 # url: https://www.sneresearch.com/en/insight/release_view/238
-# url: https://www.reuters.com/business/autos-transportation/chinas-catl-byd-extend-dominance-global-ev-battery-market-2025-02-06/ (Reuters summary)
-# retrieved: 2026-05-13
+# url: https://www.reuters.com/business/autos-transportation/chinas-catl-byd-extend-dominance-global-ev-battery-market-2025-02-06/ (Reuters summary, 2024 data)
+# url: https://cnevpost.com/2026/02/04/global-ev-battery-market-share-2025/ (CnEVPost summary of SNE Research full-year 2025 release, incl. restated 2024 shares)
+# retrieved: 2026-10-13
 # notes: % of global EV battery installations (kWh). CATL and BYD individual shares; Combined and Rest of World are derived.
+# notes: REVISION (2026-10-13): SNE's Feb-2026 release restates 2024 shares as CATL 38.0 (was 37.9) and BYD 16.9 (was 17.2); 2024 row updated to the restated values. 2018-2023 not revised.
+# notes: 2026 YTD for reference only (not in series): Jan-Aug 2026 CATL 39.4%, BYD 15.1% (SNE via https://cnevpost.com/2026/10/02/global-ev-battery-market-share-jan-aug-2026/).
 year,CATL,BYD
 2018,23.0,5.3
 2019,27.9,3.0
@@ -10,4 +13,5 @@ year,CATL,BYD
 2021,32.6,8.8
 2022,37.0,13.6
 2023,36.8,15.8
-2024,37.9,17.2
+2024,38.0,16.9
+2025,39.2,16.4

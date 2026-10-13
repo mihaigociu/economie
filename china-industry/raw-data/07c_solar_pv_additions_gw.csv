@@ -1,15 +1,22 @@
-# source: IRENA — Renewable Capacity Statistics; cross-checked with IEA Renewables 2024
-# url: https://www.irena.org/Publications/2024/Mar/Renewable-capacity-statistics-2024  (IRENA renewable capacity)
-# url: https://www.iea.org/reports/renewables-2024
-# retrieved: 2026-05-13
-# notes: Annual solar PV capacity additions per country, GW per year. Global and China_share_pct columns derived.
+# source: IRENA — Renewable Capacity Statistics 2026 (cumulative installed solar PV capacity by country, via Ember Yearly Electricity Data which republishes IRENA capacity); China cross-checked with China NEA 2025 release
+# url: https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2026/Mar/IRENA_DAT_RE_capacity_highlights_2026.pdf  (IRENA Renewable Capacity Highlights 2026)
+# url: https://www.irena.org/News/pressreleases/2026/Apr/Near-700-GW-Surge-in-2025-Proves-Renewable-Energy-Resilience
+# url: https://storage.googleapis.com/emb-prod-bkt-publicdata/public-downloads/yearly_full_release_long_format.csv  (Category 'Capacity', Variable 'Solar', GW)
+# url: https://pv-magazine-usa.com/2026/04/02/global-solar-additions-reached-record-511-gw-in-2025-says-irena/  (IRENA headline: 511 GW global solar added in 2025; cumulative 2,391 GW)
+# url: https://www.pv-magazine-india.com/2026/01/29/china-adds-315-gw-of-solar-in-2025  (NEA: China added 315.07 GW in 2025)
+# retrieved: 2026-10-13
+# notes: Annual solar PV capacity additions per country, GW per year = year-on-year change in IRENA cumulative capacity (net additions). Global and China_share_pct columns derived in the chart script.
+# notes: 2026-10-13 METHODOLOGY CHANGE: whole series rebuilt on one consistent IRENA basis and 2025 row added. The previous file mixed sources; its 'Rest of World' was much larger than IRENA's (e.g. 2024 RoW 150 -> 59; 2024 global 556 -> 458 GW; 2023 global 456 -> 364 GW). Previous 2024 row: 278,33,65,30,150.
+# notes: IRENA reports mostly AC capacity; industry DC-based totals (BNEF, SolarPower Europe, SEIA) are typically higher, so totals here are lower than DC-based headline numbers. Rest of World = IRENA World minus the four named columns (derived).
+# notes: EU27 = Ember/IRENA EU aggregate. 2025 values: China 315 matches NEA 315.07 GW; global 511 matches IRENA's headline.
 year,China,United States,EU27,India,Rest of World
-2015,15,7,8,2,17
-2017,53,11,7,10,24
-2018,44,11,8,8,23
-2019,30,13,14,9,32
-2020,48,19,20,5,35
-2021,55,24,26,13,55
-2022,87,18,41,12,71
-2023,217,32,56,13,138
-2024,278,33,65,30,150
+2015,15,6,4,2,21
+2017,53,8,4,8,20
+2018,44,8,8,9,25
+2019,30,9,16,8,40
+2020,49,15,18,4,45
+2021,53,19,27,10,36
+2022,86,18,32,14,42
+2023,217,27,54,10,56
+2024,277,38,60,25,59
+2025,315,34,56,37,69

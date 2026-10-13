@@ -1,12 +1,31 @@
-# source: US Bureau of Industry and Security (BIS) Entity List and Federal Register notices; CSIS analyses of the export-control cycle
+# source: US Bureau of Industry and Security (BIS) Entity List and Federal Register notices; CSIS analyses of the export-control cycle; NVIDIA SEC filings; press coverage where no regulation was published
 # url: https://www.bis.doc.gov/  (US BIS)
 # url: https://www.federalregister.gov/agencies/industry-and-security-bureau  (Federal Register BIS notices)
 # url: https://www.csis.org/analysis/choking-china-acsem-ic-semiconductor-supply-chain  (CSIS chip-controls analyses)
-# retrieved: 2026-05-13
-# notes: Major US semiconductor / AI compute export controls targeting China, 2018-2024. Scope has expanded substantially each cycle.
+# url: https://www.federalregister.gov/documents/2024/12/05/2024-28270/foreign-produced-direct-product-rule-additions-and-refinements-to-controls-for-advanced-computing  (Dec 2024 IFR)
+# url: https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion  (AI Diffusion IFR, 15 Jan 2025)
+# url: https://www.sec.gov/Archives/edgar/data/1045810/000104581025000082/nvda-20250409.htm  (NVIDIA 8-K: H20 licence requirement, Apr 2025)
+# url: https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/bis-rescinds-ai-diffusion-rule-and-issues-new-guidance  (BIS rescission of AI Diffusion Rule + Huawei Ascend guidance, 13 May 2025)
+# url: https://fortune.com/2025/08/10/nvidia-amd-chips-h20-mi308-china-sales-revenue-trump-export-license  (H20/MI308 licences with 15% revenue share; press, not codified)
+# url: https://www.federalregister.gov/documents/2025/09/02/2025-16735/revocation-of-validated-end-user-authorizations-in-the-peoples-republic-of-china
+# url: https://www.federalregister.gov/documents/2025/09/30/2025-19001/expansion-of-end-user-controls-to-cover-affiliates-of-certain-listed-entities
+# url: https://www.federalregister.gov/documents/2025/11/12/2025-19846/one-year-suspension-of-expansion-of-end-user-controls-for-affiliates-of-certain-listed-entities
+# url: https://www.federalregister.gov/documents/2026/01/15/2026-00789/revision-to-license-review-policy-for-advanced-computing-commodities
+# retrieved: 2026-10-13
+# notes: Major US semiconductor / AI compute export controls targeting China, 2019-2026. Scope expanded each cycle through Sept 2025; since then the direction has been mixed (affiliates-rule suspension, H200 case-by-case licensing).
+# notes: CORRECTION to Dec 2024 row: the rule controlled 24 TYPES of chipmaking equipment and 3 software tools (not "24 toolmakers"); the companion Entity List rule added 140 entities in China, Japan, South Korea and Singapore (mostly, not exclusively, Chinese).
+# notes: Aug 2025 row rests on press reports (FT/Reuters/Fortune) — the 15% revenue-share arrangement is not in any published regulation. Jan 2026 row: China reportedly told customs to block H200 imports (Reuters, 14 Jan 2026) — not a US control, not in table.
+# notes: Affiliates-rule suspension ends 9 Nov 2026 absent extension (FR 2025-19846). Press reports (Sept 2026) say the wider US-China truce was extended to 10 Jan 2027; whether this covers the affiliates rule is unconfirmed.
 year,month,event,scope_summary
 2019,5,Huawei + 70 affiliates added to Entity List,"Cuts Huawei off from US-origin chips, software and design tools"
 2020,9,SMIC added to Entity List restrictions,"Restricts SMIC access to advanced US-origin manufacturing equipment"
 2022,10,"October 2022 export controls — advanced compute + EDA + fab equipment",Limits export to China of advanced AI chips (A100/H100 class) plus the equipment needed to make them
 2023,10,"October 2023 update — H800/A800 also restricted",Closes loopholes; adds presumptive denial for ~30 named Chinese AI labs
-2024,12,"December 2024 update — adds HBM, 24 toolmakers, 140 Chinese chip firms","Tightens HBM (high-bandwidth memory) and chipmaking equipment; broadens Foreign Direct Product Rule"
+2024,12,"December 2024 update — HBM, 24 equipment types, 140 entities","Controls HBM, 24 types of chipmaking equipment and 3 software tools; 140 Entity List additions; broadens Foreign Direct Product Rule"
+2025,1,"AI Diffusion Rule (interim final rule)","Worldwide tiered licensing for advanced AI chips and closed model weights; set to apply from May 2025"
+2025,4,"H20 / MI308 licence requirement","US requires licences for NVIDIA H20 (and equivalents) to China; NVIDIA flags up to ~$5.5bn charge"
+2025,5,"AI Diffusion Rule rescinded; Huawei Ascend guidance","Rule withdrawn before compliance date; BIS warns using Huawei Ascend chips anywhere risks violating US controls"
+2025,8,"H20 / MI308 licences granted (15% revenue share)","Licences issued after deal for US government to receive 15% of China sales (press-reported; not codified)"
+2025,9,"Affiliates (50%) rule; China fab VEUs revoked","Entity List restrictions extended to firms >=50% owned by listed parties; Samsung, SK hynix, Intel China fabs lose VEU status"
+2025,11,"Affiliates rule suspended for one year","Suspended 10 Nov 2025 to 9 Nov 2026 as part of US-China trade truce"
+2026,1,"H200 licence review moved to case-by-case","Presumption of denial replaced by case-by-case review for H200-class and less advanced chips to China, with conditions"

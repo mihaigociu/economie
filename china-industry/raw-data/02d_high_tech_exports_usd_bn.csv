@@ -1,7 +1,7 @@
 # source: World Bank Open Data — High-technology exports, current USD (billions)
 # indicator: TX.VAL.TECH.CD
 # url: https://data.worldbank.org/indicator/TX.VAL.TECH.CD
-# retrieved: 2026-05-13 (fetched via wbgapi)
+# retrieved: 2026-10-13 (fetched via wbgapi)
 # notes: Values divided by 1e9 (USD billion).
 # notes: Goods only — services excluded. US figure understates because US high-tech 'value' increasingly travels in software/services.
 year,CN,EU,JP,KR,US
@@ -30,3 +30,4 @@ year,CN,EU,JP,KR,US
 2022,924.393316669,900.313929829,113.492876284,209.651189631,191.876058536
 2023,825.04538947,930.406318083,102.601446852,164.678173896,208.51437677
 2024,856.764726389,966.68526844,102.451366263,216.203069107,232.906639404
+2025,,,,,

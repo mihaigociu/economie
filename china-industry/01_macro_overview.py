@@ -43,7 +43,7 @@ POLICY_MARKERS = [
 
 def load(name, **kwargs):
     return pd.read_csv(f"{RAW_DATA}/{name}.csv", comment="#",
-                       index_col="year", **kwargs)
+                       index_col="year", **kwargs).dropna(how="all")
 
 
 def line_plot(df, title, ylabel, savename, highlight="CN",
@@ -155,7 +155,6 @@ ax.xaxis.set_major_locator(mticker.MultipleLocator(5))
 ax.annotate(
     "Derived from raw-data/01c_manufacturing_va_current_usd_tn.csv\n"
     "(WORLD column / country columns). Source: World Bank NV.IND.MANF.CD.\n"
-    "EU27 dip post-2020 reflects UK exit from the aggregate, not relative decline.\n"
     "China NV.IND.MANF.CD series begins 2004 in WB data.",
     xy=(0.99, 0.45), xycoords="axes fraction",
     fontsize=8, color="#555", va="top", ha="right",

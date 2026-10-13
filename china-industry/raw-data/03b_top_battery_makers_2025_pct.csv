@@ -1,0 +1,20 @@
+# source: SNE Research — Global EV Battery Market, full-year 2025 (released 4 Feb 2026); figures as re-published by CnEVPost
+# url: https://cnevpost.com/2026/02/04/global-ev-battery-market-share-2025/ (CnEVPost summary of SNE Research release; full table with GWh)
+# url: https://www.sneresearch.com/en/insight/release_view/ (SNE Research release index; full report paywalled)
+# retrieved: 2026-10-13
+# notes: Share is % of global EV battery installations measured in kWh during calendar 2025 (BEV + PHEV + HEV). Global total 1,187 GWh (+31.7% y/y).
+# notes: SNE Research full report is paywalled; headline percentages re-published in trade press are used.
+# notes: Top-10 composition changed vs 2024: Sunwoda dropped out of the top 10; SVOLT (China) entered at #10. Gotion moved up to #5.
+# notes: Supersedes 03b_top_battery_makers_2024_pct.csv for the "latest year" chart; the 2024 file was removed (it remains in git history).
+maker,country,share
+CATL,China,39.2
+BYD,China,16.4
+LG Energy Solution,Korea,9.2
+CALB,China,5.3
+Gotion,China,4.5
+SK On,Korea,3.7
+Panasonic,Japan,3.7
+EVE Energy,China,2.6
+Samsung SDI,Korea,2.4
+SVOLT,China,2.4
+Others,Mixed,10.5

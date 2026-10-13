@@ -1,9 +1,16 @@
-# source: China General Administration of Customs (GAC) monthly trade data; IMF Direction of Trade Statistics; World Bank
+# source: China General Administration of Customs (GACC) monthly trade data; NBS Statistical Communique 2025; IMF Direction of Trade Statistics; World Bank
 # url: http://english.customs.gov.cn/  (China Customs)
+# url: https://www.stats.gov.cn/english/PressRelease/202602/t20260228_1962661.html  (NBS 2025 Statistical Communique: goods trade surplus RMB 8,509.4bn)
+# url: https://www.aljazeera.com/news/2026/1/14/chinas-trade-surplus-hits-new-heights-in-2025-despite-us-tariff-war  (reporting GACC 2025 full-year release, 14 Jan 2026)
+# url: https://www.scmp.com/economy/economic-indicators/article/3339811/china-records-us119-trillion-trade-surplus-2025-exports-jump-55
+# url: https://www.bloomberg.com/news/articles/2026-09-08/china-export-growth-rebounds-as-ai-boom-offsets-extreme-weather  (Jan-Aug 2026 YTD context)
 # url: https://data.imf.org/dot  (IMF Direction of Trade Statistics)
-# retrieved: 2026-05-13
+# retrieved: 2026-10-13
 # notes: China merchandise trade surplus (goods exports - goods imports), USD billion, annual.
-# notes: Counter-view evidence — despite tariffs, decoupling rhetoric, and domestic-demand weakness, China's goods trade surplus has hit successive records in 2022-2024.
+# notes: 2025 added: GACC full-year 2025 surplus USD 1,189bn (exports USD 3.77tn, +5.5%; imports USD 2.58tn, ~flat) — first year above USD 1 trillion. Exports to the US fell ~20% in 2025 while exports to ASEAN, Africa, EU rose. USD figure taken from press reports of the GACC release (GACC English page not directly retrieved); RMB figure confirmed in NBS communique.
+# notes: Some press reports cite the 2024 surplus as USD 993bn (possible GACC revision); 992 retained pending check against GACC.
+# notes: 2026 YTD (not in table, partial year): Jan-Aug 2026 surplus ~USD 806bn; August 2026 USD 119.1bn. September 2026 data due 14 Oct 2026 — not yet released at retrieval.
+# notes: Counter-view evidence — despite tariffs (US tariffs on China peaked at 145% in April 2025), decoupling rhetoric, and domestic-demand weakness, China's goods trade surplus has hit successive records in 2024-2025.
 year,trade_surplus_usd_bn
 2000,24
 2005,102
@@ -15,3 +22,4 @@ year,trade_surplus_usd_bn
 2022,838
 2023,824
 2024,992
+2025,1189

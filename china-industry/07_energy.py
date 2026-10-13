@@ -6,12 +6,14 @@ era where AI is becoming energy-bound rather than purely chip-bound.
 
 The data:
 - China generates more electricity than the US + EU27 combined; gap widening
-- China installed more solar PV capacity in 2024 than the rest of the world
+- China installs more solar PV each year than the rest of the world combined
 - China has the world's largest pipeline of nuclear reactors under
-  construction (~26 vs ~30 total under construction worldwide outside China)
-- Industrial electricity prices are materially below the EU, somewhat below US
-- Western data-centre electricity bottlenecks (NoVa, Ireland) well-documented;
-  China has spare generation in western provinces
+  construction (37 of ~78 worldwide, IAEA PRIS Oct 2026)
+- Data-centre demand roughly doubles 2025->2030 (IEA); the US and China
+  account for most of the increase
+- (Industrial electricity prices are discussed in the report text only:
+  IEA Electricity 2026 ratios; the 2023 price-snapshot chart was dropped
+  in the October 2026 edition because no citable 2025 country table exists.)
 
 This script only READS data. Every chart's numbers live in a CSV under
 raw-data/ with a `# source:` / `# url:` / `# retrieved:` header. See
@@ -51,11 +53,22 @@ def load(name, **kwargs):
     return pd.read_csv(f"{RAW_DATA}/{name}.csv", comment="#", **kwargs)
 
 
+def retrieved(name):
+    """Return the '# retrieved:' date from a CSV header (for chart labels)."""
+    with open(f"{RAW_DATA}/{name}.csv") as fh:
+        for line in fh:
+            if line.startswith("# retrieved:"):
+                return line.split(":", 1)[1].strip()
+    return "n/a"
+
+
 # ---------------------------------------------------------------------------
-# 7a. Total electricity generation by country, 1990–2024 (TWh)
+# 7a. Total electricity generation by country (TWh)
 # ---------------------------------------------------------------------------
 print("Total electricity generation by country...")
 gen = load("07a_electricity_generation_twh", index_col="year")
+first_yr, last_yr = gen.index.min(), gen.index.max()
+us_eu = gen["United States"] + gen["EU27"]
 
 fig, ax = plt.subplots(figsize=(13, 5.5))
 for col, color, lw in [("China", COLOR_CN, 2.8),
@@ -66,27 +79,33 @@ for col, color, lw in [("China", COLOR_CN, 2.8),
     ax.plot(gen.index, gen[col], label=col, color=color,
             linewidth=lw, marker="o", markersize=5)
 ax.fill_between(gen.index, gen["China"], alpha=0.08, color=COLOR_CN)
-us_eu = gen["United States"] + gen["EU27"]
 ax.plot(gen.index, us_eu, color="#222", linewidth=1.5, linestyle="--",
         label="US + EU27 combined", alpha=0.6)
 for col, color in [("China", COLOR_CN), ("United States", COLOR_US),
-                   ("EU27", COLOR_EU), ("India", COLOR_IN)]:
+                   ("EU27", COLOR_EU), ("India", COLOR_IN),
+                   ("Japan", COLOR_JP)]:
     y = gen[col].iloc[-1]
-    ax.text(2024.3, y, f"{y:,}", va="center", fontsize=9.5,
+    ax.text(last_yr + 0.6, y, f"{y:,.0f}", va="center", fontsize=9.5,
             color=color, fontweight="bold")
-ax.set_title("Electricity Generation by Country — TWh per Year",
-             fontsize=13, fontweight="bold")
+ax.set_title(f"Electricity Generation by Country — TWh per Year, "
+             f"{first_yr}–{last_yr}", fontsize=13, fontweight="bold")
 ax.set_xlabel("Year"); ax.set_ylabel("Generation (TWh per year)")
-ax.set_ylim(0, 11500)
+ax.set_xlim(first_yr - 1, last_yr + 3)
+ax.set_ylim(0, gen.max().max() * 1.12)
 ax.legend(loc="upper left", fontsize=10, framealpha=0.95)
 ax.grid(axis="y", alpha=0.3)
 ax.xaxis.set_major_locator(mticker.MultipleLocator(5))
+ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda v, _: f"{v:,.0f}"))
+cn_last, cn_prev = gen["China"].iloc[-1], gen["China"].iloc[-2]
 ax.annotate(
-    "China's 2024 generation (~10,250 TWh) exceeds the US + EU27 combined (~6,960 TWh).\n"
-    "The gap has been widening every year since ~2018.\n\n"
-    "Source: Ember Global Electricity Review; IEA Electricity Report.\n"
-    "See raw-data/07a_*.csv for URLs.",
-    xy=(0.02, 0.55), xycoords="axes fraction",
+    f"China's {last_yr} generation (~{cn_last:,.0f} TWh) is "
+    f"{cn_last / us_eu.iloc[-1]:.1f}x the US + EU27 combined "
+    f"(~{us_eu.iloc[-1]:,.0f} TWh).\n"
+    f"China added ~{cn_last - cn_prev:,.0f} TWh in {last_yr} alone — "
+    f"roughly Germany's entire 2025 generation (~500 TWh, Ember).\n\n"
+    "Source: Ember Yearly Electricity Data / Global Electricity Review 2026\n"
+    "(2000 onwards; 1990–95 from earlier compilation). See raw-data/07a_*.csv.",
+    xy=(0.20, 0.97), xycoords="axes fraction",
     fontsize=9, color="#222", va="top", ha="left",
     bbox=dict(boxstyle="round,pad=0.4", facecolor="white",
               edgecolor="#888", linewidth=0.8))
@@ -96,10 +115,13 @@ print("  saved 07a_electricity_generation.png")
 
 
 # ---------------------------------------------------------------------------
-# 7b. China's electricity generation mix by source, 2010–2024
+# 7b. China's electricity generation mix by source
 # ---------------------------------------------------------------------------
 print("China generation mix by source...")
 mix = load("07b_china_generation_mix_pct", index_col="year")
+m0, m1 = mix.index.min(), mix.index.max()
+# Absolute coal TWh = share x total generation (07a) where both years exist
+coal_twh = (mix["Coal"] / 100 * gen["China"]).dropna()
 
 fig, ax = plt.subplots(figsize=(13, 5.5))
 cols = ["Coal", "Gas", "Hydro", "Nuclear", "Wind", "Solar", "Bio / other"]
@@ -108,19 +130,28 @@ colors = [COLOR_COAL, COLOR_GAS, COLOR_HYDRO, COLOR_NUCLEAR,
 ax.stackplot(mix.index, *[mix[c] for c in cols],
              labels=cols, colors=colors, alpha=0.92,
              edgecolor="white", linewidth=0.8)
-ax.set_title("China's Electricity Generation Mix — % by Source, 2010–2024",
+ax.set_title(f"China's Electricity Generation Mix — % by Source, {m0}–{m1}",
              fontsize=13, fontweight="bold")
 ax.set_xlabel("Year"); ax.set_ylabel("% of total electricity generation")
-ax.set_ylim(0, 100)
-ax.legend(loc="upper right", fontsize=9, framealpha=0.95, ncol=2)
+ax.set_ylim(0, 100); ax.set_xlim(m0, m1)
+ax.legend(loc="upper left", bbox_to_anchor=(1.01, 1.0), fontsize=9,
+          framealpha=0.95)
 ax.grid(axis="y", alpha=0.3)
 ax.xaxis.set_major_locator(mticker.MultipleLocator(2))
+ws = mix["Wind"] + mix["Solar"]
+coal_note = ""
+if len(coal_twh) >= 2 and coal_twh.index[-1] == m1:
+    c_prev, c_last = coal_twh.iloc[-2], coal_twh.iloc[-1]
+    trend = "fell" if c_last < c_prev else "rose"
+    coal_note = (f"Coal generation {trend} in absolute terms in {m1} "
+                 f"(~{c_prev:,.0f} -> ~{c_last:,.0f} TWh).\n")
 ax.annotate(
-    "Coal share declining (78% → 58%) but coal generation still grew\n"
-    "in absolute TWh; renewables fill the marginal demand.\n"
-    "Wind + solar reached ~18% of generation in 2024,\n"
-    "nuclear ~5% and rising as new reactors come online.\n\n"
-    "Source: Ember Global Electricity Review.\n"
+    f"Coal share {mix['Coal'].iloc[0]:.0f}% ({m0}) -> {mix['Coal'].iloc[-1]:.0f}% ({m1}).\n"
+    + coal_note +
+    f"Wind + solar reached {ws.iloc[-1]:.0f}% of generation in {m1} "
+    f"(solar alone {mix['Solar'].iloc[-1]:.0f}%);\n"
+    f"nuclear {mix['Nuclear'].iloc[-1]:.1f}%.\n\n"
+    "Source: Ember Global Electricity Review 2026.\n"
     "See raw-data/07b_*.csv for URLs.",
     xy=(0.02, 0.62), xycoords="axes fraction",
     fontsize=9, color="white", va="top", ha="left",
@@ -132,12 +163,13 @@ print("  saved 07b_china_generation_mix.png")
 
 
 # ---------------------------------------------------------------------------
-# 7c. Solar PV capacity additions by country, 2015–2024 (GW per year)
+# 7c. Solar PV capacity additions by country (GW per year, IRENA basis)
 # ---------------------------------------------------------------------------
 print("Annual solar PV capacity additions...")
 solar = load("07c_solar_pv_additions_gw", index_col="year")
 solar["Global"] = solar.sum(axis=1)
 solar["China_share_pct"] = (solar["China"] / solar["Global"] * 100).round(1)
+s_last = solar.index.max()
 
 fig, ax = plt.subplots(figsize=(13, 5.5))
 cols = ["China", "EU27", "United States", "India", "Rest of World"]
@@ -147,26 +179,32 @@ for col, color in zip(cols, colors):
     ax.bar(solar.index, solar[col], bottom=bottom, label=col,
            color=color, edgecolor="white", linewidth=0.6, width=0.7)
     bottom = bottom + solar[col]
+ymax = solar["Global"].max() * 1.22
 for x, total in zip(solar.index, solar["Global"]):
-    ax.text(x, total + 12, f"{total} GW", ha="center", va="bottom",
-            fontsize=9, color="#222", fontweight="bold")
-for x in [2023, 2024]:
+    ax.text(x, total + ymax * 0.015, f"{total:.0f} GW", ha="center",
+            va="bottom", fontsize=9, color="#222", fontweight="bold")
+for x in solar.index[-3:]:
     ax.text(x, solar.loc[x, "China"] / 2,
             f"{solar.loc[x, 'China_share_pct']:.0f}%\nChina",
             ha="center", va="center", fontsize=10, color="white",
             fontweight="bold")
-ax.set_title("Annual Solar PV Capacity Additions — by Country, GW per Year",
-             fontsize=13, fontweight="bold")
-ax.set_xlabel("Year"); ax.set_ylabel("GW of solar PV added")
-ax.set_ylim(0, 650)
+ax.set_title(f"Annual Solar PV Capacity Additions — by Country, GW per Year "
+             f"({solar.index.min()}–{s_last})", fontsize=13, fontweight="bold")
+ax.set_xlabel("Year"); ax.set_ylabel("GW of solar PV added (IRENA, mostly AC)")
+ax.set_ylim(0, ymax)
+ax.set_xticks(solar.index)
 ax.legend(loc="upper left", fontsize=10, framealpha=0.95)
 ax.grid(axis="y", alpha=0.3)
+g0yr = 2020 if 2020 in solar.index else solar.index.min()
 ax.annotate(
-    "China alone added more solar capacity in 2023 and 2024 than the rest of\n"
-    "the world combined. Global additions tripled from ~127 GW (2020) to ~556 GW (2024).\n\n"
-    "Source: IRENA Renewable Capacity Statistics; IEA Renewables 2024.\n"
-    "See raw-data/07c_*.csv for URLs.",
-    xy=(0.02, 0.77), xycoords="axes fraction",
+    f"China added {solar.loc[s_last, 'China']:.0f} GW in {s_last} — "
+    f"{solar.loc[s_last, 'China_share_pct']:.0f}% of the world total, more than\n"
+    f"every other country combined. Global additions rose from "
+    f"~{solar.loc[g0yr, 'Global']:.0f} GW ({g0yr})\n"
+    f"to ~{solar.loc[s_last, 'Global']:.0f} GW ({s_last}).\n\n"
+    "Source: IRENA Renewable Capacity Statistics 2026 (net change in\n"
+    "cumulative capacity, via Ember); China NEA. See raw-data/07c_*.csv.",
+    xy=(0.17, 0.97), xycoords="axes fraction",
     fontsize=9, color="#222", va="top", ha="left",
     bbox=dict(boxstyle="round,pad=0.4", facecolor="white",
               edgecolor="#888", linewidth=0.8))
@@ -176,86 +214,72 @@ print("  saved 07c_solar_pv_additions.png")
 
 
 # ---------------------------------------------------------------------------
-# 7d. Industrial electricity prices — country snapshot ~2023
+# 7e. Data-centre electricity demand — IEA estimates and 2030 Base Case
 # ---------------------------------------------------------------------------
-print("Industrial electricity prices snapshot...")
-prices = load("07d_industrial_electricity_prices_usd_mwh").sort_values(
-    "usd_per_mwh", ascending=True)
-
-color_map = {"China": COLOR_CN, "United States": COLOR_US,
-             "Germany": COLOR_EU, "United Kingdom": COLOR_EU,
-             "Italy": COLOR_EU, "France": COLOR_EU,
-             "Japan": COLOR_JP, "Korea": "#e67e22"}
-bar_colors = [color_map.get(c, COLOR_OTHER) for c in prices["country"]]
-
-fig, ax = plt.subplots(figsize=(13, 5.5))
-y_pos = range(len(prices))
-ax.barh(y_pos, prices["usd_per_mwh"], color=bar_colors, edgecolor="white")
-ax.set_yticks(y_pos); ax.set_yticklabels(prices["country"])
-for i, v in enumerate(prices["usd_per_mwh"]):
-    ax.text(v + 4, i, f"\\${v}", va="center", fontsize=11,
-            color="#222", fontweight="bold")
-ax.set_xlim(0, 260)
-ax.set_xlabel("Industrial electricity price (USD per MWh, 2023)")
-ax.set_title("Industrial Electricity Prices — Country Snapshot, 2023",
-             fontsize=13, fontweight="bold")
-ax.grid(axis="x", alpha=0.3)
-ax.annotate(
-    "Chinese industrial electricity (\\$80/MWh) is roughly:\n"
-    "  one-third of German industrial price (\\$220/MWh)\n"
-    "  half of UK / Italian industrial price\n"
-    "  ~85% of US industrial price (US is cheap by global standards)\n\n"
-    "Compounding effect on energy-intensive industries\n"
-    "(aluminium, chemicals, refining, data centres, AI compute).\n\n"
-    "Source: OECD/IEA Energy Prices and Taxes 2024.\n"
-    "See raw-data/07d_*.csv for URLs.",
-    xy=(0.98, 0.05), xycoords="axes fraction",
-    fontsize=9, color="#222", va="bottom", ha="right",
-    bbox=dict(boxstyle="round,pad=0.4", facecolor="#fdf2ee",
-              edgecolor=COLOR_CN, linewidth=1.0))
-plt.tight_layout()
-plt.savefig(f"{OUTPUT}/07d_industrial_electricity_prices.png", dpi=150); plt.close()
-print("  saved 07d_industrial_electricity_prices.png")
-
-
-# ---------------------------------------------------------------------------
-# 7e. Global data-centre electricity demand — 2020–2030 projection
-# ---------------------------------------------------------------------------
-print("Data centre electricity demand projection...")
+print("Data centre electricity demand (IEA)...")
 dc = load("07e_datacenter_electricity_demand_twh", index_col="year")
-dc["Global"] = dc.sum(axis=1)
+regions = ["United States", "China", "Europe", "Rest of World"]
+reg_colors = [COLOR_US, COLOR_CN, COLOR_EU, COLOR_OTHER]
+proj_yr = dc.index[dc["basis"] == "projection"].max()
+base_yr = dc.dropna(subset=regions).index.min()
 
-fig, ax = plt.subplots(figsize=(13, 5.5))
-cols = ["United States", "China", "EU27", "Rest of World"]
-colors = [COLOR_US, COLOR_CN, COLOR_EU, COLOR_OTHER]
-ax.stackplot(dc.index, *[dc[c] for c in cols],
-             labels=cols, colors=colors, alpha=0.88,
-             edgecolor="white", linewidth=0.8)
-ax.set_title("Global Data-Centre Electricity Demand — Historical and Projection, TWh",
-             fontsize=13, fontweight="bold")
-ax.set_xlabel("Year"); ax.set_ylabel("Data-centre electricity demand (TWh)")
-ax.set_ylim(0, 1200)
-ax.legend(loc="upper left", fontsize=10, framealpha=0.95)
-ax.grid(axis="y", alpha=0.3)
-for x in [2020, 2024, 2026, 2030]:
-    total = dc.loc[x, "Global"]
-    ax.text(x, total + 30, f"{total} TWh", ha="center", va="bottom",
-            fontsize=10, color="#222", fontweight="bold")
-ax.axvline(2024.5, color="#222", linestyle="--", linewidth=1, alpha=0.5)
-ax.text(2024.5, 1100, "← actuals | projections →", ha="center", fontsize=8.5,
-        color="#444", style="italic")
-ax.annotate(
-    "Global data-centre electricity demand on track to roughly double 2024→2030.\n"
-    "US and China each project to ~400 TWh by 2030.\n"
-    "The constraint that bites: where can this generation actually be built?\n\n"
-    "Source: IEA Electricity 2024; IEA Energy & AI 2025 (scenario-based).\n"
-    "See raw-data/07e_*.csv for URLs.",
-    xy=(0.98, 0.05), xycoords="axes fraction",
-    fontsize=9, color="#222", va="bottom", ha="right",
-    bbox=dict(boxstyle="round,pad=0.4", facecolor="white",
-              edgecolor="#888", linewidth=0.8))
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5.5),
+                               gridspec_kw={"width_ratios": [1, 1.6]})
+# Left: global totals
+xs = [str(y) + (" (proj.)" if b == "projection" else "")
+      for y, b in zip(dc.index, dc["basis"])]
+bars = ax1.bar(xs, dc["Global"], color=["#555" if b == "estimate" else "#bbb"
+                                        for b in dc["basis"]],
+               edgecolor="#333", width=0.6,
+               hatch=None)
+for b, basis in zip(bars, dc["basis"]):
+    if basis == "projection":
+        b.set_hatch("//")
+for x, v in zip(xs, dc["Global"]):
+    ax1.text(x, v + 15, f"{v:.0f} TWh", ha="center", va="bottom",
+             fontsize=10.5, fontweight="bold", color="#222")
+ax1.set_ylim(0, dc["Global"].max() * 1.18)
+ax1.set_ylabel("Data-centre electricity consumption (TWh)")
+ax1.set_title("Global — IEA estimates and Base Case", fontsize=12,
+              fontweight="bold")
+ax1.grid(axis="y", alpha=0.3)
+
+# Right: regional comparison base year vs projection year
+import numpy as np
+xpos = np.arange(len(regions)); w = 0.38
+v0 = dc.loc[base_yr, regions].astype(float)
+v1 = dc.loc[proj_yr, regions].astype(float)
+ax2.bar(xpos - w / 2, v0, w, color=reg_colors, alpha=0.55,
+        edgecolor="#333", label=f"{base_yr} (estimate)")
+ax2.bar(xpos + w / 2, v1, w, color=reg_colors, alpha=1.0,
+        edgecolor="#333", hatch="//", label=f"{proj_yr} (IEA Base Case)")
+for i in range(len(regions)):
+    ax2.text(xpos[i] - w / 2, v0.iloc[i] + 6, f"~{v0.iloc[i]:.0f}",
+             ha="center", fontsize=9.5, color="#222")
+    ax2.text(xpos[i] + w / 2, v1.iloc[i] + 6, f"~{v1.iloc[i]:.0f}",
+             ha="center", fontsize=9.5, color="#222", fontweight="bold")
+ax2.set_xticks(xpos); ax2.set_xticklabels(regions)
+ax2.set_ylim(0, v1.max() * 1.25)
+ax2.set_ylabel("TWh (derived from IEA shares and increments)")
+ax2.set_title(f"By region, {base_yr} vs {proj_yr} — derived", fontsize=12,
+              fontweight="bold")
+ax2.legend(loc="upper right", fontsize=9.5, framealpha=0.95)
+ax2.grid(axis="y", alpha=0.3)
+
+plt.suptitle("Data-Centre Electricity Demand — Roughly Doubling by 2030 (IEA)",
+             fontsize=13, fontweight="bold", y=1.0)
+fig.text(0.5, -0.04,
+         f"Regional TWh are derived: {base_yr} = IEA shares (US 45%, China 25%, "
+         f"Europe 15%) x {dc.loc[base_yr, 'Global']:.0f} TWh; {proj_yr} = "
+         f"{base_yr} + IEA increments (US +240, China +175, Europe +45 TWh). "
+         "Rest of World = residual.\n"
+         "Sources: IEA Energy and AI (2025); IEA Key Questions on Energy and AI "
+         "(2026: 2025 = 485 TWh, 2030 ~950 TWh). See raw-data/07e_*.csv.",
+         ha="center", fontsize=8.5, color="#555")
 plt.tight_layout()
-plt.savefig(f"{OUTPUT}/07e_datacenter_demand.png", dpi=150); plt.close()
+plt.savefig(f"{OUTPUT}/07e_datacenter_demand.png", dpi=150,
+            bbox_inches="tight")
+plt.close()
 print("  saved 07e_datacenter_demand.png")
 
 
@@ -265,7 +289,8 @@ print("  saved 07e_datacenter_demand.png")
 print("Nuclear reactors — operating and under construction...")
 nuke = load("07f_nuclear_reactors_by_country")
 nuke["total"] = nuke["operating"] + nuke["under_construction"]
-nuke = nuke.sort_values("total", ascending=True)
+nuke = nuke.sort_values("total", ascending=True).reset_index(drop=True)
+snap = retrieved("07f_nuclear_reactors_by_country")
 
 fig, ax = plt.subplots(figsize=(13, 6.0))
 y_pos = range(len(nuke))
@@ -277,23 +302,29 @@ ax.barh(y_pos, nuke["under_construction"], left=nuke["operating"],
         color=uc_colors, alpha=1.0, label="Under construction",
         edgecolor="white", hatch="//")
 ax.set_yticks(y_pos); ax.set_yticklabels(nuke["country"])
-for i, (op, uc) in enumerate(zip(nuke["operating"], nuke["under_construction"])):
-    ax.text(op + uc + 2, i, f"{op}+{uc}", va="center", fontsize=10,
-            color="#222", fontweight="bold")
-ax.set_xlim(0, 110)
+for i, (c, op, uc) in enumerate(zip(nuke["country"], nuke["operating"],
+                                    nuke["under_construction"])):
+    label = f"{op}+{uc}"
+    if c == "Japan":
+        label += "   (+19 idle units PRIS now classes 'suspended', not shown)"
+    ax.text(op + uc + 1.5, i, label, va="center", fontsize=10 if c != "Japan" else 9,
+            color="#222", fontweight="bold" if c != "Japan" else "normal")
+ax.set_xlim(0, nuke["total"].max() * 1.3)
 ax.set_xlabel("Reactors — operating (solid) and under construction (hatched)")
-ax.set_title("Nuclear Reactors — Operating and Under Construction by Country (end-2024)",
-             fontsize=13, fontweight="bold")
+ax.set_title(f"Nuclear Reactors — Operating and Under Construction by Country "
+             f"(IAEA PRIS, {snap})", fontsize=13, fontweight="bold")
 ax.legend(loc="lower right", fontsize=10, framealpha=0.95)
 ax.grid(axis="x", alpha=0.3)
+cn = nuke[nuke["country"] == "China"].iloc[0]
+others_uc = nuke[nuke["country"] != "China"]["under_construction"]
 ax.annotate(
-    "China has 55 reactors operating plus 26 under construction — by far the\n"
-    "world's largest nuclear build pipeline. Most other major economies have\n"
-    "1-4 reactors under construction; many have none.\n"
-    "Doubles existing capacity by ~2035 on current schedule.\n\n"
-    "Source: IAEA PRIS — Power Reactor Information System (end-2024 snapshot).\n"
-    "See raw-data/07f_*.csv for URLs.",
-    xy=(0.98, 0.10), xycoords="axes fraction",
+    f"China: {cn['operating']} operating + {cn['under_construction']} under "
+    f"construction —\nthe world's largest build pipeline (~half of all reactors "
+    f"under\nconstruction worldwide). Other economies shown: "
+    f"{others_uc.min()}–{others_uc.max()} each.\n\n"
+    "'Operating' = PRIS status Operational.\n"
+    "Source: IAEA PRIS. See raw-data/07f_*.csv for URLs.",
+    xy=(0.98, 0.16), xycoords="axes fraction",
     fontsize=9, color="#222", va="bottom", ha="right",
     bbox=dict(boxstyle="round,pad=0.4", facecolor="#fdf2ee",
               edgecolor=COLOR_CN, linewidth=1.0))

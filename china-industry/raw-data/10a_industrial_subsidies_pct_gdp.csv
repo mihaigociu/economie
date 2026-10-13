@@ -1,9 +1,12 @@
-# source: OECD Trade Policy Paper No. 270 (DiPippo et al., 2022) "Red Ink: Estimating Chinese Industrial Policy Spending"; CSIS-related analyses; IMF working papers
-# url: https://www.oecd.org/trade/topics/trade-related-industrial-policies/
-# url: https://www.csis.org/analysis/red-ink-estimating-chinese-industrial-policy-spending-comparative-perspective  (CSIS / DiPippo Red Ink)
-# retrieved: 2026-05-13
-# notes: Estimated annual industrial-policy spending (direct subsidies + below-market credit + tax expenditures + land-use preferences), % of GDP, 2019.
-# notes: Headline figure from Red Ink: China industrial-policy spending ~1.7% of GDP in 2019, roughly 2x of comparators by GDP share and ~3-5x in absolute terms.
+# source: CSIS, "Red Ink: Estimating Chinese Industrial Policy Spending in Comparative Perspective" (Gerard DiPippo, Ilaria Mazzocco & Scott Kennedy; CSIS Economics Program / Trustee Chair in Chinese Business and Economics, May 2022)
+# url: https://www.csis.org/analysis/red-ink-estimating-chinese-industrial-policy-spending-comparative-perspective  (CSIS Red Ink)
+# url: https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025155-source-pdf.pdf  (IMF WP/25/155, Garcia-Macia, Kothari & Tao, Aug 2025 — broader, non-comparable estimate; see notes)
+# url: https://www.oecd.org/content/dam/oecd/en/publications/reports/2026/05/oecd-magic-database-of-industrial-subsidies_3d51d749/ce94f33b-en.pdf  (OECD MAGIC database, 2026: large Chinese firms received industrial subsidies averaging 3.1% of sales revenue in 2024 — firm-level measure, not % of GDP; vs ~1.2% North America and ~0.5% Europe, per BOFIT summary https://www.bofit.fi/en/monitoring/weekly/2026/vw202624_1/)
+# retrieved: 2026-10-13
+# notes: Estimated annual industrial-policy spending (direct subsidies + tax breaks + below-market credit + government investment / guidance funds), % of GDP, 2019. Red Ink calls China's 1.73% a conservative minimum.
+# notes: REVISION (attribution only): the previous header cited "OECD Trade Policy Paper No. 270"; Red Ink is a CSIS report. Values unchanged.
+# notes: Ratios China / comparator: Korea 2.6x, France 3.1x, Japan 3.5x, Germany 4.2x, US 4.4x, Brazil 5.4x.
+# notes: IMF WP/25/155 estimates the equivalent fiscal cost of China's industrial policy at ~4.4% of GDP in 2023 (cash subsidies 2.0, tax benefits 1.5, land 0.5, credit 0.4; authors call it an upper bound) vs EU state aid ~1.5% of GDP (2022). Different method — not plotted alongside Red Ink.
 country,share_pct_gdp
 China,1.73
 South Korea,0.67

@@ -1,15 +1,20 @@
-# source: USGS Mineral Commodity Summaries 2024 (rare-earth element mine production); IEA Global Critical Minerals Outlook 2024 (refining shares)
-# url: https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-rare-earths.pdf
-# url: https://www.iea.org/reports/global-critical-minerals-outlook-2024
-# retrieved: 2026-05-13
-# notes: Share of global rare-earth output by country, 2023 figures, %. Mining vs refining/separation are two distinct stages.
-# notes: USGS reports China at ~68% of mine production, ~92% of refining capacity. Mining diversifying (US Mountain Pass, Australia Lynas).
+# source: USGS Mineral Commodity Summaries 2026 (rare-earth mine production, 2025, REO equivalent); IEA Global Critical Minerals Outlook 2026 (refining / separation shares, 2025, magnet rare earths)
+# url: https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-rare-earths.pdf
+# url: https://www.iea.org/reports/global-critical-minerals-outlook-2026
+# url: https://apo.org.au/sites/default/files/resource-files/2026-07/apo-nid335214.pdf  (mirror of the GCMO 2026 PDF used for extraction; p.31 chart 'Share of refined material production by country in 2025', p.182 text)
+# url: https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-rare-earths.pdf  (previous mining source)
+# retrieved: 2026-10-13
+# notes: Share of global rare-earth output by country, 2025 figures, %. Mining vs refining/separation are two distinct stages.
+# notes: MINING (2026-10-13 update, 2023 -> 2025): USGS 2025 world total 390,000 t REO; China 270,000 (69%), US 51,000 (13%), Australia 29,000 (7%), Burma/Myanmar 22,000 (6%), Vietnam 150 (~0%), Malaysia 110 (~0%), Other = remainder (Thailand 4,800, India 2,900, Madagascar 2,700, Russia 2,600, Brazil 2,000, Nigeria 1,500, other 550) = 5%. Old 2023 values: 68/12/5/11/1/0/1/2.
+# notes: REFINING (2026-10-13 update, 2023 -> 2025): IEA GCMO 2026 says China's share of (magnet) rare-earth refining fell from 90% (2024) to 85% (2025), lost share going mostly to the US and then Malaysia. Values read from the vector data of the IEA p.31 chart: China 84.7, US 5.3, India 1.1, Japan 0.3, rest of world 8.6.
+# notes: IEA does NOT break out Australia, Myanmar, Vietnam, Estonia or Malaysia in that chart; their refining cells are left BLANK (not zero) and are included in Other (= India + Japan + IEA 'rest of world' = 10). Malaysia (Lynas) is a material part of that 10.
+# notes: SCOPE CAVEAT: mining = all rare earths (USGS, REO); refining = magnet rare earths only (Nd, Pr, Dy, Tb; IEA). The same IEA report's export-control table gives China 91% 'share of refining' for rare earths (2025) — likely a broader definition; flag before quoting.
 country,mining,refining
-China,68,90
-United States,12,1
-Australia,5,0
-Myanmar,11,0
-Vietnam,1,3
-Estonia,0,2
-Malaysia,1,3
-Other,2,1
+China,69,85
+United States,13,5
+Australia,7,
+Myanmar,6,
+Vietnam,0,
+Estonia,0,
+Malaysia,0,
+Other,5,10

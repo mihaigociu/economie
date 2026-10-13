@@ -1,14 +1,22 @@
-# source: UNCTAD Review of Maritime Transport (annual, free); Clarksons Research data summarised in trade press
+# source: UNCTADstat — Merchant fleet / Ships built by country of building, annual (data: Clarksons Research), dataset US.ShipBuilding; UNCTAD Review of Maritime Transport (annual, free)
+# url: https://unctadstat-api.unctad.org/bulkdownload/US.ShipBuilding/US_ShipBuilding  (bulk download, 7z/CSV; file dated 2026-06-11)
+# url: https://unctadstat.unctad.org/datacentre/dataviewer/US.ShipBuilding
+# url: https://unctad.org/system/files/official-document/rmt2025ch2_en.pdf  (Review of Maritime Transport 2025, ch.2)
 # url: https://unctad.org/publication/review-maritime-transport-2024
-# url: https://www.unctad.org/topic/transport-and-trade-logistics/review-of-maritime-transport
-# retrieved: 2026-05-13
-# notes: % of global merchant shipbuilding new-build deliveries by tonnage (CGT, compensated gross tons), annual.
-# notes: China overtook South Korea as largest builder by tonnage in 2009; share has continued to climb.
+# url: https://en.portnews.ru/news/393791/  (trade press: Clarksons H1 2026 orders, China 72% by CGT; orderbook end-June 2026 China 65%)
+# url: https://es2019.marinelink.com/news/clarksons-global-shipbuilding-review-520914  (trade press: Clarksons 2024 output shares by CGT)
+# retrieved: 2026-10-13
+# notes: % of global merchant ship deliveries by GROSS TONNAGE (GT), annual (2015 onwards). Other = 100 - China - Korea - Japan. 2015+ rows at one decimal.
+# notes: 2026-10-13 METHODOLOGY CHANGE: header previously said CGT, but values matched neither UNCTAD GT nor Clarksons CGT. 2015-2024 rows REVISED to UNCTADstat GT and 2025 added. Old -> new: 2015 38/33/21/8 -> 37.2/35.0/19.0/8.8; 2020 40/30/22/8 -> 40.3/31.5/22.2/6.1; 2023 55/27/12/6 -> 50.7/28.3/15.4/5.6; 2024 57/25/11/7 -> 54.6/28.0/12.6/4.9. China's share slipped slightly in 2025 (53.8).
+# notes: 2000, 2005, 2010 rows are NOT in the UNCTADstat bulk file (it starts in 2014) and are retained unchanged from the 2026-05-13 compilation; basis unverified.
+# notes: For comparison, Clarksons' CGT-based completions share for 2024 was ~53% China / ~28% Korea / ~12% Japan (Clarksons 2024 review via trade press). China's ORDER share is far higher (Clarksons: ~72% of global orders by CGT in H1 2026; ~65% of the orderbook end-June 2026).
+# notes: US share of deliveries (GT): 0.04% (2024), 0.03% (2025).
 year,China,South Korea,Japan,Other
 2000,6,40,32,22
 2005,16,38,29,17
 2010,32,32,24,12
-2015,38,33,21,8
-2020,40,30,22,8
-2023,55,27,12,6
-2024,57,25,11,7
+2015,37.2,35.0,19.0,8.8
+2020,40.3,31.5,22.2,6.1
+2023,50.7,28.3,15.4,5.6
+2024,54.6,28.0,12.6,4.9
+2025,53.8,27.3,13.1,5.7

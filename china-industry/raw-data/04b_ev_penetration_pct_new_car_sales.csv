@@ -1,9 +1,16 @@
-# source: CPCA (China Passenger Car Association); ACEA (European Automobile Manufacturers Association); IEA Global EV Outlook 2025; EV-Volumes / EV Adoption (US); JADA (Japan Automobile Dealers Association)
+# source: CPCA (China Passenger Car Association); ACEA (European Automobile Manufacturers Association); IEA Global EV Outlook 2025 + 2026; Argonne National Laboratory (US); JADA (Japan Automobile Dealers Association)
 # url: http://www.cpcaauto.com/  (CPCA monthly retail data, China)
+# url: https://cnevpost.com/2026/01/09/china-dec-2025-nev-retail-record-high/  (CPCA final Dec-2025 / full-year 2025 data: NEV retail 12.81M of 23.74M PV retail = 53.96%)
 # url: https://www.acea.auto/pc-registrations/  (ACEA passenger-car registrations, Europe)
+# url: https://www.acea.auto/pc-registrations/new-car-registrations-1-8-in-2025-battery-electric-17-4-market-share/  (ACEA FY2025: EU BEV 17.4% + PHEV 9.4% = 26.8%)
 # url: https://www.iea.org/reports/global-ev-outlook-2025
-# retrieved: 2026-05-13
+# url: https://www.iea.org/reports/global-ev-outlook-2026/trends-in-electric-cars  (IEA: Europe EV share 28% in 2025)
+# url: https://www.anl.gov/esia/light-duty-electric-drive-vehicles-monthly-sales-updates  (Argonne: US PEVs 9.1% of passenger-vehicle sales in 2025, 9.9% in 2024)
+# retrieved: 2026-10-13
 # notes: NEV (BEV + PHEV) share of new passenger-car sales, %.
+# notes: 2025 row: China 54.0 = CPCA final retail 53.96%; Europe 28.0 = IEA GEVO 2026 "Europe" (wider than EU; ACEA EU-only = 26.8%); United States 9.1 = Argonne PEV share of passenger-vehicle sales.
+# notes: Japan 2025 left BLANK: no exact figure found. IEA GEVO 2026 says Japanese EV sales were "just above 100 000" in both 2024 and 2025 and "less than 3%" of sales in 2025. This also suggests the 2024 Japan value (3.5) may be too high; not revised pending a JADA primary figure.
+# notes: Europe definition caveat: the 2024 value (24.0) does not match ACEA EU (13.6 + 7.2 = 20.8); its exact geography is undocumented. The 2025 IEA value may not be like-for-like with earlier rows.
 year,China,Europe,United States,Japan
 2018,4.5,2.0,2.0,1.0
 2019,4.9,3.0,2.0,1.0
@@ -12,3 +19,4 @@ year,China,Europe,United States,Japan
 2022,25.6,21.6,7.0,3.0
 2023,31.6,21.6,9.5,3.5
 2024,47.6,24.0,10.0,3.5
+2025,54.0,28.0,9.1,

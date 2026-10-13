@@ -1,8 +1,13 @@
-# source: Tesla Inc. 10-K annual reports (SEC); BYD Co. annual reports and monthly sales releases (SEHK)
+# source: Tesla Inc. 10-K annual reports and quarterly delivery releases (SEC / ir.tesla.com); BYD Co. annual reports and monthly sales releases (SEHK)
 # url: https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001318605&type=10-K  (Tesla 10-K filings)
+# url: https://electrek.co/2026/01/02/tesla-tsla-releases-q4-delivery-results/  (Tesla FY2025 deliveries 1,636,129; Q4 418,227)
 # url: https://www.bydglobal.com/en/InvestorRelations/  (BYD investor relations)
-# retrieved: 2026-05-13
-# notes: tesla_bev and byd_bev are battery-electric only. byd_phev is plug-in hybrid only. byd_total_nev = byd_bev + byd_phev (derived).
+# url: https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1201/2025120103427.pdf  (BYD HKEX filing, Jan-Nov 2025 YTD: passenger BEV 2,066,002, PHEV 2,064,637)
+# url: https://carnewschina.com/2026/01/01/byd-sold-4-6-million-cars-in-2025-but-things-dont-look-very-good-for-2026/  (BYD Dec-2025: BEV 190,712, PHEV 224,072; FY PHEV 2,288,709; total NEV incl. commercial 4,602,436)
+# retrieved: 2026-10-13
+# notes: tesla_bev and byd_bev are battery-electric only. byd_phev is plug-in hybrid only. byd_total_nev = byd_bev + byd_phev (derived). BYD figures are passenger vehicles only.
+# notes: 2025 BYD BEV = 2,256,714 (Jan-Nov HKEX YTD + December release). CarNewsChina prints 2,254,714 and a passenger total of 4,550,036, which do not reconcile with the HKEX YTD + December figures (4,545,423); the HKEX-based sum is used. BYD's December 2025 HKEX filing itself was not retrieved — confirm against it.
+# notes: Tesla 2025 = 1,636,129 deliveries per Tesla's Q4 2025 release (as reported by Electrek); the FY2025 10-K was not opened directly.
 year,tesla_bev,byd_bev,byd_phev
 2019,0.37,0.13,0.10
 2020,0.50,0.13,0.06
@@ -10,3 +15,4 @@ year,tesla_bev,byd_bev,byd_phev
 2022,1.31,0.91,0.95
 2023,1.81,1.57,1.44
 2024,1.79,1.76,2.49
+2025,1.64,2.26,2.29

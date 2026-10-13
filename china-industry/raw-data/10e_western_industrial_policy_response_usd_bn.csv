@@ -3,10 +3,17 @@
 # url: https://crsreports.congress.gov/product/pdf/R/R47558  (CRS CHIPS+Science Act overview)
 # url: https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal/green-deal-industrial-plan/net-zero-industry-act_en
 # url: https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal/green-deal-industrial-plan/critical-raw-materials-act_en
-# retrieved: 2026-05-13
+# url: https://taxfoundation.org/research/all/federal/one-big-beautiful-bill-act-tax-changes/  (OBBBA, Jul 2025: repeal / early phase-out of IRA clean-energy credits raises ~$500B over 10y)
+# url: https://bipartisanpolicy.org/explainer/what-does-the-one-big-beautiful-bill-cost/  (BPC: IRA clean-energy rollbacks -$543B)
+# url: https://www.manufacturingdive.com/news/us-government-10-percent-stake-intel-chips-funding-8-9-billion/758518/  (Aug 2025: $8.9B of CHIPS / Secure Enclave awards converted into a 9.9% US government stake in Intel)
+# url: https://digital-strategy.ec.europa.eu/en/library/proposal-chips-act-20  (EU Chips Act 2.0 proposal, 3 Jun 2026 — no new headline funding figure)
+# retrieved: 2026-10-13
 # notes: Headline announced funding amounts, USD billion. IRA tax-credit value depends on uptake; CBO 2023 revised IRA energy/EV provisions to ~$663B over 10y.
 # notes: EU Net-Zero Industry Act is a regulatory framework, but linked to IPCEI / Innovation Fund + Sovereignty Fund proposals totalling ~$170B. EU CRMA does not bring new money but channels existing funds.
 # notes: This is announced / authorised amounts, not actual disbursements.
+# notes: 2025-26 UPDATE (values unchanged): the IRA rows are original 2022-23 scorings. The One Big Beautiful Bill Act (signed 4 Jul 2025) repealed or accelerated the phase-out of many IRA credits (~$500-543B over 10y per Tax Foundation / BPC), so the IRA's remaining authority is materially below these headline numbers. No single official post-OBBBA IRA total is published, so no revised row is added.
+# notes: CHIPS: in Aug 2025 $8.9B of undisbursed CHIPS ($5.7B) and Secure Enclave ($3.2B) awards to Intel were converted into equity — a change of instrument, not new money.
+# notes: EU NZIA ($170B) and CRMA ($30B) figures are linked / channelled existing EU funds, not new appropriations; low confidence on both.
 policy,year,country_region,headline_usd_bn,focus
 CHIPS Act,2022,United States,52,Semiconductor manufacturing + R&D
 IRA (clean energy + EV),2022,United States,369,"Clean-energy and EV tax credits (initial scoring; CBO 2023 revised ~$663B)"

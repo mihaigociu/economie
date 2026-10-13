@@ -1,26 +1,31 @@
-# source: USGS Mineral Commodity Summaries 2024 (mine production); IEA Global Critical Minerals Outlook 2024 (refining shares)
-# url: https://pubs.usgs.gov/periodicals/mcs2024/
-# url: https://www.iea.org/reports/global-critical-minerals-outlook-2024
-# retrieved: 2026-05-13
-# notes: % of global supply at each stage of the lithium and cobalt value chains, 2023.
-# notes: Mining is geographically diversified (Australia for Li, DRC for Co); refining is concentrated in China.
+# source: USGS Mineral Commodity Summaries 2026 (mine production, 2025); IEA Global Critical Minerals Outlook 2026 (refining shares, 2025)
+# url: https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-lithium.pdf
+# url: https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-cobalt.pdf
+# url: https://www.iea.org/reports/global-critical-minerals-outlook-2026
+# url: https://apo.org.au/sites/default/files/resource-files/2026-07/apo-nid335214.pdf  (mirror of GCMO 2026 PDF; p.31 refined-share chart, p.141 lithium text, p.162 cobalt text)
+# retrieved: 2026-10-13
+# notes: % of global supply at each stage of the lithium and cobalt value chains, 2025 (was 2023).
+# notes: Mining is geographically diversified (Australia/China/Chile/Zimbabwe for Li, DRC/Indonesia for Co); refining is concentrated in China.
+# notes: LITHIUM MINING 2025 (USGS, world 290,000 t Li excl. US, which is withheld): Australia 92,000 (32%), China 62,000 (21%), Chile 56,000 (19%), Zimbabwe 28,000 (10%), Argentina 23,000 (8%), Other = remainder 29,000 (10%; Brazil 12,000, Mali 9,400, Canada 5,600, Portugal 380). Old 2023 values: Australia 52, Chile 24, China 18, Argentina 6, Other 0. Zimbabwe row added.
+# notes: COBALT MINING 2025 (USGS, world 310,000 t): DRC 230,000 (74%), Indonesia 44,000 (14%), Russia 7,700 (2%), Australia 3,700 (1%), Other 8%. Rounded shares sum to 99. Old 2023: 74/7/4/3/12.
+# notes: REFINING 2025 read from vector data of IEA GCMO 2026 p.31 chart: Lithium — China 73.7, Chile 16.3, Argentina 4.9, Australia 2.0, rest of world 3.1 (Other = Australia + RoW = 5). Cobalt — China 75.6, Japan 2.4, rest of world 22.0. IEA no longer breaks out Finland or Canada for cobalt, so those rows are replaced by Japan + Other.
+# notes: UNCERTAINTY: GCMO 2026 quotes China's lithium refining share as 75% (lithium chapter), 71% (export-control table) and 'about 70%' (overview) in different places; the chart value (74) is used here. Cobalt text: 'more than 75%'.
 mineral,stage,country,share
-Lithium,Mining,Australia,52
-Lithium,Mining,Chile,24
-Lithium,Mining,China,18
-Lithium,Mining,Argentina,6
-Lithium,Mining,Other,0
-Lithium,Refining,China,70
-Lithium,Refining,Chile,12
+Lithium,Mining,Australia,32
+Lithium,Mining,China,21
+Lithium,Mining,Chile,19
+Lithium,Mining,Zimbabwe,10
+Lithium,Mining,Argentina,8
+Lithium,Mining,Other,10
+Lithium,Refining,China,74
+Lithium,Refining,Chile,16
 Lithium,Refining,Argentina,5
-Lithium,Refining,Other,13
+Lithium,Refining,Other,5
 Cobalt,Mining,DR Congo,74
-Cobalt,Mining,Indonesia,7
-Cobalt,Mining,Russia,4
-Cobalt,Mining,Australia,3
-Cobalt,Mining,Other,12
-Cobalt,Refining,China,75
-Cobalt,Refining,Finland,5
-Cobalt,Refining,Japan,4
-Cobalt,Refining,Canada,3
-Cobalt,Refining,Other,13
+Cobalt,Mining,Indonesia,14
+Cobalt,Mining,Russia,2
+Cobalt,Mining,Australia,1
+Cobalt,Mining,Other,8
+Cobalt,Refining,China,76
+Cobalt,Refining,Japan,2
+Cobalt,Refining,Other,22

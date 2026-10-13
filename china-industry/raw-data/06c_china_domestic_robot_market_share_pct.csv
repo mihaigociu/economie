@@ -1,13 +1,20 @@
-# source: Chinese MIIT industrial-robot annual summaries; IFR China-market reports (publicly summarised in trade press)
+# source: IFR World Robotics 2024/2025/2026 China-market figures (press releases); Chinese MIIT industrial-robot annual summaries
 # url: https://www.miit.gov.cn/  (MIIT annual industrial-robot statistics)
 # url: https://ifr.org/ifr-press-releases/news/top-5-robot-trends-2024  (IFR commentary on Chinese-brand domestic share)
-# retrieved: 2026-05-13
+# url: https://ifr.org/ifr-press-releases/news/record-of-4-million-robots-working-in-factories-worldwide  (WR2024: Chinese manufacturers 47% of domestic market in 2023)
+# url: https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years  (WR2025: Chinese suppliers' domestic share climbed to 57% in 2024)
+# url: https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf  (WR2026: domestic suppliers 55% of 2025 installations; domestic +15%, foreign +27%)
+# url: https://ifr.org/img/worldrobotics/Executive_Summary_WR_2026_-_Industrial_Robots.pdf  (WR2026: domestic share "around 30% from 2019 to 2021", accelerating from 2022)
+# retrieved: 2026-10-13
 # notes: Chinese-brand vs foreign-brand share of industrial-robot installations within China.
 # notes: Big Four foreign makers = FANUC, Yaskawa, ABB, KUKA. Chinese challengers = Estun, Inovance, Siasun, EFORT, Han's Robot.
+# notes: REVISION 2026-10-13: 2024 chinese_brand 50->57 (IFR WR2025). Added 2025 = 55 (IFR WR2026) — the share FELL 2 pp in 2025 because foreign-brand installations grew faster (+27%) than domestic (+15%).
+# notes: CAVEAT: the 2019 (37) and 2021 (40) values conflict with IFR WR2026, which says the domestic-supplier share was "around 30% from 2019 to 2021". The original source of 37/40 is not traceable; left unchanged pending verification. 2015/2017 values also unverified.
 year,chinese_brand,foreign_brand
 2015,30,70
 2017,33,67
 2019,37,63
 2021,40,60
 2023,47,53
-2024,50,50
+2024,57,43
+2025,55,45

@@ -1,15 +1,20 @@
-# source: IFR World Robotics 2024 — robot-density tables (publicly summarised in IFR press releases)
-# url: https://ifr.org/ifr-press-releases/news/global-robot-density-in-factories-doubled-in-seven-years  (IFR robot density press release)
-# retrieved: 2026-05-13
-# notes: Industrial robots per 10,000 manufacturing workers. Change column = density_2023 - density_2018 (derived).
-country,density_2018,density_2023
-South Korea,774,1012
-Singapore,831,770
-China,140,470
-Germany,338,429
-Japan,327,419
-United States,217,295
-Italy,200,219
-Sweden,247,343
-France,154,198
-Netherlands,175,209
+# source: IFR World Robotics 2024 and World Robotics 2025 — robot-density tables (publicly summarised in IFR press releases)
+# url: https://ifr.org/ifr-press-releases/news/global-robot-density-in-factories-doubled-in-seven-years  (IFR robot density press release, WR2024 / 2023 data)
+# url: https://ifr.org/downloads/press_docs/DE-2026-APRIL-_8-IFR_PRESSMELDUNG_Roboterdichte-deutsch.pdf  (IFR press release 8 Apr 2026, WR2025 / 2024 data)
+# url: https://ifr.org/ifr-press-releases/robot-density-surges-in-europe-asia-and-americas  (English version of the 8 Apr 2026 release)
+# retrieved: 2026-10-13
+# notes: Industrial robots per 10,000 manufacturing workers. Change column = density_2023 - density_2018 (derived in script).
+# notes: NEW COLUMN density_2024 (WR2025, released 8 Apr 2026): Korea 1,220; Singapore 818; Germany 449; Japan 446; Sweden 377; US 307 (8th); China 166 (22nd). Italy, France, Netherlands 2024 values were not given in the press release — left blank. Other top-10 in 2024: Denmark 329, Slovenia 315, Taiwan 302, Switzerland 294. World average 132.
+# notes: METHODOLOGY BREAK FOR CHINA: IFR re-based China's density on updated employment data from China's National Bureau of Statistics. China 2024 = 166 (+17% y/y on the new basis). The 2018 (140) and 2023 (470) China values are on the OLD basis and are NOT comparable with 166; IFR did not publish a revised 2023 value in the release. Do not plot 470 -> 166 as a decline.
+# notes: The chart (06_robotics.py) plots density_2024; density_2018 / density_2023 are on the pre-re-basing IFR employment denominator and are not comparable with 2024 for China.
+country,density_2018,density_2023,density_2024
+South Korea,774,1012,1220
+Singapore,831,770,818
+China,140,470,166
+Germany,338,429,449
+Japan,327,419,446
+United States,217,295,307
+Italy,200,219,
+Sweden,247,343,377
+France,154,198,
+Netherlands,175,209,

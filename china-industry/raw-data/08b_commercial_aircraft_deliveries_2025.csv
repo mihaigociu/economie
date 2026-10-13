@@ -1,0 +1,26 @@
+# source: Airbus, Boeing, Embraer, Bombardier, ATR full-year 2025 delivery / results releases; COMAC figures from trade press (COMAC does not publish an annual delivery tally)
+# url: https://www.airbus.com/en/newsroom/press-releases/2026-01-airbus-reports-793-commercial-aircraft-deliveries-in-2025
+# url: https://boeing.mediaroom.com/2026-01-13-Boeing-Announces-Fourth-Quarter-Deliveries
+# url: https://aviacionaldia.com/en/2026/01/embraer-delivered-244-aircraft-in-2025.html  (Embraer 4Q25 release as reported: Commercial Aviation 78, Executive 155, total 244; primary at ri.embraer.com)
+# url: https://www.stocktitan.net/news/BDRBF/bombardier-exceeds-all-2025-guidance-metrics-successfully-completes-82yjj165ra4q.html  (Bombardier FY2025 results release, 12 Feb 2026: 157 business jets)
+# url: https://www.atr-aircraft.com/presspost/atr-reports-strong-2025-demand-prepares-2026-ramp-up/
+# url: https://www.seetaoe.com/details/257693.html  (C919 2025: Air China 6, China Southern 5, China Eastern 4 = ~15)
+# url: https://www.bloomberg.com/news/articles/2025-12-23/china-s-comac-on-track-to-miss-c919-delivery-target-by-half  (13 C919s through 22 Dec 2025, Cirium/Planespotters)
+# url: https://leehamnews.com/2026/01/15/comac-struggled-in-2025-2026-wont-be-much-better/  (~13 C919s in 2025)
+# url: https://www.airframer.com/aircraft_detail.html?model=ARJ21  (26 C909 in 2025 "per one industry analysis report")
+# url: https://www.sina.cn/news/detail/5250211502621418.html  (aviation blogger: 25 C909 + 16 C919 = 41 C9x9 in 2025)
+# retrieved: 2026-10-13
+# notes: 2025 commercial-aircraft deliveries by manufacturer (units). Supersedes 08b_commercial_aircraft_deliveries_2023.csv (removed; recoverable from git history). Corrections to that file: C919 2023 deliveries were 2 (China Eastern, Jul + Dec 2023), not 7; its Embraer value (181) was the company-wide total.
+# notes: COMAC C919 = 15 (most-cited figure; sources range 13-16). LOW-MEDIUM confidence. COMAC C909 (renamed ARJ21) = 25 (secondary sources give 25 or 26). LOW confidence.
+# notes: COMAC had targeted 75 C919s for 2025, reportedly cut to ~25 (Bloomberg via ch-aviation, Sep 2025). US Commerce suspended LEAP-1C/CF34 export licences to COMAC late May 2025, restored ~3 July 2025.
+# notes: Embraer row = Commercial Aviation unit only (78). NB the 2023 file's Embraer value (181) was Embraer's company-wide total (commercial 64 + executive + defense), so the two files are not like-for-like on that row.
+# notes: Bombardier row = business jets (157: 71 Challenger + 86 Global); not commercial airliners, kept for continuity with the 2023 file.
+# notes: C919 still uses CFM LEAP-1C engines; the indigenous CJ-1000A is not yet certified (flight testing on a Y-20 testbed; C919 integration next per AirInsight, May 2026).
+manufacturer,country,deliveries_2025
+COMAC C919,China,15
+ATR,France/Italy,32
+COMAC C909 (ARJ21),China,25
+Bombardier (business),Canada,157
+Embraer (commercial),Brazil,78
+Boeing,United States,600
+Airbus,European Union,793

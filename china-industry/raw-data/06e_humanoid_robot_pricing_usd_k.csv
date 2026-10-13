@@ -1,19 +1,26 @@
-# source: public product announcements, press releases and company websites for each named model (late 2024 / early 2025)
+# source: public product announcements, press releases and company websites for each named model (late 2024 – 2026); Reuters / Business Wire for 2025 launches
 # url: https://www.unitree.com/g1  (Unitree G1)
 # url: https://www.unitree.com/h1  (Unitree H1)
+# url: https://www.business-standard.com/world-news/china-s-unitree-robotics-offers-a-humanoid-robot-for-under-6-000-125072501674_1.html  (Reuters, 25 Jul 2025: Unitree R1 from 39,900 yuan ~US$5,566; G1 launched 2024 at 99,000 yuan)
+# url: https://www.businesswire.com/news/home/20251027434628/en/1X-Launches-NEO-The-Robot-Redefining-Life-at-Home  (1X NEO, 27/28 Oct 2025: US$20,000 Early Access or US$499/month, US deliveries 2026)
 # url: https://www.tesla.com/we-robot  (Tesla Optimus target)
 # url: https://www.figure.ai/  (Figure 02)
 # url: https://apptronik.com/apollo  (Apptronik Apollo)
 # url: https://agilityrobotics.com/  (Agility Digit)
 # url: https://www.agibot.com/  (AGIBOT A2)
 # url: https://www.fftai.com/  (Fourier GR-2)
-# retrieved: 2026-05-13
+# retrieved: 2026-10-13
 # notes: "Commercial" = publicly-listed retail or stated commercial-pilot price. "False" means R&D / pilot, not at retail.
 # notes: price_usd_k_low and price_usd_k_high in thousands USD per unit. Where they are equal, vendor has stated a single point price.
+# notes: ADDED 2026-10-13: Unitree R1 (launched Jul 2025, 39,900 yuan ≈ $5.6k at Reuters' conversion; shipping). 1X NEO ($20k one-off or $499/mo; pre-order with $200 deposit since Oct 2025 — marked True as a listed retail price, but customer deliveries were NOT confirmed as of Oct 2026; WSJ testing found tasks were tele-operated).
+# notes: NOT ADDED (no verifiable vendor price): Unitree H2 (Oct 2025; $29,900 reported only by KR-Asia, unconfirmed), Figure 03 (Oct 2025, no public price), UBTech Walker S2 (orders >800m yuan by Nov 2025 but no unit price), Tesla Optimus V3 (not unveiled as of Oct 2026; Musk's $20–30k target unchanged).
+# notes: FLAG: the Figure 02 100–200k range is not a Figure-published price (Figure has never listed one); treat as press estimate.
 model,maker,country,price_usd_k_low,price_usd_k_high,commercial
+Unitree R1,Unitree (China),China,5.6,5.6,True
 Unitree G1,Unitree (China),China,16,16,True
 Unitree H1,Unitree (China),China,90,90,True
 Tesla Optimus (target),Tesla (United States),United States,20,30,False
+1X NEO,1X Technologies (United States),United States,20,20,True
 Figure 02,Figure (United States),United States,100,200,False
 Apptronik Apollo,Apptronik (United States),United States,50,150,True
 Agility Digit,Agility (United States),United States,85,110,True

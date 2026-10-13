@@ -1,13 +1,17 @@
-# source: Synergy Research Group — Cloud Infrastructure Services market tracker (Q4 2024 quarterly snapshot)
-# url: https://www.srgresearch.com/articles/q4-2024-cloud-spending  (Synergy quarterly press release)
+# source: Synergy Research Group — Cloud Infrastructure Services market tracker (Q2 2026 quarterly release, 30 Jul 2026, for the big three; other vendors carried from Q4 2024 snapshot)
+# url: https://www.srgresearch.com/articles/q2-cloud-market-passes-143-billion-highest-growth-rate-in-eight-years  (Q2 2026: Amazon 28%, Microsoft 20%, Google 15%; market $143.4bn, +43% y/y)
+# url: https://www.srgresearch.com/articles/genai-helps-drive-quarterly-cloud-revenues-to-119-billion-as-growth-rate-jumped-yet-again-in-q4  (Q4 2025: 28 / 21 / 14; FY2025 market $419bn)
+# url: https://www.srgresearch.com/articles/q4-2024-cloud-spending  (Q4 2024 snapshot — source of the carried-forward rows)
 # url: https://www.canalys.com/  (cross-check with Canalys cloud market)
-# retrieved: 2026-05-13
-# notes: % of global cloud-infrastructure-services market (IaaS + PaaS + hosted private cloud), Q4 2024.
-# notes: AWS + Azure + GCP = 63% globally. Chinese cloud vendors (Alibaba + Tencent + Huawei) = ~8% globally; dominant inside China but marginal outside.
+# retrieved: 2026-10-13
+# notes: % of global cloud-infrastructure-services market (IaaS + PaaS + hosted private cloud).
+# notes: AWS / Azure / Google Cloud rows updated to Q2 2026 (old Q4 2024: 30 / 21 / 12 -> new 28 / 20 / 15). Big three still = 63% combined.
+# notes: CAUTION — Alibaba, Oracle, IBM, Salesforce, Tencent, Huawei and Others are CARRIED FORWARD from Q4 2024; Synergy's free releases no longer give per-vendor % for them. Oracle and neoclouds (CoreWeave etc.) have been gaining share per Synergy, so the Oracle/Others rows are likely stale.
+# notes: Rows still sum to 100 by coincidence (big-three total unchanged at 63); the mix is not a single-quarter snapshot.
 vendor,country,share
-AWS,United States,30
-Microsoft Azure,United States,21
-Google Cloud,United States,12
+AWS,United States,28
+Microsoft Azure,United States,20
+Google Cloud,United States,15
 Alibaba Cloud,China,4
 Oracle,United States,3
 IBM,United States,3

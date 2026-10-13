@@ -57,20 +57,20 @@ def write_csv(df, name, indicator, description, notes=()):
 # ---------- Chapter 01 ----------
 
 print("Fetching NY.GDP.MKTP.KD — Real GDP (constant 2015 USD) ...")
-df = fetch("NY.GDP.MKTP.KD", (1978, 2025)).rename(columns=COL_MAP) / 1e12
+df = fetch("NY.GDP.MKTP.KD", (1978, 2026)).rename(columns=COL_MAP) / 1e12
 write_csv(df, "01a_real_gdp_const2015_usd_tn", "NY.GDP.MKTP.KD",
           "GDP (constant 2015 USD), trillions",
           notes=("Values divided by 1e12 (trillion USD, constant 2015 prices).",))
 
 print("Fetching NY.GDP.PCAP.PP.CD — GDP per capita PPP ...")
-df = fetch("NY.GDP.PCAP.PP.CD", (1990, 2025)).rename(columns=COL_MAP)
+df = fetch("NY.GDP.PCAP.PP.CD", (1990, 2026)).rename(columns=COL_MAP)
 write_csv(df, "01b_gdp_per_capita_ppp_usd", "NY.GDP.PCAP.PP.CD",
           "GDP per capita, PPP (current international USD)",
           notes=("Chart 01b 'GDP per capita as % of US' is derived in script as "
                  "(country / US) * 100.",))
 
 print("Fetching NV.IND.MANF.CD — Manufacturing VA (current USD), incl. WORLD ...")
-df = fetch("NV.IND.MANF.CD", (1978, 2025),
+df = fetch("NV.IND.MANF.CD", (1978, 2026),
            economies=ECONOMIES + ["WLD"])
 df = df.rename(columns={**COL_MAP, "WLD": "WORLD"}) / 1e12
 write_csv(df, "01c_manufacturing_va_current_usd_tn", "NV.IND.MANF.CD",
@@ -82,12 +82,12 @@ write_csv(df, "01c_manufacturing_va_current_usd_tn", "NV.IND.MANF.CD",
                  "reflects UK exit from the aggregate, not relative decline."))
 
 print("Fetching NE.TRD.GNFS.ZS — Trade as % of GDP ...")
-df = fetch("NE.TRD.GNFS.ZS", (1978, 2025)).rename(columns=COL_MAP)
+df = fetch("NE.TRD.GNFS.ZS", (1978, 2026)).rename(columns=COL_MAP)
 write_csv(df, "01e_trade_gdp_share_pct", "NE.TRD.GNFS.ZS",
           "Trade (% of GDP) — sum of exports and imports of goods+services")
 
 print("Fetching BX.KLT.DINV.CD.WD — FDI net inflows ...")
-df = fetch("BX.KLT.DINV.CD.WD", (1982, 2025)).rename(columns=COL_MAP) / 1e9
+df = fetch("BX.KLT.DINV.CD.WD", (1982, 2026)).rename(columns=COL_MAP) / 1e9
 write_csv(df, "01f_fdi_inflows_current_usd_bn", "BX.KLT.DINV.CD.WD",
           "Foreign direct investment, net inflows (BoP, current USD), billions",
           notes=("Values divided by 1e9 (billion USD).",))
@@ -96,20 +96,20 @@ write_csv(df, "01f_fdi_inflows_current_usd_bn", "BX.KLT.DINV.CD.WD",
 # ---------- Chapter 02 ----------
 
 print("Fetching GB.XPD.RSDV.GD.ZS — GERD % of GDP ...")
-df = fetch("GB.XPD.RSDV.GD.ZS", (1996, 2025)).rename(columns=COL_MAP)
+df = fetch("GB.XPD.RSDV.GD.ZS", (1996, 2026)).rename(columns=COL_MAP)
 write_csv(df, "02a_gerd_pct_gdp", "GB.XPD.RSDV.GD.ZS",
           "GERD — Gross domestic expenditure on R&D (% of GDP)",
           notes=("Source-of-source: UNESCO Institute of Statistics, via World Bank.",))
 
 print("Fetching NY.GDP.MKTP.PP.CD — GDP PPP (current intl $) ...")
-df = fetch("NY.GDP.MKTP.PP.CD", (1996, 2025)).rename(columns=COL_MAP)
+df = fetch("NY.GDP.MKTP.PP.CD", (1996, 2026)).rename(columns=COL_MAP)
 write_csv(df, "02b_gdp_ppp_current_intl_usd", "NY.GDP.MKTP.PP.CD",
           "GDP, PPP (current international USD)",
           notes=("Chart 02b 'R&D spending absolute' is derived in script as "
                  "(GERD%GDP / 100) * GDP_PPP.",))
 
 print("Fetching IP.PAT.RESD — Patent applications by residents ...")
-df = fetch("IP.PAT.RESD", (1996, 2025)).rename(columns=COL_MAP) / 1000
+df = fetch("IP.PAT.RESD", (1996, 2026)).rename(columns=COL_MAP) / 1000
 write_csv(df, "02c_patent_applications_residents_thousands", "IP.PAT.RESD",
           "Patent applications by residents (thousands)",
           notes=("Values divided by 1000 (thousands of applications).",
@@ -118,7 +118,7 @@ write_csv(df, "02c_patent_applications_residents_thousands", "IP.PAT.RESD",
                  "WB does not publish IP.PAT.RESD for the EUU aggregate; EU column may be NaN."))
 
 print("Fetching TX.VAL.TECH.CD — High-technology exports ...")
-df = fetch("TX.VAL.TECH.CD", (2000, 2025)).rename(columns=COL_MAP) / 1e9
+df = fetch("TX.VAL.TECH.CD", (2000, 2026)).rename(columns=COL_MAP) / 1e9
 write_csv(df, "02d_high_tech_exports_usd_bn", "TX.VAL.TECH.CD",
           "High-technology exports, current USD (billions)",
           notes=("Values divided by 1e9 (USD billion).",
@@ -126,12 +126,12 @@ write_csv(df, "02d_high_tech_exports_usd_bn", "TX.VAL.TECH.CD",
                  "US high-tech 'value' increasingly travels in software/services."))
 
 print("Fetching TX.VAL.TECH.MF.ZS — High-tech % of manufactured exports ...")
-df = fetch("TX.VAL.TECH.MF.ZS", (2000, 2025)).rename(columns=COL_MAP)
+df = fetch("TX.VAL.TECH.MF.ZS", (2000, 2026)).rename(columns=COL_MAP)
 write_csv(df, "02e_high_tech_pct_manuf_exports", "TX.VAL.TECH.MF.ZS",
           "High-technology exports (% of manufactured exports)")
 
 print("Fetching SP.POP.SCIE.RD.P6 — Researchers per million people ...")
-df = fetch("SP.POP.SCIE.RD.P6", (1996, 2025)).rename(columns=COL_MAP)
+df = fetch("SP.POP.SCIE.RD.P6", (1996, 2026)).rename(columns=COL_MAP)
 write_csv(df, "02f_researchers_per_million", "SP.POP.SCIE.RD.P6",
           "Researchers in R&D, per million people (FTE)",
           notes=("Source-of-source: UNESCO Institute of Statistics, via World Bank.",))

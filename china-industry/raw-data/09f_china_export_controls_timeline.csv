@@ -1,11 +1,22 @@
-# source: Chinese MOFCOM and Ministry of Commerce export-control announcements; Reuters and FT coverage of each event; WTO DS431 case file (2014 rare-earth ruling)
+# source: Chinese MOFCOM and Ministry of Commerce export-control announcements; Reuters and FT coverage of each event; WTO DS431 case file (2014 rare-earth ruling); law-firm summaries of MOFCOM announcements where the MOFCOM English text was not retrievable
 # url: https://english.mofcom.gov.cn/  (MOFCOM English news releases)
 # url: https://www.wto.org/english/tratop_e/dispu_e/cases_e/ds431_e.htm  (WTO China-Rare Earths case)
 # url: https://www.reuters.com/world/china/china-imposes-export-controls-graphite-citing-national-security-2023-10-20/
 # url: https://www.reuters.com/world/china/china-imposes-export-controls-some-rare-earth-processing-technologies-2024-12-21/
-# retrieved: 2026-05-13
-# notes: Major Chinese export-control or restriction events affecting critical minerals / materials, 2010-2024.
+# url: https://fastmarkets.com/insights/china-suspends-export-prohibition-on-superhard-materials-us  (MOFCOM Ann. 46/2024 US ban and its Nov 2025 suspension)
+# url: https://www.iea.org/policies/26795-decision-to-implement-export-controls-on-tungsten-tellurium-bismuth-molybdenum-and-indium-related-items  (MOFCOM/GACC Ann. 10/2025, 4 Feb 2025)
+# url: https://english.mofcom.gov.cn/Policies/AnnouncementsOrders/art/2025/art_0dd87cbee7b045bf93fabe6ab2faceee.html  (MOFCOM/GACC Ann. 18/2025, 4 Apr 2025)
+# url: https://www.iea.org/policies/26796-export-controls-on-certain-medium-and-heavy-rare-earth-items
+# url: https://www.jonesday.com/en/insights/2025/10/china-imposes-extraterritorial-export-control-measures-over-rare-earth-items  (Ann. 55-58, 61, 62 of 9 Oct 2025)
+# url: https://www.siliconexpert.com/blog/china-expands-export-controls-on-middle-and-heavy-rare-earth-elements  (Ann. 57/2025: Ho, Er, Tm, Eu, Yb)
+# url: https://www.jonesday.com/en/insights/2025/11/bis-suspends-affiliates-rule_china-pauses-rare-earth-export-controls  (Ann. 70/2025 suspension)
+# url: https://www.gtlaw.com/ja/insights/2026/2/china-imposes-escalated-export-controls-on-dual-use-items-to-japan  (Ann. 1/2026, Japan)
+# url: https://arnoldporter.com/en/perspectives/advisories/2026/07/china-imposes-export-control-and-government-procurement-restrictions-on-designated-us-companies  (Ann. 23/2026, 10 US entities)
+# retrieved: 2026-10-13
+# notes: Major Chinese export-control or restriction events affecting critical minerals / materials, 2010-2026.
 # notes: 2010 Senkaku episode was an informal embargo on rare earths to Japan; the WTO 2014 ruling found later (2012-2014) formal quotas to be WTO-non-compliant.
+# notes: ADDED 2024-12 (back-fill): MOFCOM Ann. 46/2024 (3 Dec 2024) — in-principle ban on gallium, germanium, antimony, superhard-material exports to the US. REMOVED (2026-10-13): a pre-existing 2024-12 row "Rare-earth and graphite tech controls (expanded)" matched no MOFCOM announcement and duplicated the Dec-2023 rare-earth technology export ban already listed.
+# notes: Status at retrieval: April 2025 (Ann. 18) licensing remains in force, partly eased by one-year "general licences" for some magnet makers from Dec 2025 (Reuters). October 2025 package (Ann. 55-58, 61, 62) suspended 7 Nov 2025 to 10 Nov 2026 (Ann. 70); US-specific Ga/Ge/Sb ban suspended 9 Nov 2025 to 27 Nov 2026 (Ann. 72). Press reports (Sept 2026) say the truce was extended to 10 Jan 2027; no MOFCOM text confirming an extension was found.
 year,month,event,materials,note
 2010,9,2010 Senkaku rare-earth embargo (informal),Rare earths,Informal halt to RE shipments to Japan during Senkaku/Diaoyu islands incident
 2012,3,Formal RE export quotas (later WTO-ruled non-compliant),Rare earths,Quota system formalised; challenged at WTO by US/EU/Japan
@@ -14,4 +25,10 @@ year,month,event,materials,note
 2023,10,Graphite export licensing,Graphite,Export licences required for natural and synthetic graphite (battery anode material)
 2023,12,Rare-earth refining tech export ban,Rare-earth processing tech,Export of rare-earth separation/refining technology banned
 2024,8,Antimony export controls,Antimony,Export licences for antimony (defense / semiconductor applications)
-2024,12,Rare-earth and graphite tech controls (expanded),"Rare earths, Graphite",Expanded controls on processing technology and equipment
+2024,12,Ga/Ge/Sb/superhard export ban to US,"Gallium, Germanium, Antimony, Superhard materials","MOFCOM Ann. 46: exports to US 'in principle' not permitted; dual-use exports to US military users banned"
+2025,2,"Tungsten, tellurium, bismuth, molybdenum, indium licensing","Tungsten, Tellurium, Bismuth, Molybdenum, Indium",MOFCOM/GACC Ann. 10: export licences required
+2025,4,Seven medium/heavy rare earths licensing,"Sm, Gd, Tb, Dy, Lu, Sc, Y + magnets","MOFCOM/GACC Ann. 18: licences for oxides, metals, alloys, magnets"
+2025,10,Extraterritorial rare-earth regime + 5 more REEs,"Ho, Er, Tm, Eu, Yb; RE tech; Li-ion batteries; graphite anode; superhard materials","Ann. 55-58, 61, 62: 0.1% de minimis rule for foreign products with Chinese RE; controls on RE technology and equipment"
+2025,11,October package and US-specific ban suspended,"Rare earths, Ga, Ge, Sb, battery materials","Ann. 70/72 after Busan Trump-Xi meeting: Oct 2025 measures paused to Nov 2026; April 2025 controls stay in force"
+2026,1,Dual-use export ban to Japanese military end-users,"Dual-use items incl. rare earths, tungsten",MOFCOM Ann. 1/2026; followed by 20 Japanese entities on control list (Feb 2026)
+2026,6,10 US firms added to export control list,"Dual-use items incl. rare earths","Ann. 23/2026: includes MP Materials, USA Rare Earth, defence firms; response to US 1260H list update"

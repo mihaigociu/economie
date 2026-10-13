@@ -2,9 +2,12 @@
 # url: https://investor.synopsys.com/financial-information/sec-filings  (Synopsys 10-K)
 # url: https://www.cadence.com/en_US/home/company/investor-relations.html  (Cadence 10-K)
 # url: https://www.semi.org/en/products-services/market-data  (SEMI / ESD Alliance commentary)
-# retrieved: 2026-05-13
-# notes: % of global EDA software market by vendor revenue, 2024.
+# url: https://www.sec.gov/Archives/edgar/data/883241/000088324125000024/snps-20250731.htm  (Synopsys 10-Q: Ansys acquisition closed 17 Jul 2025)
+# url: https://www.caixinglobal.com/2025-07-03/us-lifts-export-ban-on-chip-design-software-to-china-amid-trade-thaw-102337708.html  (US EDA export curbs to China May 2025, rescinded 2 Jul 2025)
+# retrieved: 2026-05-13 (shares); notes reviewed 2026-10-13
+# notes: % of global EDA software market by vendor revenue, 2024. SHARES NOT UPDATED — no free authoritative 2025 vendor-share breakdown found (third-party estimates vary widely).
 # notes: Top 3 (Synopsys + Cadence + Siemens EDA) hold ~73% of global EDA. Empyrean is the largest indigenous Chinese EDA vendor.
+# notes: Synopsys completed its acquisition of Ansys on 17 Jul 2025 (~$35bn). From 2025 the Synopsys and Ansys rows are one company; Ansys is mostly simulation software, so a "Synopsys + Ansys" share would overstate chip-design EDA concentration.
 vendor,country,share
 Synopsys,United States,32
 Cadence,United States,28

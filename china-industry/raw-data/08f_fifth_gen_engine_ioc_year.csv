@@ -2,9 +2,12 @@
 # url: https://www.pw.utc.com/products-and-services/products/military-engines/F119/  (Pratt & Whitney F119)
 # url: https://www.pw.utc.com/products-and-services/products/military-engines/F135-Engine/  (Pratt & Whitney F135)
 # url: https://thediplomat.com/2023/07/chinese-j-20-fighter-finally-gets-its-purpose-built-engine/  (WS-15 IOC reporting)
-# retrieved: 2026-05-13
+# url: https://www.janes.com/defence-intelligence-insights/defence-news/defence/chinese-ws-15-engine-prepared-for-mass-production  (AECC, Mar 2023: WS-15 ready for mass production)
+# url: https://militarywatchmagazine.com/article/footage-new-chinese-j20a-stealth-ws15  (Dec 2025 footage: first serial-production J-20As with twin WS-15)
+# retrieved: 2026-10-13
 # notes: Year of Initial Operational Capability (IOC) for an indigenous high-thrust 5th-gen fighter engine.
-# notes: WS-15 reached IOC in 2023 — 18 years after the US F-119 (the engine for the F-22) entered service in 2005.
+# notes: CAVEAT — China has never announced a formal WS-15 IOC. "2023" = AECC statement that the engine was ready for mass production; serial-production J-20As with WS-15 were first reported (from footage, not officially) in Dec 2025. Treat 2023 as the earliest plausible date.
+# notes: On that basis WS-15 came 18 years after the US F-119 (F-22 IOC Dec 2005).
 engine,country,ioc_year
 F-119 (F-22),United States,2005
 F-135 (F-35),United States,2015

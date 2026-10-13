@@ -1,9 +1,19 @@
-# source: IFR (International Federation of Robotics) — World Robotics 2024 report (headline annual figures publicly summarised in IFR press releases)
-# url: https://ifr.org/ifr-press-releases/news/world-robotics-2024-report  (IFR press release with global+regional headline figures)
-# url: https://ifr.org/ifr-press-releases/news/asia-still-dominates-the-global-robotics-installation
-# retrieved: 2026-05-13
+# source: IFR (International Federation of Robotics) — World Robotics 2022–2026 reports (headline annual figures publicly summarised in IFR press releases / executive summaries)
+# url: https://ifr.org/img/worldrobotics/Executive_Summary_WR_2026_-_Industrial_Robots.pdf  (WR2026 exec summary: 2025 global 603,307; China 354,226; US 38,428)
+# url: https://ifr.org/downloads/press_docs/EN-2026-SEP-24-IFR_Press_Release_WR-CHINA.pdf  (WR2026 China release, 24 Sep 2026: 354,000 units, ~59% of world)
+# url: https://www.therobotreport.com/5-million-robots-now-working-factories-worldwide-ifr-reports/  (trade-press summary of WR2026 country figures: Japan 36,219; Korea ~30,000; Germany <25,000)
+# url: https://www.industrial-production.de/industrial-robots/world-robotics-2026-report-germany-installs-41--of-all-industrial-robots-in-the-eu.htm  (Germany 2025: 24,800)
+# url: https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years  (WR2025: 2024 global ~542,000 [542,076]; China 295,000; Japan 44,500; US 34,200; Korea 30,600; Germany 26,982)
+# url: https://ifr.org/ifr-press-releases/news/record-of-4-million-robots-working-in-factories-worldwide  (WR2024: 2023 global 541,302; China 276,288; Japan 46,106; US 37,587; Korea 31,444; Germany 28,355)
+# url: https://ifr.org/news/world-robotics-2023-report-asia-ahead-of-europe-and-the-americas  (WR2023: 2022 global 553,052; China 290,258; Japan 50,413; US 39,576; Korea 31,716; Germany 25,636)
+# url: https://ifr.org/ifr-press-releases/news/wr-report-all-time-high-with-half-a-million-robots-installed  (WR2022: 2021 global 517,385)
+# retrieved: 2026-10-13
 # notes: New industrial-robot installations per year, thousands of units. Full IFR World Robotics report is paywalled; headline country totals are in IFR press releases each September.
-# notes: Global column is derived (sum of regions); China_share_pct = China / Global * 100.
+# notes: Global column is derived in the script (sum of all columns); China_share_pct = China / Global * 100. "Rest of World" is therefore defined as IFR global total minus the five named countries.
+# notes: REVISION 2026-10-13: the previous "Rest of World" values for 2021–2023 (75, 78, 86) did not reconcile to IFR global totals (517k, 553k, 541k) and overstated China's share (e.g. 2023 showed ~54% vs IFR's 51%). Rest of World for 2021–2023 recomputed as IFR global minus named countries: 2021 75->112, 2022 78->115, 2023 86->122.
+# notes: REVISION 2026-10-13: 2023 United States 44->38 (IFR 37,587) and Germany 26->28 (IFR 28,355); 2022 United States 39->40 (39,576) and Germany 25->26 (25,636) — rounding corrected.
+# notes: CAVEAT: 2012–2020 rows are unchanged and their Rest of World values also appear too low vs IFR global totals (e.g. 2020 row sums to 349k vs IFR ~384–394k), so China's share is overstated for those years. Not revised here because country-level figures for those years were not re-verified; fix before relying on the pre-2021 share line.
+# notes: 2024 row from WR2025 (Japan 44.5k rounded to 45 so that the row sums to IFR's 542k). 2025 row from WR2026 (Germany 24.8k rounded to 25). China share: 2023 51.0%, 2024 54.4%, 2025 58.7%.
 year,China,Japan,Korea,United States,Germany,Rest of World
 2012,23,28,19,22,18,30
 2013,37,26,22,24,18,29
@@ -14,6 +24,8 @@ year,China,Japan,Korea,United States,Germany,Rest of World
 2018,154,55,38,40,26,70
 2019,140,50,28,33,20,62
 2020,168,39,30,30,22,60
-2021,268,47,31,35,24,75
-2022,290,50,32,39,25,78
-2023,276,46,31,44,26,86
+2021,268,47,31,35,24,112
+2022,290,50,32,40,26,115
+2023,276,46,31,38,28,122
+2024,295,45,31,34,27,110
+2025,354,36,30,38,25,120

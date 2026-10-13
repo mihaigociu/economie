@@ -1,10 +1,12 @@
-# source: TrendForce 2024 fab-capacity commentary; SEMI World Fab Forecast 2024 (publicly cited figures)
-# url: https://www.trendforce.com/news/  (TrendForce free news + analyses)
-# url: https://www.semi.org/en/products-services/market-data/world-fab-forecast  (SEMI World Fab Forecast — paywalled report; headline figures in press)
-# retrieved: 2026-05-13
-# notes: % of global wafer-fab capacity by economy of fab location, by node segment, 2024.
-# notes: Advanced = leading-edge (<=7nm). Mature = 28nm and older (analog, power management, automotive, IoT).
-# notes: Rows sum to ~100%; small differences (0-1pp) reflect rounding across sources.
-node_segment,Taiwan (TSMC),South Korea,United States,Japan,China (mainland),Europe + Other
-Advanced (<=7nm),91.5,7,1,0,0.5,0
-Mature (28nm+),30,17,7,10,32,4
+# source: TrendForce press releases / insights (free). Two advanced-node rows from two TrendForce publications with DIFFERENT node definitions and vintages — not a single consistent table.
+# url: https://www.trendforce.com/presscenter/news/20220801-11322.html  (1 Aug 2022: forecast share of <=7nm capacity in 2025 — Taiwan ~69%, South Korea 18%, United States 12%, China 1%)
+# url: https://www.trendforce.com/news/2024/05/14/insights-trendforce-foundry-capacity-market-share-of-advanced-process-to-decline-in-taiwan-korea-until-2027-while-us-on-the-rise/  (14 May 2024: 2024 share of foundry capacity at 16/14nm and below — Taiwan 66%, Korea 11%, US 10%, China 9%)
+# retrieved: 2026-10-13
+# notes: % of global capacity by LOCATION of the fab (not by company), per node segment.
+# notes: MAJOR REVISION — the previous file (Advanced <=7nm: Taiwan 91.5 / Korea 7 / US 1 / China 0.5; Mature 28nm+: Taiwan 30 / Korea 17 / US 7 / Japan 10 / China 32 / Other 4) could not be traced to a citable source and conflicted with TrendForce's own published figures. It is replaced.
+# notes: Row 1 is a 2022 FORECAST for 2025, not a measured 2025 actual; the four shares sum to 100, so Japan and Europe+Other are 0 by implication.
+# notes: Row 2 is a 2024 estimate on a broader definition (16/14nm and more advanced; foundry capacity). The four named shares sum to 96; TrendForce does not allocate the remaining 4%, so Japan and Europe + Other are left blank and the chart shows the residual as "not allocated".
+# notes: Mature-node (28nm and above) shares by country are NOT available from a free source as a full table; the mature row has been dropped. China-only mature-node share is in 08a_china_mature_node_share_pct.csv.
+node_segment,Taiwan,South Korea,United States,Japan,China (mainland),Europe + Other
+"<=7nm — 2025 (TrendForce forecast, 2022)",69,18,12,0,1,0
+"<=16/14nm — 2024 (TrendForce estimate, 2024)",66,11,10,,9,

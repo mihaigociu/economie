@@ -1,17 +1,23 @@
-# source: IISS Military Balance 2024 (paywalled report; figures cited in trade press); US Office of Naval Intelligence public testimony to Congress; CSIS open analyses
-# url: https://www.iiss.org/publications/the-military-balance/the-military-balance-2024  (IISS Military Balance — paywalled)
+# source: IISS Military Balance (paywalled; figures cited in trade press); US Office of Naval Intelligence public testimony; CSIS open analyses; Xinhua / China Daily (Fujian commissioning); USNI News (US carrier count)
+# url: https://www.iiss.org/publications/the-military-balance/  (IISS Military Balance — paywalled)
 # url: https://www.csis.org/programs/china-power-project  (CSIS China Power Project, free)
 # url: https://news.usni.org/  (USNI News covers ONI testimony)
-# retrieved: 2026-05-13
-# notes: Aircraft carriers commissioned and operational as of end-2024. Nuclear vs conventional propulsion.
-# notes: India/Japan/Italy/Korea entries here treat helicopter / STOVL flat-tops as carriers per IISS convention.
+# url: https://subsites.chinadaily.com.cn/npc/2025-11/07/c_1139081.htm  (Fujian / Type 003 commissioned 5 Nov 2025, Sanya, hull 18)
+# url: https://news.usni.org/2026/03/14/navy-extends-uss-nimitz-service-life-to-2027-in-line-with-carrier-john-f-kennedys-delivery  (Nimitz retirement moved to Mar 2027; US stays at 11)
+# url: https://theaviationist.com/2025/07/12/russia-considers-retiring-its-sole-aircraft-carrier/  (Admiral Kuznetsov: repairs suspended, possible scrapping)
+# retrieved: 2026-10-13
+# notes: Aircraft carriers in commission as of October 2026 (previous snapshot: end-2024). Nuclear vs conventional propulsion.
+# notes: REVISION — China's value (3) is unchanged but its basis is corrected: at end-2024 only Liaoning and Shandong were commissioned; Fujian (CATOBAR, EM catapults) was commissioned 5 Nov 2025, so "3" is correct only from Nov 2025.
+# notes: Russia's Admiral Kuznetsov has been out of service (refit) since 2017; Moscow reportedly suspended repairs in Jul 2025. Kept in the count per IISS inventory convention but flagged in the non_operational column (number of the country's carriers not operational).
+# notes: Italy = Cavour + Trieste (LHD, commissioned Dec 2024; Garibaldi withdrawn Oct 2024). India/Japan/Italy treat STOVL / helicopter flat-tops as carriers per IISS convention.
+# notes: Not counted: China's Type 076 Sichuan (EM-catapult LHD, sea trials since Nov 2025, not yet commissioned as of Aug 2026 reporting) and Type 004 (under construction at Dalian; nuclear propulsion suspected, not confirmed).
 # notes: Total column is derived (nuclear + conventional).
-country,nuclear,conventional
-France,1,0
-Russia,0,1
-Italy,0,2
-United Kingdom,0,2
-India,0,2
-Japan,0,2
-China,0,3
-United States,11,0
+country,nuclear,conventional,non_operational
+France,1,0,0
+Russia,0,1,1
+Italy,0,2,0
+United Kingdom,0,2,0
+India,0,2,0
+Japan,0,2,0
+China,0,3,0
+United States,11,0,0

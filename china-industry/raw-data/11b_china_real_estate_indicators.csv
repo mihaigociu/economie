@@ -1,11 +1,15 @@
 # source: National Bureau of Statistics of China (NBS); IMF Article IV China consultations; BIS quarterly review
 # url: https://www.stats.gov.cn/english/
+# url: https://www.stats.gov.cn/english/PressRelease/202601/t20260120_1962353.html  (NBS, Investment in Real Estate Development for 2025, released 2026-01-20)
+# url: https://www.stats.gov.cn/english/PressRelease/202609/t20260916_1965342.html  (NBS, Investment in Real Estate Development Jan-Aug 2026; YTD context only, not plotted)
 # url: https://www.imf.org/en/Countries/CHN  (IMF China page — Article IV reports)
 # url: https://www.bis.org/publ/quarterly/  (BIS quarterly review)
-# retrieved: 2026-05-13
-# notes: China property sector indicators. residential_floor_area_started_mn_m2 = annual new-build floor area started, million square metres.
-# notes: property_investment_yoy_pct = year-on-year change in real-estate investment by developers, % (NBS data).
-# notes: The 2021-2024 collapse follows Evergrande default (Sept 2021) and the "three red lines" deleveraging policy.
+# retrieved: 2026-10-13
+# notes: China property sector indicators. floor_started_mn_m2 = annual floor space of buildings newly started by real-estate developers, ALL building types (NBS headline series), million square metres. CORRECTION: earlier versions described this as "residential"; the values (2019 2,272; 2024 740; 2025 588) match the NBS all-buildings total. NBS residential-only starts were 429.84 Mm2 in 2025.
+# notes: property_investment_yoy_pct = year-on-year change in real-estate development investment, % (NBS headline rate, computed by NBS on a comparable basis after revising prior-year levels; it will not exactly equal the change between published levels).
+# notes: 2025 added (NBS 2026-01-20): investment RMB 8,278.8bn, -17.2% YoY; new starts 587.70 Mm2 (-20.4% NBS comparable basis); new commercial-building sales 881.01 Mm2 (-8.7%), RMB 8,393.7bn (-12.6%).
+# notes: 2026 YTD (not in table, partial year): Jan-Aug 2026 investment RMB 4,797.9bn, -19.9% YoY; new starts 298.94 Mm2, -24.8%; sales floor space -12.1%, sales value -13.0% (NBS 2026-09-16).
+# notes: The 2021-2025 collapse follows Evergrande default (Sept 2021) and the "three red lines" deleveraging policy.
 year,floor_started_mn_m2,property_investment_yoy_pct
 2015,1545,1.0
 2016,1669,6.9
@@ -17,3 +21,4 @@ year,floor_started_mn_m2,property_investment_yoy_pct
 2022,1206,-10.0
 2023,955,-9.6
 2024,740,-10.6
+2025,588,-17.2

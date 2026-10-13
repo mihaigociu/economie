@@ -1,13 +1,15 @@
-# source: IEA — Electricity 2024; IEA — Energy and AI 2025
-# url: https://www.iea.org/reports/electricity-2024
-# url: https://www.iea.org/reports/energy-and-ai
-# retrieved: 2026-05-13
-# notes: Global data-centre electricity demand by region, TWh per year. 2020-2024 are estimates of actuals; 2026-2030 are IEA scenario projections (mid-case).
-# notes: Global column derived (sum of regions).
-year,United States,China,EU27,Rest of World
-2020,100,80,65,50
-2022,140,120,80,60
-2024,175,150,90,70
-2026,260,240,115,85
-2028,330,320,130,100
-2030,400,400,150,120
+# source: IEA — Energy and AI (April 2025; 2024 base year, regional shares and 2030 Base Case increments); IEA — Key Questions on Energy and AI (April 2026; 2025 estimate and 2030 Base Case global total)
+# url: https://www.iea.org/reports/energy-and-ai/executive-summary  (2024: ~415 TWh, ~1.5% of world electricity; US 45%, China 25%, Europe 15%; 2030 Base Case ~945 TWh)
+# url: https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai  (2030 increments: US +~240 TWh (+130%), China +~175 TWh (+170%), Europe +>45 TWh (+70%), Japan +~15 TWh)
+# url: https://sustainabilityonline.net/news/data-centres-to-account-for-3-of-global-electricity-consumption-by-2030/  (trade press quoting the IEA increments verbatim)
+# url: https://iea.blob.core.windows.net/assets/3179f7f8-01f6-4dd6-bffa-c9f7b73f1dc9/KeyQuestionsonEnergyandAI.pdf  (2025: ~485 TWh, +17% y-o-y; 2030 Base Case ~950 TWh)
+# retrieved: 2026-10-13
+# notes: Data-centre electricity consumption, TWh per year. 2024 and 2025 are IEA estimates of actuals; 2030 is the IEA Base Case projection.
+# notes: 2026-10-13 REBUILD: the previous file (2020-2030 regional series, 2024 global 485 TWh, 2030 1,070 TWh, China 400 TWh in 2030) did not match any IEA publication and has been replaced with IEA-citable figures only.
+# notes: REGIONAL VALUES ARE DERIVED, not published as TWh by the IEA: 2024 region = IEA share x 415 TWh (US 45% -> 187, China 25% -> 104, Europe 15% -> 62); 2030 region = 2024 value + IEA stated increment (US +240 -> 427, China +175 -> 279, Europe +45 -> 107). Rest of World = Global - three regions (derived). Europe is IEA's 'Europe', not EU27.
+# notes: 2030 global is the April 2025 Energy and AI Base Case (945 TWh), kept for consistency with the regional increments; the April 2026 Key Questions report gives ~950 TWh. The 2025 row has no regional split (IEA has not published one).
+# notes: basis column: 'estimate' = IEA estimate of actual consumption; 'projection' = IEA Base Case.
+year,United States,China,Europe,Rest of World,Global,basis
+2024,187,104,62,62,415,estimate
+2025,,,,,485,estimate
+2030,427,279,107,132,945,projection

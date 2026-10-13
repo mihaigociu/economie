@@ -1,18 +1,24 @@
-# source: IEA Global Critical Minerals Outlook 2024 (refining / processing shares for the major critical minerals)
-# url: https://www.iea.org/reports/global-critical-minerals-outlook-2024
-# retrieved: 2026-05-13
-# notes: China's share of global refining / processing capacity for each critical mineral, 2023 figures, %.
-# notes: Sorted ascending; nickel is the diversified outlier (most refining in Indonesia + Russia + Japan).
+# source: IEA Global Critical Minerals Outlook 2026 (China's share of refining / processing, 2025); USGS Mineral Commodity Summaries 2026 (magnesium metal)
+# url: https://www.iea.org/reports/global-critical-minerals-outlook-2026
+# url: https://apo.org.au/sites/default/files/resource-files/2026-07/apo-nid335214.pdf  (mirror of GCMO 2026 PDF; p.31 chart 'Share of refined material production by country in 2025'; p.39 table 'Export controls announced, proposed or updated in 2025 and 2026', column 'Market share (2025) - share of refining')
+# url: https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-magnesium-metal.pdf
+# url: https://www.iea.org/reports/global-critical-minerals-outlook-2024  (previous source)
+# retrieved: 2026-10-13
+# notes: China's share of global refining / processing for each critical mineral, 2025 figures, % (was 2023).
+# notes: 2026-10-13 update, old -> new (source): Nickel 20 -> 31 (IEA p.31; Indonesia is top refiner at 45%); Lithium 70 -> 74 (IEA p.31; GCMO text elsewhere says 70-75%); Cobalt 75 -> 76 (IEA p.31); Rare earths 90 -> 85 (IEA p.31/p.182, magnet rare earths; p.39 table says 91%); Graphite 90 -> 94 (battery-grade incl. spherical + synthetic; IEA p.31 & p.39); Manganese 95 -> 96 (manganese sulphate; IEA p.31); Bismuth 80 -> 73, Antimony 60 -> 44, Gallium 98 -> 99, Germanium 68 -> 94, Tungsten 84 -> 76 (all IEA p.39 'share of refining'); Magnesium 87 -> 86 (USGS 2025 primary metal: China 950 of 1,100 kt).
+# notes: p.31 values were read from the vector geometry of the IEA chart (exact to ~0.1 pt); p.39 values are printed labels.
+# notes: Germanium jump (68 -> 94) and antimony drop (60 -> 44) are large: likely partly definitional (old values may have been production/mining shares). Flag before quoting.
+# notes: Nickel is the diversified outlier but it is Indonesia (not Russia/Japan/Canada) that dominates refining.
 mineral,china_share
-Nickel (refined),20
-Lithium (refined),70
-Cobalt (refined),75
-Rare earths (refined),90
-Graphite (natural + synthetic),90
-Manganese (battery-grade),95
-Bismuth,80
-Antimony,60
-Gallium,98
-Germanium,68
-Tungsten,84
-Magnesium,87
+Nickel (refined),31
+Lithium (refined),74
+Cobalt (refined),76
+Rare earths (refined),85
+Graphite (natural + synthetic),94
+Manganese (battery-grade),96
+Bismuth,73
+Antimony,44
+Gallium,99
+Germanium,94
+Tungsten,76
+Magnesium,86

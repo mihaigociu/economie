@@ -1,11 +1,14 @@
-# source: IEA — Special Report on Solar PV Global Supply Chains (2022); updated with IEA Renewables 2024
-# url: https://www.iea.org/reports/solar-pv-global-supply-chains
-# url: https://www.iea.org/reports/renewables-2024
-# retrieved: 2026-05-13
-# notes: China's share of global solar PV manufacturing at each stage of the value chain, 2023 figures, %.
-# notes: Polysilicon -> wafer -> cell -> module. China share rose from ~60% (modules) in 2010 to >80% at every stage by 2023.
+# source: IEA PVPS (IEA Photovoltaic Power Systems Programme) Task 1 — PV industry snapshot, Nov 2025 (2024 production data compiled by RTS Corporation); IEA PVPS April 2026 snapshot (2025 module share)
+# url: https://iea-pvps.org/wp-content/uploads/2025/11/2025-11-11-Kaizuka.pdf
+# url: https://iea-pvps.org/wp-content/uploads/2026/01/Industry-I-Kaizuka-PVPS-Task-1-Snapshot-webinar-slides-April-2026.pdf
+# url: https://www.iea.org/reports/solar-pv-global-supply-chains  (original 2022 source)
+# retrieved: 2026-10-13
+# notes: China's share of global solar PV manufacturing at each stage of the value chain, 2024 PRODUCTION figures, % (was 2023).
+# notes: 2026-10-13 METHODOLOGY CHANGE: switched to IEA PVPS production shares (one consistent source for all four stages). Old -> new: Polysilicon 88 -> 94, Wafer 97 -> 96.5, Cell 85 -> 90, Module 80 -> 86. PVPS's own 2023 shares were 92 / 98.1 / 92 / 84.6, so the old file's numbers were on a different (likely capacity / IEA-2022 projection) basis.
+# notes: 2025: IEA PVPS (Apr 2026) reports China's share of MODULE production fell to 80% in 2025 (India 5%, Vietnam and USA 3% each). 2025 shares for polysilicon / wafer / cell were not published in text form, so the table stays on 2024 for consistency.
+# notes: Polysilicon -> wafer -> cell -> module. China >85% at every stage in 2024.
 stage,china_share,rest_of_world
-Polysilicon,88,12
-Wafer,97,3
-Cell,85,15
-Module,80,20
+Polysilicon,94,6
+Wafer,96.5,3.5
+Cell,90,10
+Module,86,14

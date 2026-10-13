@@ -1,0 +1,9 @@
+# source: TrendForce insights (free)
+# url: https://www.trendforce.com/news/2024/05/14/insights-trendforce-foundry-capacity-market-share-of-advanced-process-to-decline-in-taiwan-korea-until-2027-while-us-on-the-rise/  (China share of mature-process capacity incl. >=28nm: 33% in 2024, 45% forecast 2027)
+# url: https://www.trendforce.com/news/2023/10/18/chinas-share-in-mature-processes-will-speed-up-to-33-in-2027-under-the-pressure-of-geopolitics/  (earlier vintage: 29% in 2023 rising to 33% by 2027 — superseded by the May 2024 figures)
+# retrieved: 2026-10-13
+# notes: China (mainland) share of global mature-process (28nm and above) capacity, %. 2027 is a forecast.
+# notes: TrendForce has revised its China mature-node path upward between vintages (Oct 2023: 33% by 2027; May 2024: 45% by 2027). Uses the latest vintage.
+year,china_share_pct,status
+2024,33,estimate
+2027,45,forecast

@@ -2,9 +2,15 @@
 # url: https://www.reuters.com/technology/china-launches-third-big-fund-with-475-bln-boost-its-chips-2024-05-27/
 # url: https://www.miit.gov.cn/
 # url: https://www.caixinglobal.com/
-# retrieved: 2026-05-13
+# url: https://www.yicaiglobal.com/news/china-sets-up-third-investment-fund-with-usd475-billion-to-spur-semiconductor-industry  (Phase III registered capital RMB 344bn ~ $47.5bn)
+# url: https://www.trendforce.com/news/?p=62206  (Aug 2026: Phase III focus shifting to advanced packaging, equipment/materials, AI chips)
+# url: https://www.techinsights.com/blog/smic-n3-confirmed-kirin-9030-analysis-reveals-how-close-smic-5nm  (Dec 2025: Kirin 9030 on SMIC N+3, a scaled 7nm-class node)
+# url: https://heise.de/-10264695  (YMTC 294-layer Xtacking 4.0 NAND)
+# url: https://www.yicaiglobal.com/news/china-launches-cny1-trillion-venture-capital-guidance-fund-to-back-hard-technology  (separate national VC guidance fund, operating since 26 Dec 2025 — not a Big Fund tranche)
+# retrieved: 2026-10-13
 # notes: National Integrated Circuit Industry Investment Fund ("Big Fund") tranches, USD billion at announcement.
 # notes: Phase 1 launched 2014; Phase 2 launched 2019; Phase 3 launched May 2024. Plus subsequent provincial / local funds; the table only lists central-government Big Fund tranches.
+# notes: Reviewed 2026-10-13: no new central tranche since Phase III. The national venture-capital guidance fund (RMB 1tn target scale, RMB 100bn government capital; NDRC + MoF) is a separate vehicle and is not listed.
 phase,year,announced_usd_bn,note
 Big Fund I,2014,22,"Initial fund — capital injection into national chip producers (SMIC, YMTC, Hua Hong, etc.)"
 Big Fund II,2019,30,"Second-tranche fund; broader coverage including equipment + materials"

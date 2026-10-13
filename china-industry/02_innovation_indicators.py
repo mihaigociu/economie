@@ -39,7 +39,7 @@ COLORS = {"CN": "#c0392b", "US": "#2980b9", "EU": "#7f8c8d",
 
 def load(name, **kwargs):
     return pd.read_csv(f"{RAW_DATA}/{name}.csv", comment="#",
-                       index_col="year", **kwargs)
+                       index_col="year", **kwargs).dropna(how="all")
 
 
 def line_plot(df, title, ylabel, savename, highlight="CN",
@@ -79,7 +79,7 @@ line_plot(
     ylabel="% of GDP",
     savename="02a_gerd_pct_gdp",
     annotation="Source: World Bank GB.XPD.RSDV.GD.ZS (UNESCO via WB).\n"
-               "China overtook the EU27 average around 2013 and continues to close on US/Korea.",
+               f"China overtook the EU27 average in {int(gerd_share[gerd_share.CN > gerd_share.EU].index.min())} and continues to close on US/Korea.",
 )
 
 
@@ -91,6 +91,10 @@ gdp_ppp = load("02b_gdp_ppp_current_intl_usd")
 common_yrs = sorted(set(gerd_share.index) & set(gdp_ppp.index))
 gerd_abs_bn = ((gerd_share.loc[common_yrs] / 100) *
                gdp_ppp.loc[common_yrs]) / 1e9
+_both = gerd_abs_bn[["CN", "US"]].dropna()
+_last = int(_both.index.max())
+_gap = (1 - _both.loc[_last, "CN"] / _both.loc[_last, "US"]) * 100
+_cn_over_eu = int(gerd_abs_bn[gerd_abs_bn.CN > gerd_abs_bn.EU].index.min())
 line_plot(
     gerd_abs_bn,
     title="R&D Spending — Absolute, USD PPP (billion, current intl $)",
@@ -99,7 +103,8 @@ line_plot(
     fill_highlight=True,
     annotation="Derived in-script as (GERD%GDP / 100) × GDP_PPP.\n"
                "Inputs: 02a_gerd_pct_gdp.csv, 02b_gdp_ppp_current_intl_usd.csv.\n"
-               "China overtook EU27 in absolute R&D around 2014; now within ~15% of US.",
+               f"China overtook EU27 in absolute R&D in {_cn_over_eu}; "
+               f"{_gap:.0f}% below the US in {_last}.",
 )
 
 
@@ -148,8 +153,8 @@ line_plot(
     ylabel="% of manufactured exports",
     savename="02e_high_tech_pct_manuf",
     annotation="Source: World Bank TX.VAL.TECH.MF.ZS (Comtrade-derived).\n"
-               "Headline share has been falling for China, US, and Japan since\n"
-               "~2007 as software/services and battery-EV exports shift composition.\n"
+               "Headline share has been falling for China and Japan since ~2007\n"
+               "as EV/battery exports shift composition; the US share has risen since 2018.\n"
                "Absolute high-tech exports continued to grow (see 02d).",
 )
 

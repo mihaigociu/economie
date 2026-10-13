@@ -1,16 +1,20 @@
-# source: IAEA — PRIS (Power Reactor Information System), end-2024 snapshot
-# url: https://pris.iaea.org/pris/  (free interactive database)
-# url: https://pris.iaea.org/PRIS/WorldStatistics/UnderConstructionReactorsByCountry.aspx
-# retrieved: 2026-05-13
-# notes: Operable and under-construction reactor counts by country. Total = operating + under_construction (derived).
+# source: IAEA — PRIS (Power Reactor Information System), live database queried 2026-10-13 (PRIS Analytics country statistics)
+# url: https://pris.iaea.org/pris/  (free interactive database; now redirects to https://pris-stats.iaea.org/)
+# url: https://pris-stats.iaea.org/countrystatistics/country-statistics/  (JSON behind the PRIS Analytics country pages; fields InOperation / UnderConstruction)
+# url: https://www.eia.gov/todayinenergy/detail.php?id=67746  (EIA, June 2026: China 36 under construction per PRIS, ~49% of world construction)
+# retrieved: 2026-10-13
+# notes: Operating (PRIS status 'Operational') and under-construction reactor counts by country. Total = operating + under_construction (derived). World (PRIS, Oct 2026): 417 operating, 78 under construction in 17 countries.
+# notes: 2026-10-13 update, old->new: China 55+26 -> 60+37; Canada 19+0 -> 17+1 (Pickering units retired; Darlington BWRX-300 SMR under construction); South Korea 26+3 -> 26+4; India 23+7 -> 23+8; Russia 36+4 -> 34+5; France 56+1 -> 57+0 (Flamanville-3 now operating); United States 94+1 -> 94+0 (the old '1 under construction' was Vogtle-4, which entered commercial operation in 2024); Japan 33+2 -> 14+2.
+# notes: JAPAN DEFINITION CHANGE: PRIS now classifies 19 idled Japanese units as 'Suspended Operation' (separate from 'Operational'); the old 33 counted them as operable. Operable (operational + suspended) would still be 33. India also has 2 units in 'Suspended Operation' (Madras-1, Rajasthan-1) not counted here, as before.
+# notes: China figures exclude Taiwan (PRIS lists Taiwan units under CN; all are now permanently shut down). Ukraine figures are PRIS's latest available and reflect pre-war reporting; treat as low-confidence.
 country,operating,under_construction
 United Kingdom,9,2
 Ukraine,15,2
-Canada,19,0
-South Korea,26,3
-India,23,7
-Japan,33,2
-Russia,36,4
-France,56,1
-China,55,26
-United States,94,1
+Canada,17,1
+South Korea,26,4
+India,23,8
+Japan,14,2
+Russia,34,5
+France,57,0
+China,60,37
+United States,94,0

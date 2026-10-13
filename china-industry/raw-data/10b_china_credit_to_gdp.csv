@@ -1,19 +1,27 @@
-# source: BIS — Credit to the non-financial sector (free database, table F1.1)
+# source: BIS — Credit to the non-financial sector (total credit statistics, dataflow WS_TC; table F1.1). Vintage downloaded 2026-10-13, data to 2026-Q1.
 # url: https://www.bis.org/statistics/totcredit.htm
 # url: https://stats.bis.org/statx/srs/table/f1.1?c=CN
-# retrieved: 2026-05-13
-# notes: Credit to the non-financial sector (all instruments), % of GDP. BIS data ends ~mid-2024; latest values are quarterly.
-# notes: China_total = government + non-financial corporations + households. The financing engine behind industrial-policy directives is the state-bank lending channel.
-# notes: Comparator series shown for context — the US figure is also high but is driven primarily by household + government, not corporate.
+# url: https://stats.bis.org/api/v1/data/WS_TC/Q.CN.C.A.M.770.A/all  (China, total non-financial sector, % of GDP)
+# url: https://stats.bis.org/api/v1/data/WS_TC/Q.CN.N.A.M.770.A/all  (China, non-financial corporations, % of GDP)
+# url: https://stats.bis.org/api/v1/data/WS_TC/Q.US.C.A.M.770.A/all  (United States, total)
+# url: https://stats.bis.org/api/v1/data/WS_TC/Q.XM.C.A.M.770.A/all  (Euro area, total)
+# retrieved: 2026-10-13
+# notes: Credit to the non-financial sector from all sectors, market value, % of GDP, break-adjusted (BIS key ...A.M.770.A). Each year = Q4 (end-year) value.
+# notes: Latest quarter 2026-Q1: China total 305.2, China corporate 146.6, US 250.5, euro area 239.1 (not shown as a row; table is annual).
+# notes: MAJOR REVISION — every value has been replaced with the current BIS series. The previous file's numbers did not match BIS (e.g. 2024: China total 310->288.4, China corporate 165->137.9, US 225->248.8, euro area 210->240.8; 2020: China total 294->263.4, corporate 160->131.9).
+# notes: BIS China corporate series starts 2006-Q1, so 2000 and 2005 corporate values are left blank (previous values 103 / 109 were not traceable to BIS).
+# notes: China_total = government + non-financial corporations + households. 2025-Q4 split: corporates 142.8, government 99.3, households 58.0.
+# notes: US non-financial corporate credit 2025-Q4 = 72.2% of GDP (~29% of US total); euro area NFC = 103.0%.
 year,china_total,china_corporate,united_states,euro_area
-2000,116,103,180,167
-2005,135,109,179,164
-2008,140,96,200,180
-2010,178,118,196,183
-2012,200,128,201,191
-2014,222,140,202,194
-2016,249,152,203,194
-2018,253,150,205,192
-2020,294,160,229,219
-2022,295,160,219,205
-2024,310,165,225,210
+2000,127.1,,188.1,196.6
+2005,134.3,,218.4,216.2
+2008,133.0,88.4,242.1,229.4
+2010,170.8,110.7,250.9,256.0
+2012,183.3,120.0,254.5,268.9
+2014,211.3,136.8,250.7,274.2
+2016,238.6,145.1,252.8,271.8
+2018,233.1,126.7,252.2,261.4
+2020,263.4,131.9,293.4,294.6
+2022,264.5,127.2,254.9,253.1
+2024,288.4,137.9,248.8,240.8
+2025,300.1,142.8,251.2,238.4
