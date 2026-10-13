@@ -1,3 +1,6 @@
+# source: Eurostat ilc_di12c, GINI_HND
+# url: https://ec.europa.eu/eurostat/databrowser/view/ilc_di12c/default/table
+# retrieved: 2026-10-13
 year,CY,GR,ES,EU,IT,PT
 2003,,36.2,,,,
 2004,,34.2,34.0,,34.2,40.9

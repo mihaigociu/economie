@@ -1,3 +1,6 @@
+# source: Eurostat irt_lt_mcby_a, MCBY (EMU convergence criterion 10y bond yield, annual average)
+# url: https://ec.europa.eu/eurostat/databrowser/view/irt_lt_mcby_a/default/table
+# retrieved: 2026-10-13
 year,CY,DE,EL,ES,IT,PT
 2000,,5.26,6.1,5.53,5.58,5.59
 2001,7.62,4.8,5.3,5.12,5.19,5.16
@@ -24,3 +27,4 @@ year,CY,DE,EL,ES,IT,PT
 2022,2.96,1.14,3.49,2.18,3.16,2.17
 2023,3.91,2.43,4.0,3.48,4.28,3.24
 2024,3.13,2.32,3.35,3.15,3.71,2.96
+2025,2.92614,2.59206,3.36997,3.21381,3.59284,3.07583

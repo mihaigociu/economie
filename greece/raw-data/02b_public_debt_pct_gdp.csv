@@ -1,3 +1,6 @@
+# source: Eurostat gov_10dd_edpt1 (EDP notification tables), unit PC_GDP, sector S13, na_item GD
+# url: https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table
+# retrieved: 2026-10-13
 year,CY,EL,ES,IT,PT
 2000,56.5,108.9,57.8,108.7,54.2
 2001,58.1,110.5,54.1,108.5,57.4
@@ -24,3 +27,4 @@ year,CY,EL,ES,IT,PT
 2022,80.1,177.8,109.3,138.4,111.2
 2023,71.1,164.3,105.2,133.9,96.9
 2024,62.7,154.2,101.6,134.7,93.5
+2025,55.0,146.1,100.7,137.1,89.7

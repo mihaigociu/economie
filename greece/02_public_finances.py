@@ -9,6 +9,8 @@ Note: Eurostat uses "EL" for Greece (not the ISO "GR" used by the World Bank).
 import warnings
 warnings.filterwarnings("ignore")
 
+from datetime import date
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import eurostat
@@ -17,9 +19,25 @@ OUTPUT   = "charts"
 RAW_DATA = "raw-data"
 import os; os.makedirs(OUTPUT, exist_ok=True); os.makedirs(RAW_DATA, exist_ok=True)
 
-def save_csv(df, name):
+# Last calendar year requested from every source. Bump once a year; series that
+# have not yet published LAST_YEAR simply end earlier (see trim()).
+LAST_YEAR = 2025
+RETRIEVED = date.today().isoformat()
+
+def trim(df):
+    """Drop all-NaN columns and leading/trailing all-NaN rows, so series that
+    lack the most recent year(s) simply end earlier instead of plotting gaps/zeros."""
+    df = df.dropna(axis=1, how="all")
+    if df.empty:
+        raise RuntimeError("fetched frame is empty after dropping all-NaN columns")
+    return df.loc[df.first_valid_index():df.last_valid_index()]
+
+def save_csv(df, name, source, url):
+    """Write CSV with provenance header (read back with pd.read_csv(..., comment='#'))."""
     path = f"{RAW_DATA}/{name}.csv"
-    df.to_csv(path)
+    with open(path, "w") as f:
+        f.write(f"# source: {source}\n# url: {url}\n# retrieved: {RETRIEVED}\n")
+        df.to_csv(f)
     print(f"  saved {path}")
 
 # Eurostat country codes (note: Greece = EL, not GR)
@@ -44,18 +62,21 @@ def fetch_edp(na_item, geos, unit="PC_GDP", sector="S13"):
     mask = ((df["na_item"] == na_item) & (df["unit"] == unit) &
             (df["sector"] == sector) & (df["geo\\TIME_PERIOD"].isin(geos)))
     sub = df[mask].set_index("geo\\TIME_PERIOD")
-    year_cols = [c for c in sub.columns if str(c).isdigit() and 2000 <= int(c) <= 2024]
+    year_cols = [c for c in sub.columns if str(c).isdigit() and 2000 <= int(c) <= LAST_YEAR]
     out = sub[year_cols].T.astype(float)
     out.index = out.index.astype(int)
     out.index.name = "year"
-    return out
+    return trim(out)
+
+EDP_SRC = ("Eurostat gov_10dd_edpt1 (EDP notification tables), unit PC_GDP, sector S13",
+           "https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table")
 
 # ---------------------------------------------------------------------------
 # 1. General government balance (% GDP) — Greece vs southern peers
 # ---------------------------------------------------------------------------
 print("Fetching government balance...")
 balance = fetch_edp("B9", PEERS)
-save_csv(balance, "02a_govt_balance_pct_gdp")
+save_csv(balance, "02a_govt_balance_pct_gdp", EDP_SRC[0] + ", na_item B9", EDP_SRC[1])
 
 fig, ax = plt.subplots(figsize=(13, 5))
 for iso in PEERS:
@@ -78,7 +99,7 @@ print("  saved 02a_deficit.png")
 # ---------------------------------------------------------------------------
 print("Fetching public debt...")
 debt = fetch_edp("GD", PEERS)
-save_csv(debt, "02b_public_debt_pct_gdp")
+save_csv(debt, "02b_public_debt_pct_gdp", EDP_SRC[0] + ", na_item GD", EDP_SRC[1])
 
 fig, ax = plt.subplots(figsize=(13, 5))
 for iso in PEERS:
@@ -97,6 +118,7 @@ if "EL" in debt.columns:
                     fontsize=8, ha="center", color=COLORS["EL"],
                     arrowprops=dict(arrowstyle="->", color=COLORS["EL"], lw=0.8))
     peak_year = el_series.idxmax()
+    ax.set_ylim(top=el_series.max() * 1.12)
     ax.annotate(f"Peak: {el_series[peak_year]:.0f}% ({int(peak_year)})",
                 xy=(peak_year, el_series[peak_year]),
                 xytext=(peak_year + 1.5, el_series[peak_year] + 5),
@@ -124,7 +146,8 @@ prim_df = pd.DataFrame({
     "Primary balance":  primary_el,
 })
 prim_df.index.name = "year"
-save_csv(prim_df, "02c_primary_balance_greece")
+save_csv(prim_df, "02c_primary_balance_greece",
+         EDP_SRC[0] + ", B9 + D41PAY (primary = headline + interest paid)", EDP_SRC[1])
 
 fig, ax = plt.subplots(figsize=(13, 5))
 ax.plot(balance_el.index, balance_el.values, label="Headline balance",
@@ -157,16 +180,17 @@ comp_data = {}
 for label, code in comp_codes.items():
     s = fetch_edp(code, ["EL"])["EL"]
     comp_data[label] = s
-comp_df = pd.DataFrame(comp_data).dropna(how="all")
+# Keep only years where all three instruments are published (no zero-filled stack tops)
+comp_df = pd.DataFrame(comp_data).dropna(how="any")
 comp_df.index.name = "year"
-save_csv(comp_df, "02d_debt_composition_greece")
+save_csv(comp_df, "02d_debt_composition_greece", EDP_SRC[0] + ", GD_F2 / GD_F3 / GD_F4", EDP_SRC[1])
 
 fig, ax = plt.subplots(figsize=(13, 5))
 ax.stackplot(comp_df.index,
-             comp_df["Currency & deposits"].fillna(0),
-             comp_df["Debt securities (market)"].fillna(0),
-             comp_df["Loans (mainly official sector)"].fillna(0),
-             labels=["Currency & deposits", "Debt securities (market)", "Loans (official sector)"],
+             comp_df["Currency & deposits"],
+             comp_df["Debt securities (market)"],
+             comp_df["Loans (mainly official sector)"],
+             labels=["Currency & deposits", "Debt securities (market)", "Loans (official sector from 2010)"],
              colors=["#95a5a6", "#2980b9", "#c0392b"], alpha=0.85)
 # Mark PSI 2012 and end of programmes 2018
 ax.axvline(2012, color="black", linestyle=":", linewidth=0.8, alpha=0.6)
@@ -187,93 +211,93 @@ print("  saved 02d_debt_composition.png")
 # 5. Tax revenue as % GDP — Greece vs broader EU set (latest available year)
 # ---------------------------------------------------------------------------
 print("Fetching tax revenue cross-country...")
-try:
-    df_tax = eurostat.get_data_df("gov_10a_taxag")
-    eu_set = ["EL","PT","IT","ES","CY","DE","FR","NL","AT","SE","DK","FI","IE","BE","EU27_2020"]
-    mask = ((df_tax["na_item"] == "D2_D5_D91_D61_M_D995") &
-            (df_tax["unit"] == "PC_GDP") &
-            (df_tax["sector"] == "S13") &
-            (df_tax["geo\\TIME_PERIOD"].isin(eu_set)))
-    tax = df_tax[mask].set_index("geo\\TIME_PERIOD")
-    year_cols = sorted([c for c in tax.columns if str(c).isdigit()], reverse=True)
-    latest = None
-    for y in year_cols:
-        col = tax[y].dropna()
-        if len(col) >= 10:
-            latest = y; break
+df_tax = eurostat.get_data_df("gov_10a_taxag")
+eu_set = ["EL","PT","IT","ES","CY","DE","FR","NL","AT","SE","DK","FI","IE","BE","EU27_2020"]
+mask = ((df_tax["na_item"] == "D2_D5_D91_D61_M_D995") &
+        (df_tax["unit"] == "PC_GDP") &
+        (df_tax["sector"] == "S13") &
+        (df_tax["geo\\TIME_PERIOD"].isin(eu_set)))
+tax = df_tax[mask].set_index("geo\\TIME_PERIOD")
+tax_year_cols = [c for c in tax.columns if str(c).isdigit() and int(c) <= LAST_YEAR]
+# Latest year with data for >= 10 of the 15 countries
+latest = None
+for y in sorted(tax_year_cols, reverse=True):
+    if tax[y].notna().sum() >= 10:
+        latest = y; break
+if latest is None:
+    raise RuntimeError("gov_10a_taxag: no year with >= 10 countries")
 
-    if latest:
-        tax_ts = tax[[c for c in tax.columns if str(c).isdigit()]].T.astype(float)
-        tax_ts.index = tax_ts.index.astype(int)
-        tax_ts.index.name = "year"
-        save_csv(tax_ts, "02e_tax_revenue_pct_gdp")
+tax_ts = trim(tax[tax_year_cols].T.astype(float))
+tax_ts.index = tax_ts.index.astype(int)
+tax_ts.index.name = "year"
+save_csv(tax_ts, "02e_tax_revenue_pct_gdp",
+         "Eurostat gov_10a_taxag, na_item D2_D5_D91_D61_M_D995 (taxes + net social contributions), PC_GDP, S13",
+         "https://ec.europa.eu/eurostat/databrowser/view/gov_10a_taxag/default/table")
 
-        tax_latest = tax[latest].dropna().sort_values()
-        labels_map = {"EL":"Greece","PT":"Portugal","IT":"Italy","ES":"Spain","CY":"Cyprus",
-                      "DE":"Germany","FR":"France","NL":"Netherlands","AT":"Austria",
-                      "SE":"Sweden","DK":"Denmark","FI":"Finland","IE":"Ireland",
-                      "BE":"Belgium","EU27_2020":"EU27"}
-        bar_colors = ["#c0392b" if i == "EL" else ("#7f8c8d" if i == "EU27_2020" else "#95a5a6")
-                      for i in tax_latest.index]
-        fig, ax = plt.subplots(figsize=(10, 6))
-        ax.barh([labels_map.get(i, i) for i in tax_latest.index],
-                tax_latest.values, color=bar_colors)
-        for i, v in enumerate(tax_latest.values):
-            ax.text(v + 0.2, i, f"{v:.1f}", va="center", fontsize=8)
-        ax.set_title(f"Tax Revenue (% of GDP), {latest}",
-                     fontsize=14, fontweight="bold")
-        ax.set_xlabel("% of GDP"); ax.grid(axis="x", alpha=0.3)
-        plt.tight_layout()
-        plt.savefig(f"{OUTPUT}/02e_tax_revenue.png", dpi=150); plt.close()
-        print("  saved 02e_tax_revenue.png")
-except Exception as e:
-    print(f"  tax revenue chart skipped: {e}")
+tax_latest = tax[latest].dropna().astype(float).sort_values()
+labels_map = {"EL":"Greece","PT":"Portugal","IT":"Italy","ES":"Spain","CY":"Cyprus",
+              "DE":"Germany","FR":"France","NL":"Netherlands","AT":"Austria",
+              "SE":"Sweden","DK":"Denmark","FI":"Finland","IE":"Ireland",
+              "BE":"Belgium","EU27_2020":"EU27"}
+bar_colors = ["#c0392b" if i == "EL" else ("#7f8c8d" if i == "EU27_2020" else "#95a5a6")
+              for i in tax_latest.index]
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.barh([labels_map.get(i, i) for i in tax_latest.index],
+        tax_latest.values, color=bar_colors)
+for i, v in enumerate(tax_latest.values):
+    ax.text(v + 0.2, i, f"{v:.1f}", va="center", fontsize=8)
+ax.set_title(f"Tax Revenue incl. Social Contributions (% of GDP), {latest}",
+             fontsize=14, fontweight="bold")
+ax.set_xlabel("% of GDP"); ax.grid(axis="x", alpha=0.3)
+ax.set_xlim(0, tax_latest.max() * 1.08)
+plt.tight_layout()
+plt.savefig(f"{OUTPUT}/02e_tax_revenue.png", dpi=150); plt.close()
+print("  saved 02e_tax_revenue.png")
 
 # ---------------------------------------------------------------------------
 # 6. Government revenue vs expenditure (Greece) — area chart with deficit shading
 # ---------------------------------------------------------------------------
 print("Fetching revenue/expenditure split for Greece...")
-try:
-    df_main = eurostat.get_data_df("gov_10a_main")
-    items = {"TE": "Total Expenditure", "TR": "Total Revenue"}
-    el_data = {}
-    for code, label in items.items():
-        mask = ((df_main["na_item"] == code) & (df_main["unit"] == "PC_GDP") &
-                (df_main["sector"] == "S13") & (df_main["geo\\TIME_PERIOD"] == "EL"))
-        sub = df_main[mask]
-        if not sub.empty:
-            year_cols = [c for c in sub.columns if str(c).isdigit() and 2000 <= int(c) <= 2024]
-            s = sub[year_cols].iloc[0].astype(float)
-            s.index = s.index.astype(int)
-            el_data[label] = s
+df_main = eurostat.get_data_df("gov_10a_main")
+items = {"TE": "Total Expenditure", "TR": "Total Revenue"}
+el_data = {}
+for code, label in items.items():
+    mask = ((df_main["na_item"] == code) & (df_main["unit"] == "PC_GDP") &
+            (df_main["sector"] == "S13") & (df_main["geo\\TIME_PERIOD"] == "EL"))
+    sub = df_main[mask]
+    if sub.empty:
+        raise RuntimeError(f"gov_10a_main: no data for {code}")
+    year_cols = [c for c in sub.columns if str(c).isdigit() and 2000 <= int(c) <= LAST_YEAR]
+    s = sub[year_cols].iloc[0].astype(float)
+    s.index = s.index.astype(int)
+    el_data[label] = s
 
-    if len(el_data) == 2:
-        rev_exp_df = pd.DataFrame(el_data)
-        rev_exp_df.index.name = "year"
-        save_csv(rev_exp_df, "02f_greece_revenue_expenditure_pct_gdp")
+rev_exp_df = trim(pd.DataFrame(el_data))
+rev_exp_df.index.name = "year"
+save_csv(rev_exp_df, "02f_greece_revenue_expenditure_pct_gdp",
+         "Eurostat gov_10a_main, na_item TE / TR, PC_GDP, S13, Greece",
+         "https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table")
 
-        fig, ax = plt.subplots(figsize=(13, 5))
-        rev = el_data["Total Revenue"]; exp = el_data["Total Expenditure"]
-        ax.plot(rev.index, rev.values, label="Total Revenue",
-                color="#27ae60", linewidth=2.5, marker="o", markersize=3)
-        ax.plot(exp.index, exp.values, label="Total Expenditure",
-                color="#c0392b", linewidth=2.5, marker="o", markersize=3)
-        idx = rev.index.intersection(exp.index)
-        ax.fill_between(idx, rev[idx], exp[idx],
-                        where=exp[idx] > rev[idx], alpha=0.15, color="red",
-                        label="Deficit area")
-        ax.fill_between(idx, rev[idx], exp[idx],
-                        where=exp[idx] <= rev[idx], alpha=0.15, color="green",
-                        label="Surplus area")
-        add_programme_shading(ax, label_y_frac=0.95)
-        ax.set_title("Greece: Government Revenue vs Expenditure (% of GDP)",
-                     fontsize=14, fontweight="bold")
-        ax.set_xlabel("Year"); ax.set_ylabel("% of GDP")
-        ax.legend(fontsize=9, loc="lower right"); ax.grid(axis="y", alpha=0.3)
-        plt.tight_layout()
-        plt.savefig(f"{OUTPUT}/02f_rev_vs_exp.png", dpi=150); plt.close()
-        print("  saved 02f_rev_vs_exp.png")
-except Exception as e:
-    print(f"  revenue/expenditure chart skipped: {e}")
+fig, ax = plt.subplots(figsize=(13, 5))
+rev = rev_exp_df["Total Revenue"].dropna(); exp = rev_exp_df["Total Expenditure"].dropna()
+ax.plot(rev.index, rev.values, label="Total Revenue",
+        color="#27ae60", linewidth=2.5, marker="o", markersize=3)
+ax.plot(exp.index, exp.values, label="Total Expenditure",
+        color="#c0392b", linewidth=2.5, marker="o", markersize=3)
+idx = rev.index.intersection(exp.index)
+ax.fill_between(idx, rev[idx], exp[idx],
+                where=exp[idx] > rev[idx], alpha=0.15, color="red",
+                label="Deficit area", interpolate=True)
+ax.fill_between(idx, rev[idx], exp[idx],
+                where=exp[idx] <= rev[idx], alpha=0.15, color="green",
+                label="Surplus area", interpolate=True)
+add_programme_shading(ax, label_y_frac=0.03)
+ax.set_title("Greece: Government Revenue vs Expenditure (% of GDP)",
+             fontsize=14, fontweight="bold")
+ax.set_xlabel("Year"); ax.set_ylabel("% of GDP")
+ax.legend(fontsize=9, loc="lower right"); ax.grid(axis="y", alpha=0.3)
+plt.tight_layout()
+plt.savefig(f"{OUTPUT}/02f_rev_vs_exp.png", dpi=150); plt.close()
+print("  saved 02f_rev_vs_exp.png")
 
 print("\nDone — public finance charts and CSVs saved.")

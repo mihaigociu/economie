@@ -1,0 +1,14 @@
+# source: EC Recovery and Resilience Scoreboard (Qlik engine, app 67047f98-760d-49e0-b6a9-31b7b2a66fb1); app load date 13/10/2026, disbursements load date 08/05/2026; EUR bn; GDP = Scoreboard reference GDP
+# url: https://ec.europa.eu/economy_finance/recovery-and-resilience-scoreboard/disbursements.html
+# retrieved: 2026-10-13
+request_date,status,payment_date,requested_net_bn
+20/12/2024,Paid,02/05/2025,3.127
+29/12/2021,Paid,08/04/2022,3.563
+30/09/2022,Paid,19/01/2023,3.563
+16/05/2023,Paid,28/12/2023,3.635
+17/04/2024,Paid,24/07/2024,2.327
+18/07/2025,Paid,26/11/2025,2.109
+19/12/2025,Paid,23/04/2026,1.178
+25/05/2026,Assessment Ongoing,-,4.549
+29/09/2026,Assessment Ongoing,-,6.775
+06/06/2024,Paid,16/10/2024,0.999

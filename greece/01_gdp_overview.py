@@ -6,6 +6,8 @@ Sources: Eurostat, World Bank
 import warnings
 warnings.filterwarnings("ignore")
 
+from datetime import date
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
@@ -15,15 +17,34 @@ OUTPUT   = "charts"
 RAW_DATA = "raw-data"
 import os; os.makedirs(OUTPUT, exist_ok=True); os.makedirs(RAW_DATA, exist_ok=True)
 
+# Last calendar year requested from every source. Bump once a year; series that
+# have not yet published LAST_YEAR simply end earlier (see trim()).
+LAST_YEAR = 2025
+RETRIEVED = date.today().isoformat()
+
 def wb_series(indicator, economies, years):
     df = wb.data.DataFrame(indicator, economy=economies, time=range(*years))
     df = df.T
     df.index = df.index.str.replace("YR", "").astype(int)
-    return df
+    return trim(df)
 
-def save_csv(df, name):
+def wb_src(code):
+    return (f"World Bank WDI, indicator {code}", f"https://data.worldbank.org/indicator/{code}")
+
+def trim(df):
+    """Drop all-NaN columns and leading/trailing all-NaN rows, so series that
+    lack the most recent year(s) simply end earlier instead of plotting gaps/zeros."""
+    df = df.dropna(axis=1, how="all")
+    if df.empty:
+        raise RuntimeError("fetched frame is empty after dropping all-NaN columns")
+    return df.loc[df.first_valid_index():df.last_valid_index()]
+
+def save_csv(df, name, source, url):
+    """Write CSV with provenance header (read back with pd.read_csv(..., comment='#'))."""
     path = f"{RAW_DATA}/{name}.csv"
-    df.to_csv(path)
+    with open(path, "w") as f:
+        f.write(f"# source: {source}\n# url: {url}\n# retrieved: {RETRIEVED}\n")
+        df.to_csv(f)
     print(f"  saved {path}")
 
 # Greece + southern-euro peer set (incl. two fellow programme countries: PRT, CYP)
@@ -38,9 +59,9 @@ COLORS = {"GR": "#c0392b", "PT": "#e67e22", "IT": "#27ae60",
 # 1. Real GDP growth rate (annual %)
 # ---------------------------------------------------------------------------
 print("Fetching GDP growth rates...")
-growth = wb_series("NY.GDP.MKTP.KD.ZG", ECONOMIES, (2000, 2025)).rename(columns=COL_MAP)
+growth = wb_series("NY.GDP.MKTP.KD.ZG", ECONOMIES, (2000, LAST_YEAR + 1)).rename(columns=COL_MAP)
 growth.index.name = "year"
-save_csv(growth, "01a_gdp_growth_pct")
+save_csv(growth, "01a_gdp_growth_pct", *wb_src("NY.GDP.MKTP.KD.ZG"))
 
 fig, ax = plt.subplots(figsize=(12, 5))
 for iso, label in PEER_LABELS.items():
@@ -65,13 +86,15 @@ print("  saved 01a_gdp_growth.png")
 # 2. GDP per capita (PPP, % of EU27 average) — convergence reversal
 # ---------------------------------------------------------------------------
 print("Fetching GDP per capita PPP...")
-gdp_ppp = wb_series("NY.GDP.PCAP.PP.CD", ECONOMIES, (2000, 2025)).rename(columns=COL_MAP)
+gdp_ppp = wb_series("NY.GDP.PCAP.PP.CD", ECONOMIES, (2000, LAST_YEAR + 1)).rename(columns=COL_MAP)
 gdp_ppp.index.name = "year"
-save_csv(gdp_ppp, "01b_gdp_per_capita_ppp_usd")
+save_csv(gdp_ppp, "01b_gdp_per_capita_ppp_usd", *wb_src("NY.GDP.PCAP.PP.CD"))
 
 conv = gdp_ppp.div(gdp_ppp["EU"], axis=0) * 100
 conv.index.name = "year"
-save_csv(conv, "01b_gdp_ppp_pct_eu27")
+save_csv(conv, "01b_gdp_ppp_pct_eu27",
+         "Derived: World Bank NY.GDP.PCAP.PP.CD, country / EUU x 100",
+         "https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD")
 
 fig, ax = plt.subplots(figsize=(12, 5))
 ax.axhline(100, color=COLORS["EU"], linestyle="--", linewidth=1.5, label="EU27 = 100")
@@ -84,7 +107,7 @@ for iso in ["GR", "PT", "IT", "ES", "CY"]:
 gr_series = conv["GR"].dropna()
 if not gr_series.empty:
     peak_year = gr_series.loc[:2009].idxmax()
-    trough_year = gr_series.loc[2008:2018].idxmin()
+    trough_year = gr_series.loc[2008:].idxmin()
     ax.annotate(f"Pre-crisis peak\n{int(peak_year)}: {gr_series[peak_year]:.0f}%",
                 xy=(peak_year, gr_series[peak_year]),
                 xytext=(peak_year - 2, gr_series[peak_year] + 12),
@@ -92,9 +115,10 @@ if not gr_series.empty:
                 arrowprops=dict(arrowstyle="->", color=COLORS["GR"], lw=0.8))
     ax.annotate(f"Trough\n{int(trough_year)}: {gr_series[trough_year]:.0f}%",
                 xy=(trough_year, gr_series[trough_year]),
-                xytext=(trough_year + 1, gr_series[trough_year] - 12),
+                xytext=(trough_year - 2.5, gr_series[trough_year] - 9),
                 fontsize=8, ha="center", color=COLORS["GR"],
                 arrowprops=dict(arrowstyle="->", color=COLORS["GR"], lw=0.8))
+    ax.set_ylim(bottom=min(ax.get_ylim()[0], gr_series.min() - 14))
 ax.set_title("GDP per Capita (PPP) as % of EU27 Average — Greece's Convergence Reversal",
              fontsize=14, fontweight="bold")
 ax.set_xlabel("Year"); ax.set_ylabel("% of EU27")
@@ -114,21 +138,25 @@ indicators = {
 }
 sector_data = {}
 for name, code in indicators.items():
-    s = wb_series(code, ["GRC"], (2000, 2024))
+    s = wb_series(code, ["GRC"], (2000, LAST_YEAR + 1))
     s.columns = ["GRC"]
     sector_data[name] = s["GRC"]
 
 sectors = pd.DataFrame(sector_data).dropna()
 sectors.index.name = "year"
-save_csv(sectors, "01c_gdp_sectors_greece_pct")
+save_csv(sectors, "01c_gdp_sectors_greece_pct",
+         "World Bank WDI, NV.AGR.TOTL.ZS / NV.IND.TOTL.ZS / NV.SRV.TOTL.ZS (Greece)",
+         "https://data.worldbank.org/indicator/NV.SRV.TOTL.ZS")
 
 fig, ax = plt.subplots(figsize=(12, 5))
 ax.stackplot(sectors.index,
              sectors["Agriculture"], sectors["Industry"], sectors["Services"],
              labels=["Agriculture", "Industry", "Services"],
              colors=["#27ae60", "#2980b9", "#e67e22"], alpha=0.85)
-ax.set_title("Greece: GDP Composition by Sector (% of GVA)", fontsize=14, fontweight="bold")
-ax.set_xlabel("Year"); ax.set_ylabel("% of GVA")
+ax.set_title("Greece: Value Added by Sector (% of GDP)\n"
+             "Gap to 100% = taxes less subsidies on products (World Bank definitions)",
+             fontsize=13, fontweight="bold")
+ax.set_xlabel("Year"); ax.set_ylabel("% of GDP")
 ax.set_ylim(0, 105); ax.legend(loc="upper left", fontsize=9); ax.grid(axis="y", alpha=0.3)
 plt.tight_layout()
 plt.savefig(f"{OUTPUT}/01c_gdp_sectors.png", dpi=150); plt.close()
@@ -138,9 +166,9 @@ print("  saved 01c_gdp_sectors.png")
 # 4. GDP per capita in USD — absolute level comparison
 # ---------------------------------------------------------------------------
 print("Fetching GDP per capita nominal...")
-gdp_cap = wb_series("NY.GDP.PCAP.CD", ECONOMIES, (2000, 2025)).rename(columns=COL_MAP)
+gdp_cap = wb_series("NY.GDP.PCAP.CD", ECONOMIES, (2000, LAST_YEAR + 1)).rename(columns=COL_MAP)
 gdp_cap.index.name = "year"
-save_csv(gdp_cap, "01d_gdp_per_capita_nominal_usd")
+save_csv(gdp_cap, "01d_gdp_per_capita_nominal_usd", *wb_src("NY.GDP.PCAP.CD"))
 
 fig, ax = plt.subplots(figsize=(12, 5))
 for iso, label in PEER_LABELS.items():
@@ -162,13 +190,15 @@ print("  saved 01d_gdp_per_capita.png")
 # Greece-specific addition: the cumulative real GDP loss is the most striking
 # single number of the period. Indexing to the 2007 peak shows it directly.
 print("Fetching real GDP (constant 2015 USD) for indexed view...")
-real_gdp = wb_series("NY.GDP.MKTP.KD", ECONOMIES, (2000, 2025)).rename(columns=COL_MAP)
+real_gdp = wb_series("NY.GDP.MKTP.KD", ECONOMIES, (2000, LAST_YEAR + 1)).rename(columns=COL_MAP)
 real_gdp.index.name = "year"
 
 # Index to 2007 = 100 for each country (last pre-crisis year for Greece)
 base = real_gdp.loc[2007]
 real_idx = real_gdp.div(base, axis=1) * 100
-save_csv(real_idx, "01e_real_gdp_index_2007")
+save_csv(real_idx, "01e_real_gdp_index_2007",
+         "Derived: World Bank NY.GDP.MKTP.KD (constant USD), indexed 2007 = 100",
+         "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD")
 
 fig, ax = plt.subplots(figsize=(12, 5))
 ax.axhline(100, color="black", linewidth=0.8, linestyle="--", label="2007 = 100")
@@ -182,7 +212,8 @@ gr_idx = real_idx["GR"].dropna()
 if not gr_idx.empty:
     trough = gr_idx.loc[2008:2018].idxmin()
     drop = 100 - gr_idx[trough]
-    ax.annotate(f"Peak-to-trough\nreal GDP loss: -{drop:.0f}%",
+    ax.set_ylim(bottom=gr_idx.min() - 14)
+    ax.annotate(f"Peak-to-trough (2007→{int(trough)})\nreal GDP loss: -{drop:.0f}%",
                 xy=(trough, gr_idx[trough]),
                 xytext=(trough + 1.5, gr_idx[trough] - 8),
                 fontsize=9, ha="left", color=COLORS["GR"], fontweight="bold",

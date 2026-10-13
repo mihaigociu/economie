@@ -10,6 +10,8 @@ among the smallest in the EU, construction had an extreme boom-bust cycle.
 import warnings
 warnings.filterwarnings("ignore")
 
+from datetime import date
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mticker
@@ -19,9 +21,25 @@ OUTPUT   = "charts"
 RAW_DATA = "raw-data"
 import os; os.makedirs(OUTPUT, exist_ok=True); os.makedirs(RAW_DATA, exist_ok=True)
 
-def save_csv(df, name):
+# Last calendar year requested from every source. Bump once a year; series that
+# have not yet published LAST_YEAR simply end earlier (see trim()).
+LAST_YEAR = 2025
+RETRIEVED = date.today().isoformat()
+
+def trim(df):
+    """Drop all-NaN columns and leading/trailing all-NaN rows, so series that
+    lack the most recent year(s) simply end earlier instead of plotting gaps/zeros."""
+    df = df.dropna(axis=1, how="all")
+    if df.empty:
+        raise RuntimeError("fetched frame is empty after dropping all-NaN columns")
+    return df.loc[df.first_valid_index():df.last_valid_index()]
+
+def save_csv(df, name, source, url):
+    """Write CSV with provenance header (read back with pd.read_csv(..., comment='#'))."""
     path = f"{RAW_DATA}/{name}.csv"
-    df.to_csv(path)
+    with open(path, "w") as f:
+        f.write(f"# source: {source}\n# url: {url}\n# retrieved: {RETRIEVED}\n")
+        df.to_csv(f)
     print(f"  saved {path}")
 
 PEERS_EU = ["EL", "PT", "IT", "ES", "CY", "EU27_2020"]
@@ -57,11 +75,11 @@ def fetch_eurostat(dataset, filters, geos, geo_col_search="geo"):
         mask &= (df[dim] == val)
     mask &= df[geo_col].isin(geos)
     sub = df[mask].copy()
-    year_cols = sorted([c for c in sub.columns if str(c).isdigit()])
-    out = sub.set_index(geo_col)[year_cols].T
+    year_cols = sorted([c for c in sub.columns if str(c).isdigit() and int(c) <= LAST_YEAR])
+    out = sub.set_index(geo_col)[year_cols].T.astype(float)
     out.index = out.index.astype(int)
     out = out.rename(columns=EU_TO_LBL)
-    return out
+    return trim(out)
 
 # ---------------------------------------------------------------------------
 # 1. Sectoral GVA composition — Greek services dominance
@@ -75,7 +93,7 @@ df_gva = eurostat.get_data_df("nama_10_a10")
 # J (info/comms), K (finance), L (real estate), M-N (prof+admin), O-Q (public),
 # R-U (other). A is agriculture.
 geo_col = [c for c in df_gva.columns if "geo" in c.lower()][0]
-year_cols = sorted([c for c in df_gva.columns if str(c).isdigit() and 2000 <= int(c) <= 2024])
+year_cols = sorted([c for c in df_gva.columns if str(c).isdigit() and 2000 <= int(c) <= LAST_YEAR])
 
 # We use SCA (seasonally + calendar adjusted? No — use CP_MEUR for level then % of total).
 # Use unit=PC_TOT_VA, na_item=B1G (gross value added) to get sector share of total VA.
@@ -121,9 +139,11 @@ for nace, label in sector_map.items():
         s.index = s.index.astype(int)
         gva_shares[label] = (s / total) * 100
 
-gva_df = pd.DataFrame(gva_shares)
+gva_df = trim(pd.DataFrame(gva_shares))
 gva_df.index.name = "year"
-save_csv(gva_df, "07a_greek_gva_composition_pct")
+save_csv(gva_df, "07a_greek_gva_composition_pct",
+         "Derived: Eurostat nama_10_a10, B1G, CP_MEUR, Greece; sector / TOTAL x 100", "https://ec.europa.eu/eurostat/databrowser/view/nama_10_a10/default/table")
+gva_df = gva_df.dropna(how="any")   # stack only years with every sector published
 
 # Plot ordered for visual stack: agriculture & industry at bottom, services on top
 stack_order = ["Agriculture","Industry (incl. mfg)","Construction",
@@ -132,10 +152,10 @@ stack_order = ["Agriculture","Industry (incl. mfg)","Construction",
 stack_cols = [c for c in stack_order if c in gva_df.columns]
 
 fig, ax = plt.subplots(figsize=(13, 6))
-ax.stackplot(gva_df.index, [gva_df[c].fillna(0) for c in stack_cols],
+ax.stackplot(gva_df.index, [gva_df[c] for c in stack_cols],
              labels=stack_cols,
              colors=[sector_colors[c] for c in stack_cols], alpha=0.9)
-add_programme_shading(ax, label_y_frac=0.96)
+ax.axvspan(PROG_START, PROG_END, alpha=0.06, color="grey")   # no label: stack fills the axes
 ax.set_title("Greece: Sectoral Composition of Gross Value Added (% of total)",
              fontsize=14, fontweight="bold")
 ax.set_xlabel("Year"); ax.set_ylabel("% of total GVA")
@@ -154,7 +174,7 @@ print("Fetching tourism nights spent...")
 # variables: c_resid (TOTAL), nace_r2 (I551-I553 = all accommodation, often I551_I553), unit (NR), geo, time
 df_tour = eurostat.get_data_df("tour_occ_ninat")
 geo_col_t = [c for c in df_tour.columns if "geo" in c.lower()][0]
-year_cols_t = sorted([c for c in df_tour.columns if str(c).isdigit() and 2005 <= int(c) <= 2024])
+year_cols_t = sorted([c for c in df_tour.columns if str(c).isdigit() and 2005 <= int(c) <= LAST_YEAR])
 
 # Try I551-I553 (all accommodation establishments), c_resid TOTAL
 mask_t = ((df_tour["c_resid"] == "TOTAL") &
@@ -170,7 +190,7 @@ tour_pivot = tour_pivot.rename(columns=EU_TO_LBL).astype(float)
 print("Fetching population for per-capita normalization...")
 df_pop = eurostat.get_data_df("demo_pjan")
 geo_col_p = [c for c in df_pop.columns if "geo" in c.lower()][0]
-year_cols_p = sorted([c for c in df_pop.columns if str(c).isdigit() and 2005 <= int(c) <= 2024])
+year_cols_p = sorted([c for c in df_pop.columns if str(c).isdigit() and 2005 <= int(c) <= LAST_YEAR])
 mask_p = ((df_pop["sex"] == "T") & (df_pop["age"] == "TOTAL") &
           (df_pop[geo_col_p].isin(["EL","PT","IT","ES","CY"])))
 sub_p = df_pop[mask_p]
@@ -180,9 +200,10 @@ pop_pivot = pop_pivot.rename(columns=EU_TO_LBL).astype(float)
 
 # Align years
 common_years = sorted(set(tour_pivot.index) & set(pop_pivot.index))
-nights_per_cap = (tour_pivot.loc[common_years] / pop_pivot.loc[common_years]).dropna(how="all")
+nights_per_cap = trim(tour_pivot.loc[common_years] / pop_pivot.loc[common_years])
 nights_per_cap.index.name = "year"
-save_csv(nights_per_cap, "07b_tourism_nights_per_capita")
+save_csv(nights_per_cap, "07b_tourism_nights_per_capita",
+         "Derived: Eurostat tour_occ_ninat (TOTAL residence, I551-I553, NR) / demo_pjan (1 Jan population)", "https://ec.europa.eu/eurostat/databrowser/view/tour_occ_ninat/default/table")
 
 fig, ax = plt.subplots(figsize=(13, 5))
 plot_peer_lines(ax, nights_per_cap, include_eu=False)
@@ -194,9 +215,11 @@ if "GR" in nights_per_cap.columns:
     last = el.index.max()
     ax.annotate(f"Peak: {el[peak]:.1f} nights\n({int(peak)})",
                 xy=(peak, el[peak]),
-                xytext=(peak - 4, el[peak] - 2),
+                xytext=(peak - 4.5, el[peak] + 3),
                 fontsize=9, color=COLORS["GR"], fontweight="bold",
                 arrowprops=dict(arrowstyle="->", color=COLORS["GR"], lw=0.8))
+ax.xaxis.set_major_locator(mticker.MultipleLocator(2))
+ax.xaxis.set_major_formatter(mticker.FormatStrFormatter("%d"))
 ax.set_title("Tourism Intensity: Nights Spent at Accommodation per Capita",
              fontsize=14, fontweight="bold")
 ax.set_xlabel("Year"); ax.set_ylabel("Nights per resident")
@@ -211,14 +234,14 @@ print("Fetching construction production index...")
 # sts_copr_a: construction production index, annual
 df_cons = eurostat.get_data_df("sts_copr_a")
 geo_col_c = [c for c in df_cons.columns if "geo" in c.lower()][0]
-year_cols_c = sorted([c for c in df_cons.columns if str(c).isdigit() and 2000 <= int(c) <= 2024])
+year_cols_c = sorted([c for c in df_cons.columns if str(c).isdigit() and 2000 <= int(c) <= LAST_YEAR])
 
 # variables typically: indic_bt (PROD), nace_r2 (F = construction), unit (I15 = 2015=100),
 # s_adj (SCA or CA)
 # Try the unadjusted annual index with 2015=100 base
 mask_c = ((df_cons["indic_bt"] == "PRD") &
           (df_cons["nace_r2"] == "F") &
-          (df_cons["unit"] == "I15") &
+          (df_cons["unit"] == "I21") &   # Eurostat STS rebased to 2021 = 100; I15 stopped in 2022
           (df_cons["s_adj"] == "CA") &
           (df_cons[geo_col_c].isin(["EL","PT","IT","ES","CY","EU27_2020"])))
 sub_c = df_cons[mask_c]
@@ -226,7 +249,9 @@ cons_pivot = sub_c.set_index(geo_col_c)[year_cols_c].T
 cons_pivot.index = cons_pivot.index.astype(int)
 cons_pivot = cons_pivot.rename(columns=EU_TO_LBL).astype(float)
 cons_pivot.index.name = "year"
-save_csv(cons_pivot, "07c_construction_production_idx_2015_100")
+cons_pivot = trim(cons_pivot)
+save_csv(cons_pivot, "07c_construction_production_idx_2021_100",
+         "Eurostat sts_copr_a, PRD, NACE F, I21 (2021 = 100), CA", "https://ec.europa.eu/eurostat/databrowser/view/sts_copr_a/default/table")
 
 fig, ax = plt.subplots(figsize=(13, 5))
 plot_peer_lines(ax, cons_pivot)
@@ -238,17 +263,18 @@ if "GR" in cons_pivot.columns:
     trough = el.idxmin()
     last = el.index.max()
     drop = (el[trough] - el[peak]) / el[peak] * 100
+    ax.set_ylim(top=el.max() * 1.1)
     ax.annotate(f"Peak: {el[peak]:.0f} ({int(peak)})",
-                xy=(peak, el[peak]), xytext=(peak - 3, el[peak] + 30),
+                xy=(peak, el[peak]), xytext=(peak + 1.5, el[peak] - 20),
                 fontsize=9, color=COLORS["GR"], fontweight="bold",
                 arrowprops=dict(arrowstyle="->", color=COLORS["GR"], lw=0.8))
     ax.annotate(f"Trough: {el[trough]:.0f} ({int(trough)})\n{drop:.0f}% from peak",
-                xy=(trough, el[trough]), xytext=(trough - 2, el[trough] + 60),
+                xy=(trough, el[trough]), xytext=(trough - 5, el[trough] + 120),
                 fontsize=9, color=COLORS["GR"], fontweight="bold",
                 arrowprops=dict(arrowstyle="->", color=COLORS["GR"], lw=0.8))
-ax.set_title("Construction Production Index (2015 = 100)",
+ax.set_title(f"Construction Production Index (2021 = 100), {cons_pivot.index.min()}–{cons_pivot.index.max()}",
              fontsize=14, fontweight="bold")
-ax.set_xlabel("Year"); ax.set_ylabel("Index, 2015 = 100")
+ax.set_xlabel("Year"); ax.set_ylabel("Index, 2021 = 100")
 ax.legend(ncol=3, fontsize=9); ax.grid(axis="y", alpha=0.3)
 plt.tight_layout(); plt.savefig(f"{OUTPUT}/07c_construction_cycle.png", dpi=150); plt.close()
 print("  saved 07c_construction_cycle.png")
@@ -262,7 +288,8 @@ ren = fetch_eurostat("nrg_ind_ren",
                      {"nrg_bal": "REN"},
                      ["EL","PT","IT","ES","CY","EU27_2020"])
 ren.index.name = "year"
-save_csv(ren, "07d_renewables_share_pct")
+save_csv(ren, "07d_renewables_share_pct",
+         "Eurostat nrg_ind_ren, nrg_bal REN (share of renewables in gross final energy consumption)", "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table")
 
 fig, ax = plt.subplots(figsize=(13, 5))
 plot_peer_lines(ax, ren)
@@ -301,9 +328,10 @@ for g in peers_geo:
     t = tot[year_cols].iloc[0].astype(float); t.index = t.index.astype(int)
     m = mc[year_cols].iloc[0].astype(float);  m.index = m.index.astype(int)
     mfg_data[EU_TO_LBL[g]] = (m / t) * 100
-mfg = pd.DataFrame(mfg_data)
+mfg = trim(pd.DataFrame(mfg_data))
 mfg.index.name = "year"
-save_csv(mfg, "07e_manufacturing_share_pct")
+save_csv(mfg, "07e_manufacturing_share_pct",
+         "Derived: Eurostat nama_10_a10, B1G, CP_MEUR; NACE C / TOTAL x 100", "https://ec.europa.eu/eurostat/databrowser/view/nama_10_a10/default/table")
 
 fig, ax = plt.subplots(figsize=(13, 5))
 plot_peer_lines(ax, mfg)

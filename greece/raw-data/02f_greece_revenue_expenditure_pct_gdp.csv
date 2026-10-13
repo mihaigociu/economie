@@ -1,3 +1,6 @@
+# source: Eurostat gov_10a_main, na_item TE / TR, PC_GDP, S13, Greece
+# url: https://ec.europa.eu/eurostat/databrowser/view/gov_10a_main/default/table
+# retrieved: 2026-10-13
 year,Total Expenditure,Total Revenue
 2000,48.2,43.9
 2001,47.5,41.8
@@ -24,3 +27,4 @@ year,Total Expenditure,Total Revenue
 2022,53.1,50.5
 2023,49.5,48.1
 2024,48.1,49.4
+2025,48.3,50.0

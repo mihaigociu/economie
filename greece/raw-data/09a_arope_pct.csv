@@ -1,3 +1,6 @@
+# source: Eurostat ilc_peps01 (to 2020, Europe 2020 definition) spliced with ilc_peps01n (2021+, Europe 2030 definition); PC, TOTAL, T
+# url: https://ec.europa.eu/eurostat/databrowser/view/ilc_peps01n/default/table
+# retrieved: 2026-10-13
 year,CY,GR,ES,EU,IT,PT
 2003,,32.9,,,,
 2004,,30.9,25.0,,26.2,27.5

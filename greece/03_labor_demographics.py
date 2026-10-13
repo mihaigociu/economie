@@ -7,6 +7,8 @@ Sources: Eurostat (lfsi_emp_a, une_rt_a, lc_lci_r2_a, demo_gind, demo_find), Wor
 import warnings
 warnings.filterwarnings("ignore")
 
+from datetime import date
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import eurostat
@@ -16,15 +18,31 @@ OUTPUT   = "charts"
 RAW_DATA = "raw-data"
 import os; os.makedirs(OUTPUT, exist_ok=True); os.makedirs(RAW_DATA, exist_ok=True)
 
-def wb_series(indicator, economies, year_range=(2000, 2025)):
+# Last calendar year requested from every source. Bump once a year; series that
+# have not yet published LAST_YEAR simply end earlier (see trim()).
+LAST_YEAR = 2025
+RETRIEVED = date.today().isoformat()
+
+def wb_series(indicator, economies, year_range=(2000, LAST_YEAR + 1)):
     df = wb.data.DataFrame(indicator, economy=economies, time=range(*year_range))
     df = df.T
     df.index = df.index.str.replace("YR", "").astype(int)
-    return df
+    return trim(df)
 
-def save_csv(df, name):
+def trim(df):
+    """Drop all-NaN columns and leading/trailing all-NaN rows, so series that
+    lack the most recent year(s) simply end earlier instead of plotting gaps/zeros."""
+    df = df.dropna(axis=1, how="all")
+    if df.empty:
+        raise RuntimeError("fetched frame is empty after dropping all-NaN columns")
+    return df.loc[df.first_valid_index():df.last_valid_index()]
+
+def save_csv(df, name, source, url):
+    """Write CSV with provenance header (read back with pd.read_csv(..., comment='#'))."""
     path = f"{RAW_DATA}/{name}.csv"
-    df.to_csv(path)
+    with open(path, "w") as f:
+        f.write(f"# source: {source}\n# url: {url}\n# retrieved: {RETRIEVED}\n")
+        df.to_csv(f)
     print(f"  saved {path}")
 
 # Eurostat codes (EL = Greece)
@@ -64,10 +82,12 @@ mask = ((df_emp["indic_em"] == "EMP_LFS") & (df_emp["age"] == "Y15-64") &
         (df_emp["unit"] == "PC_POP") & (df_emp["sex"] == "T") &
         (df_emp["geo\\TIME_PERIOD"].isin(PEERS)))
 emp = df_emp[mask].set_index("geo\\TIME_PERIOD")
-year_cols = sorted([c for c in emp.columns if str(c).isdigit() and 2000 <= int(c) <= 2024])
+year_cols = sorted([c for c in emp.columns if str(c).isdigit() and 2000 <= int(c) <= LAST_YEAR])
 emp = emp[year_cols].T.astype(float)
 emp.index = emp.index.astype(int); emp.index.name = "year"
-save_csv(emp, "03a_employment_rate_pct")
+emp = trim(emp)
+save_csv(emp, "03a_employment_rate_pct",
+         "Eurostat lfsi_emp_a, EMP_LFS, Y15-64, PC_POP, T", "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_a/default/table")
 
 fig, ax = plt.subplots(figsize=(12, 5))
 plot_peer_lines(ax, emp, "Employment Rate, Ages 15–64 (%)", "%")
@@ -88,10 +108,11 @@ for age_group, suffix, title, csv_name in [
     mask = ((df_une["age"] == age_group) & (df_une["unit"] == "PC_ACT") &
             (df_une["sex"] == "T") & (df_une["geo\\TIME_PERIOD"].isin(PEERS)))
     une = df_une[mask].set_index("geo\\TIME_PERIOD")
-    year_cols = sorted([c for c in une.columns if str(c).isdigit() and 2000 <= int(c) <= 2024])
+    year_cols = sorted([c for c in une.columns if str(c).isdigit() and 2000 <= int(c) <= LAST_YEAR])
     une = une[year_cols].T.astype(float)
     une.index = une.index.astype(int); une.index.name = "year"
-    save_csv(une, csv_name)
+    une = trim(une)
+    save_csv(une, csv_name, f"Eurostat une_rt_a, {age_group}, PC_ACT, T", "https://ec.europa.eu/eurostat/databrowser/view/une_rt_a/default/table")
 
     fig, ax = plt.subplots(figsize=(12, 5))
     plot_peer_lines(ax, une, title, "%")
@@ -101,8 +122,8 @@ for age_group, suffix, title, csv_name in [
         peak = une["EL"].dropna().idxmax()
         peak_val = une["EL"][peak]
         ax.annotate(f"Peak: {peak_val:.0f}% ({int(peak)})",
-                    xy=(peak, peak_val), xytext=(peak + 2, peak_val - 4),
-                    fontsize=9, ha="left", color=COLORS["EL"], fontweight="bold",
+                    xy=(peak, peak_val), xytext=(peak + 1.3, peak_val),
+                    fontsize=9, ha="left", va="center", color=COLORS["EL"], fontweight="bold",
                     arrowprops=dict(arrowstyle="->", color=COLORS["EL"], lw=0.8))
     plt.tight_layout(); plt.savefig(f"{OUTPUT}/03{suffix}.png", dpi=150); plt.close()
     print(f"  saved 03{suffix}.png")
@@ -115,10 +136,12 @@ df_lc = eurostat.get_data_df("lc_lci_r2_a")
 mask = ((df_lc["nace_r2"] == "B-S") & (df_lc["lcstruct"] == "D11") &
         (df_lc["unit"] == "I20") & (df_lc["geo\\TIME_PERIOD"].isin(PEERS)))
 wages = df_lc[mask].set_index("geo\\TIME_PERIOD")
-year_cols = sorted([c for c in wages.columns if str(c).isdigit() and 2000 <= int(c) <= 2024])
+year_cols = sorted([c for c in wages.columns if str(c).isdigit() and 2000 <= int(c) <= LAST_YEAR])
 wages = wages[year_cols].T.astype(float)
 wages.index = wages.index.astype(int); wages.index.name = "year"
-save_csv(wages, "03d_labour_cost_index_2020_100")
+wages = trim(wages)
+save_csv(wages, "03d_labour_cost_index_2020_100",
+         "Eurostat lc_lci_r2_a, NACE B-S, lcstruct D11 (wages & salaries), I20", "https://ec.europa.eu/eurostat/databrowser/view/lc_lci_r2_a/default/table")
 
 fig, ax = plt.subplots(figsize=(12, 5))
 plot_peer_lines(ax, wages, "Labour Cost Index — Wages & Salaries, NACE B-S (2020 = 100)", "Index")
@@ -132,7 +155,7 @@ if "EL" in wages.columns:
         drop = (el[peak_yr] - el[trough_yr]) / el[peak_yr] * 100
         ax.annotate(f"Internal devaluation:\n−{drop:.0f}% wages\n({int(peak_yr)}→{int(trough_yr)})",
                     xy=(trough_yr, el[trough_yr]),
-                    xytext=(trough_yr + 1, el[trough_yr] - 10),
+                    xytext=(trough_yr + 1, el[trough_yr] - 18),
                     fontsize=9, ha="left", color=COLORS["EL"], fontweight="bold",
                     arrowprops=dict(arrowstyle="->", color=COLORS["EL"], lw=0.8))
 plt.tight_layout(); plt.savefig(f"{OUTPUT}/03d_wages.png", dpi=150); plt.close()
@@ -142,13 +165,15 @@ print("  saved 03d_wages.png")
 # 4. Population trend (peer index + Greek absolute)
 # ---------------------------------------------------------------------------
 print("Fetching population data...")
-pop = wb_series("SP.POP.TOTL", WB_CODES, (2000, 2025)).rename(columns=WB_TO_EU)
+pop = wb_series("SP.POP.TOTL", WB_CODES, (2000, LAST_YEAR + 1)).rename(columns=WB_TO_EU)
 pop.index.name = "year"
-save_csv(pop, "03e_population_total")
+save_csv(pop, "03e_population_total", "World Bank WDI, indicator SP.POP.TOTL",
+         "https://data.worldbank.org/indicator/SP.POP.TOTL")
 
 pop_norm = pop.div(pop.iloc[0]) * 100
 pop_norm.index.name = "year"
-save_csv(pop_norm, "03e_population_index_2000_100")
+save_csv(pop_norm, "03e_population_index_2000_100", "Derived: World Bank SP.POP.TOTL, 2000 = 100",
+         "https://data.worldbank.org/indicator/SP.POP.TOTL")
 
 fig, ax = plt.subplots(figsize=(12, 5))
 plot_peer_lines(ax, pop_norm, "Population Index (2000 = 100)", "Index", marker_size=2)
@@ -190,10 +215,12 @@ df_mig = eurostat.get_data_df("demo_gind")
 mask = ((df_mig["indic_de"] == "CNMIGRATRT") &
         (df_mig["geo\\TIME_PERIOD"].isin(PEERS)))
 mig = df_mig[mask].set_index("geo\\TIME_PERIOD")
-year_cols = sorted([c for c in mig.columns if str(c).isdigit() and 2000 <= int(c) <= 2024])
+year_cols = sorted([c for c in mig.columns if str(c).isdigit() and 2000 <= int(c) <= LAST_YEAR])
 mig = mig[year_cols].T.astype(float)
 mig.index = mig.index.astype(int); mig.index.name = "year"
-save_csv(mig, "03f_net_migration_crude_rate")
+mig = trim(mig)
+save_csv(mig, "03f_net_migration_crude_rate",
+         "Eurostat demo_gind, CNMIGRATRT (crude rate of net migration plus statistical adjustment)", "https://ec.europa.eu/eurostat/databrowser/view/demo_gind/default/table")
 
 fig, ax = plt.subplots(figsize=(12, 5))
 for iso in PEERS:
@@ -205,7 +232,7 @@ ax.axhline(0, color="black", linewidth=0.8, linestyle="--")
 ax.fill_between(mig.index, mig.get("EL", pd.Series()), 0,
                 where=mig.get("EL", pd.Series()) < 0,
                 alpha=0.12, color=COLORS["EL"], label="Greek net outflow")
-add_programme_shading(ax, label_y_frac=0.08)
+add_programme_shading(ax, label_y_frac=0.92)
 ax.set_title("Crude Rate of Net Migration (per 1,000 inhabitants)",
              fontsize=14, fontweight="bold")
 ax.set_xlabel("Year"); ax.set_ylabel("per 1,000")
@@ -217,9 +244,10 @@ print("  saved 03f_net_migration.png")
 # 6. Age dependency ratio
 # ---------------------------------------------------------------------------
 print("Fetching age dependency ratio...")
-dep = wb_series("SP.POP.DPND", WB_CODES, (2000, 2025)).rename(columns=WB_TO_EU)
+dep = wb_series("SP.POP.DPND", WB_CODES, (2000, LAST_YEAR + 1)).rename(columns=WB_TO_EU)
 dep.index.name = "year"
-save_csv(dep, "03g_age_dependency_ratio_pct")
+save_csv(dep, "03g_age_dependency_ratio_pct", "World Bank WDI, indicator SP.POP.DPND",
+         "https://data.worldbank.org/indicator/SP.POP.DPND")
 
 fig, ax = plt.subplots(figsize=(12, 5))
 plot_peer_lines(ax, dep, "Age Dependency Ratio (% of working-age population)", "%", marker_size=2)
@@ -234,10 +262,11 @@ df_fer = eurostat.get_data_df("demo_find")
 mask = ((df_fer["indic_de"] == "TOTFERRT") &
         (df_fer["geo\\TIME_PERIOD"].isin(PEERS + ["EU27_2020"])))
 fer = df_fer[mask].set_index("geo\\TIME_PERIOD")
-year_cols = sorted([c for c in fer.columns if str(c).isdigit() and 2000 <= int(c) <= 2024])
+year_cols = sorted([c for c in fer.columns if str(c).isdigit() and 2000 <= int(c) <= LAST_YEAR])
 fer = fer[year_cols].T.astype(float)
 fer.index = fer.index.astype(int); fer.index.name = "year"
-save_csv(fer, "03h_total_fertility_rate")
+fer = trim(fer)
+save_csv(fer, "03h_total_fertility_rate", "Eurostat demo_find, TOTFERRT", "https://ec.europa.eu/eurostat/databrowser/view/demo_find/default/table")
 
 fig, ax = plt.subplots(figsize=(12, 5))
 for iso in PEERS:

@@ -1,3 +1,6 @@
+# source: Eurostat nrg_ind_ren, nrg_bal REN (share of renewables in gross final energy consumption)
+# url: https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table
+# retrieved: 2026-10-13
 year,CY,GR,ES,EU,IT,PT
 2004,3.071,7.161,8.345,9.605,6.316,19.205
 2005,3.131,7.277,8.444,10.182,7.549,19.523
@@ -20,3 +23,4 @@ year,CY,GR,ES,EU,IT,PT
 2022,19.427,22.671,21.837,23.003,18.826,34.675
 2023,20.213,25.269,24.981,24.579,19.179,35.154
 2024,20.844,25.364,25.417,25.241,19.385,36.319
+2025,21.5,26.9,26.0,26.2,20.5,36.7

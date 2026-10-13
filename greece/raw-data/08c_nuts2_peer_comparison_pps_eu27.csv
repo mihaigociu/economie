@@ -1,3 +1,6 @@
+# source: Eurostat nama_10r_2gdp, PPS_HAB_EU27_2020, selected NUTS2
+# url: https://ec.europa.eu/eurostat/databrowser/view/nama_10r_2gdp/default/table
+# retrieved: 2026-10-13
 year,Cyprus (single NUTS2),"Attica (GR, capital)","South Aegean (GR, islands)",E. Macedonia & Thrace (GR),"Madrid (ES, capital)",Andalucía (ES),Campania (IT),Calabria (IT),"Lazio (IT, capital)",Norte (PT),"Lisboa (PT, capital)"
 2000,96.0,108.0,99.0,66.0,129.0,72.0,81.0,73.0,154.0,68.0,143.0
 2001,98.0,111.0,99.0,66.0,131.0,74.0,81.0,73.0,153.0,68.0,140.0

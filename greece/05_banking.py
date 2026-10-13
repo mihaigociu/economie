@@ -11,6 +11,8 @@ that fell by ~40% from peak before recovering.
 import warnings
 warnings.filterwarnings("ignore")
 
+from datetime import date
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
@@ -22,16 +24,35 @@ OUTPUT   = "charts"
 RAW_DATA = "raw-data"
 import os; os.makedirs(OUTPUT, exist_ok=True); os.makedirs(RAW_DATA, exist_ok=True)
 
-def save_csv(df, name):
+# Last calendar year requested from every source. Bump once a year; series that
+# have not yet published LAST_YEAR simply end earlier (see trim()).
+LAST_YEAR = 2025
+RETRIEVED = date.today().isoformat()
+
+def trim(df):
+    """Drop all-NaN columns and leading/trailing all-NaN rows, so series that
+    lack the most recent year(s) simply end earlier instead of plotting gaps/zeros."""
+    df = df.dropna(axis=1, how="all")
+    if df.empty:
+        raise RuntimeError("fetched frame is empty after dropping all-NaN columns")
+    return df.loc[df.first_valid_index():df.last_valid_index()]
+
+def save_csv(df, name, source, url):
+    """Write CSV with provenance header (read back with pd.read_csv(..., comment='#'))."""
     path = f"{RAW_DATA}/{name}.csv"
-    df.to_csv(path)
+    with open(path, "w") as f:
+        f.write(f"# source: {source}\n# url: {url}\n# retrieved: {RETRIEVED}\n")
+        df.to_csv(f)
     print(f"  saved {path}")
 
-def wb_series(indicator, economies, year_range=(2005, 2025)):
+def wb_series(indicator, economies, year_range=(2005, LAST_YEAR + 1)):
     df = wb.data.DataFrame(indicator, economy=economies, time=range(*year_range))
     df = df.T
     df.index = df.index.str.replace("YR", "").astype(int)
-    return df
+    return trim(df)
+
+def wb_src(code):
+    return (f"World Bank WDI, indicator {code}", f"https://data.worldbank.org/indicator/{code}")
 
 PEERS_WB = ["GRC", "PRT", "ITA", "ESP", "CYP"]
 WB_TO_LBL = {"GRC":"GR","PRT":"PT","ITA":"IT","ESP":"ES","CYP":"CY"}
@@ -61,11 +82,11 @@ def plot_peer_lines(ax, df, highlight="GR"):
 print("Fetching NPL ratios...")
 npl = wb_series("FB.AST.NPER.ZS", PEERS_WB).rename(columns=WB_TO_LBL)
 npl.index.name = "year"
-save_csv(npl, "05a_npl_ratio_pct")
+save_csv(npl, "05a_npl_ratio_pct", *wb_src("FB.AST.NPER.ZS"))
 
 fig, ax = plt.subplots(figsize=(13, 5))
 plot_peer_lines(ax, npl)
-add_programme_shading(ax, label_y_frac=0.92)
+add_programme_shading(ax, label_y_frac=0.03)
 # Annotate Greek peak
 if "GR" in npl.columns:
     el = npl["GR"].dropna()
@@ -91,12 +112,14 @@ print("  saved 05a_npl_ratio.png")
 # ---------------------------------------------------------------------------
 # 2. Greek private-sector deposits (monthly) — capital controls story
 # ---------------------------------------------------------------------------
-# ECB SDW series: MFI balance sheet, deposits of NFCs + households at Greek MFIs.
+# ECB series: MFI balance sheet, deposits at Greek MFIs placed by euro-area non-MFIs
+# excluding central government (households, NFCs, non-bank financials, local/social-security govt).
 # Series key: BSI.M.GR.N.A.L20.A.1.U2.2300.Z01.E (monthly, € million)
 print("Fetching Greek bank deposits from ECB SDW...")
 url = "https://data-api.ecb.europa.eu/service/data/BSI/M.GR.N.A.L20.A.1.U2.2300.Z01.E"
+# No endPeriod: always fetch through the latest month the ECB has published.
 r = requests.get(url, headers={"Accept":"application/json"},
-                 params={"startPeriod":"2005-01","endPeriod":"2024-12"}, timeout=60)
+                 params={"startPeriod":"2005-01"}, timeout=60)
 r.raise_for_status()
 js = r.json()
 series = list(js["dataSets"][0]["series"].values())[0]["observations"]
@@ -108,14 +131,21 @@ for k, v in series.items():
 dep = pd.DataFrame(records, columns=["period", "deposits_mn_eur"])
 dep["date"] = pd.to_datetime(dep["period"])
 dep = dep.set_index("date").sort_index()
-dep["deposits_bn_eur"] = dep["deposits_mn_eur"] / 1000.0
-save_csv(dep[["deposits_bn_eur"]], "05b_greek_bank_deposits_bn_eur")
+dep["deposits_bn_eur"] = dep["deposits_mn_eur"].astype(float) / 1000.0
+dep = dep.dropna(subset=["deposits_bn_eur"])
+if dep.empty:
+    raise RuntimeError("ECB BSI deposits: no observations returned")
+print(f"  ECB deposits: {dep.index.min():%Y-%m} to {dep.index.max():%Y-%m}")
+save_csv(dep[["deposits_bn_eur"]], "05b_greek_bank_deposits_bn_eur",
+         "ECB Data Portal, BSI.M.GR.N.A.L20.A.1.U2.2300.Z01.E (deposits placed by euro-area non-MFIs excl. central government at Greek MFIs; EUR mn / 1000)",
+         url)
 
 fig, ax = plt.subplots(figsize=(13, 5))
 ax.fill_between(dep.index, dep["deposits_bn_eur"], alpha=0.2, color=COLORS["GR"])
 ax.plot(dep.index, dep["deposits_bn_eur"], color=COLORS["GR"], linewidth=2.2)
 
-# Key events
+# Key events (labels sit in headroom above the series)
+ax.set_ylim(0, dep["deposits_bn_eur"].max() * 1.17)
 events = [
     ("2010-05", "First MoU\nMay 2010"),
     ("2012-03", "PSI\nMar 2012"),
@@ -126,14 +156,14 @@ for date_str, label in events:
     x = pd.to_datetime(date_str)
     if dep.index.min() <= x <= dep.index.max():
         ax.axvline(x, color="black", linestyle=":", linewidth=0.7, alpha=0.6)
-        ax.text(x, dep["deposits_bn_eur"].max() * 1.02, label,
+        ax.text(x, dep["deposits_bn_eur"].max() * 1.03, label,
                 rotation=0, fontsize=7, ha="center", va="bottom", color="#333")
 
 peak_date = dep["deposits_bn_eur"].idxmax()
 trough_date = dep.loc[peak_date:"2018-01"]["deposits_bn_eur"].idxmin()
 ax.annotate(f"Peak: €{dep['deposits_bn_eur'].loc[peak_date]:.0f}bn\n({peak_date.strftime('%b %Y')})",
             xy=(peak_date, dep['deposits_bn_eur'].loc[peak_date]),
-            xytext=(peak_date - pd.Timedelta(days=900), dep['deposits_bn_eur'].loc[peak_date] - 15),
+            xytext=(peak_date - pd.Timedelta(days=1650), dep['deposits_bn_eur'].loc[peak_date] - 30),
             fontsize=8, color=COLORS["GR"], fontweight="bold",
             arrowprops=dict(arrowstyle="->", color=COLORS["GR"], lw=0.8))
 drop_pct = (dep['deposits_bn_eur'].loc[peak_date] - dep['deposits_bn_eur'].loc[trough_date]) / dep['deposits_bn_eur'].loc[peak_date] * 100
@@ -143,7 +173,7 @@ ax.annotate(f"Trough: €{dep['deposits_bn_eur'].loc[trough_date]:.0f}bn\n({trou
             fontsize=8, color=COLORS["GR"], fontweight="bold",
             arrowprops=dict(arrowstyle="->", color=COLORS["GR"], lw=0.8))
 
-ax.set_title("Greek Bank Deposits — Households & Non-Financial Corps (€ billions, monthly)",
+ax.set_title("Deposits at Greek Banks — Non-MFI Sector excl. Central Government (€ bn, monthly)",
              fontsize=14, fontweight="bold")
 ax.set_xlabel("Date"); ax.set_ylabel("€ billions")
 ax.xaxis.set_major_locator(mdates.YearLocator(2))
@@ -157,13 +187,14 @@ print("  saved 05b_bank_deposits.png")
 # 3. Credit to private sector (% GDP) — the deleveraging cycle
 # ---------------------------------------------------------------------------
 print("Fetching domestic credit to private sector...")
-credit = wb_series("FD.AST.PRVT.GD.ZS", PEERS_WB, (2000, 2025)).rename(columns=WB_TO_LBL)
+credit = wb_series("FD.AST.PRVT.GD.ZS", PEERS_WB, (2000, LAST_YEAR + 1)).rename(columns=WB_TO_LBL)
 credit.index.name = "year"
-save_csv(credit, "05c_credit_to_private_pct_gdp")
+save_csv(credit, "05c_credit_to_private_pct_gdp", *wb_src("FD.AST.PRVT.GD.ZS"))
 
 fig, ax = plt.subplots(figsize=(13, 5))
 plot_peer_lines(ax, credit)
-add_programme_shading(ax, label_y_frac=0.92)
+ax.set_ylim(bottom=0)
+add_programme_shading(ax, label_y_frac=0.04)
 if "GR" in credit.columns:
     el = credit["GR"].dropna()
     peak = el.idxmax()
@@ -190,7 +221,7 @@ print("  saved 05c_credit.png")
 print("Fetching bank capital ratio...")
 cap = wb_series("FB.BNK.CAPA.ZS", PEERS_WB).rename(columns=WB_TO_LBL)
 cap.index.name = "year"
-save_csv(cap, "05d_bank_capital_to_assets_pct")
+save_csv(cap, "05d_bank_capital_to_assets_pct", *wb_src("FB.BNK.CAPA.ZS"))
 
 fig, ax = plt.subplots(figsize=(13, 5))
 plot_peer_lines(ax, cap)

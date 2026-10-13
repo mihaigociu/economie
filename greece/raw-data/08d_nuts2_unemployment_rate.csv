@@ -1,3 +1,6 @@
+# source: Eurostat lfst_r_lfu3rt, Y15-74, T, ISCED TOTAL, PC
+# url: https://ec.europa.eu/eurostat/databrowser/view/lfst_r_lfu3rt/default/table
+# retrieved: 2026-10-13
 year,Attiki (Athens),North Aegean,South Aegean,Crete,East Macedonia & Thrace,Central Macedonia,West Macedonia,Epirus,Thessaly,Ionian Islands,West Greece,Central Greece,Peloponnese
 2000,12.3,7.7,10.5,7.3,8.8,10.9,15.0,11.0,13.0,5.6,10.6,14.4,9.7
 2001,10.4,6.3,9.9,6.3,9.3,10.9,16.2,12.6,12.2,7.3,10.3,14.1,8.4
@@ -24,3 +27,4 @@ year,Attiki (Athens),North Aegean,South Aegean,Crete,East Macedonia & Thrace,Cen
 2022,10.0,11.5,10.7,12.1,14.7,14.7,17.7,13.3,16.4,12.9,12.6,13.8,12.6
 2023,9.4,10.0,7.1,10.8,12.1,14.1,16.7,13.8,12.9,14.7,9.8,9.9,9.6
 2024,9.1,7.1,9.9,8.6,11.6,12.8,12.5,10.7,10.0,16.2,10.1,8.6,7.6
+2025,8.1,6.4,7.3,5.1,10.6,11.7,15.3,9.9,6.3,9.0,9.7,8.5,8.3

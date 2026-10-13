@@ -1,3 +1,6 @@
+# source: Eurostat lc_lci_r2_a, NACE B-S, lcstruct D11 (wages & salaries), I20
+# url: https://ec.europa.eu/eurostat/databrowser/view/lc_lci_r2_a/default/table
+# retrieved: 2026-10-13
 year,CY,EL,ES,IT,PT
 2000,65.2,81.9,61.2,63.3,72.6
 2001,68.8,84.8,63.5,66.7,75.9
@@ -24,3 +27,4 @@ year,CY,EL,ES,IT,PT
 2022,108.0,106.0,103.4,101.0,105.3
 2023,115.4,112.4,108.5,103.4,111.2
 2024,120.6,118.5,112.9,107.0,118.7
+2025,124.7,128.2,116.3,110.2,126.5

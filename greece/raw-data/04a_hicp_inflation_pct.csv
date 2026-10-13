@@ -1,3 +1,6 @@
+# source: Eurostat prc_hicp_aind, CP00, RCH_A_AVG (annual average rate of change)
+# url: https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_aind/default/table
+# retrieved: 2026-10-13
 year,CY,EA,EL,ES,IT,PT
 2000,4.9,,2.9,3.5,2.6,2.8
 2001,2.0,2.4,3.6,2.8,2.3,4.4
@@ -24,3 +27,4 @@ year,CY,EA,EL,ES,IT,PT
 2022,8.1,8.4,9.3,8.3,8.7,8.1
 2023,3.9,5.4,4.2,3.4,5.9,5.3
 2024,2.3,2.4,3.0,2.9,1.1,2.7
+2025,0.8,2.1,2.9,2.7,1.7,2.2

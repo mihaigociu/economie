@@ -1,3 +1,6 @@
+# source: Eurostat gov_10dd_edpt1 (EDP notification tables), unit PC_GDP, sector S13, GD_F2 / GD_F3 / GD_F4
+# url: https://ec.europa.eu/eurostat/databrowser/view/gov_10dd_edpt1/default/table
+# retrieved: 2026-10-13
 year,Currency & deposits,Debt securities (market),Loans (mainly official sector)
 2000,0.4,79.1,29.4
 2001,0.4,78.1,32.0
@@ -24,3 +27,4 @@ year,Currency & deposits,Debt securities (market),Loans (mainly official sector)
 2022,3.5,41.2,133.1
 2023,3.2,41.0,120.1
 2024,3.2,40.1,110.9
+2025,3.1,39.5,103.5
