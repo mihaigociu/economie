@@ -43,6 +43,23 @@ The repo is already public, so `SAFE/`, `bolojan/` and `curs/` are already reada
 2. **Romanian IT.**
 3. **Romania and Greece** after Eurostat's **October EDP notification** of deficit and debt figures (around 21–22 Oct 2026; check the release calendar). That release revises the 2025 deficit and debt numbers both reports depend on.
 
+### Progress (2026-10-13)
+- [x] **China.** Committed (`40af57a`). 34 CSVs updated or rebuilt, errors in the original data corrected, chart scripts now take their numbers from the data, text tightened to 12.0k words.
+- [x] **Romanian IT.** Committed (`9145fae`). Data refreshed; Eurostat hasn't published Romania's 2025 sector figures (`nama_10_a64` J62_J63) yet.
+- [x] **Romania.** Updated, not yet committed. New `common.py`; hand-typed series replaced; ~25 text corrections; 6.7k words.
+- [x] **Greece.** Updated, not yet committed. RRF figures pulled live from the Commission's Scoreboard; ~20 text corrections; full corrections list at the end of the report.
+
+### After Eurostat's October EDP release (~22 Oct 2026)
+1. **Romania.** Re-run `02_public_finances.py` and `04_inflation_monetary.py`.
+   - Check the 2025 deficit (7.9) and debt (59.3) and their EU rankings, and the "largest correction, +1.4 pp" claim.
+   - Check the Maastricht debt verdict: "PASS (narrowly)" flips to FAIL if debt goes above 60.
+   - Check "2.6× the limit", revenue/expenditure 35.4 / 43.3, and the 2024 figures (9.3 / 54.8).
+   - Fix the same numbers wherever the "What changed" box, executive summary and key takeaways repeat them.
+2. **Greece.** Re-run `02_public_finances.py`, and `06_external_sector.py` if nominal GDP is revised.
+   - Check the 2025 balance 1.7, primary balance 4.9, interest 3.2, debt 146.1; the "−63 pp since 2020" fall; the ~2% effective interest rate; tourism plus shipping as 17–18% of GDP.
+3. **Romanian IT.** Re-run all scripts. If Romania's 2025 rows have arrived, update the 2024 → 2025 figures in the text (ICT share of GDP, value added, employment, pay).
+4. **All three.** Compare the CSVs with git and fix any text whose numbers moved.
+
 ## Phase 2 — Build the site
 
 ### Layout
